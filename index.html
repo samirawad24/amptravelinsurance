@@ -94,6 +94,9 @@ header.nav{
 }
 header.nav.scrolled{border-bottom-color:var(--line)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;height:70px}
+.nav-left{display:flex;align-items:center;gap:15px}
+.nav-partner{display:flex;align-items:center;padding-left:15px;border-left:1px solid var(--line)}
+.nav-partner img{height:26px;width:auto;display:block}
 .brand{display:flex;align-items:center;gap:11px}
 .brand .tick{
   width:34px;height:34px;border-radius:9px;flex:none;background:radial-gradient(130% 130% at 30% 20%,#455876,#26324a);color:#e8ecf3;
@@ -108,6 +111,7 @@ header.nav.scrolled{border-bottom-color:var(--line)}
 .lang button[aria-pressed="true"]{background:var(--ink);color:#fff}
 .nav-cta{display:inline-flex;align-items:center;gap:8px;font-weight:600;padding:10px 18px;border-radius:999px;background:var(--ink);color:#fff;min-height:44px;transition:transform .16s var(--ease)}
 .nav-cta:hover{transform:translateY(-2px)}
+@media(max-width:820px){.nav-partner{display:none}}
 @media(max-width:600px){.nav-cta .txt{display:none} .nav-cta{padding:10px 12px} .brand b{font-size:.98rem}}
 
 /* ---------- Hero ---------- */
@@ -422,10 +426,15 @@ footer.foot{background:var(--paper-2);border-top:1px solid var(--line);padding:5
 <!-- ============ NAV ============ -->
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
-    <a class="brand" href="#top" aria-label="Home">
-      <span class="tick" id="brandMark">A</span>
-      <b id="brandName">Ana María Palacios</b>
-    </a>
+    <div class="nav-left">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="tick" id="brandMark">A</span>
+        <b id="brandName">Ana María Palacios</b>
+      </a>
+      <span class="nav-partner" id="navPartner">
+        <img id="navBrokerLogo" src="assets/best-travel-assistance-logo.svg" alt="Backed by Best Travel Assistance" />
+      </span>
+    </div>
     <div class="nav-right">
       <div class="lang" role="group" aria-label="Language / Idioma">
         <button type="button" data-lang="en" aria-pressed="true">EN</button>
@@ -1001,6 +1010,10 @@ const I18N = {
     const bl = $("#brokerLogo");
     if(CONFIG.brokerLogoUrl){ bl.innerHTML = '<img src="'+CONFIG.brokerLogoUrl+'" alt="'+esc(CONFIG.brokerName)+'">'; }
     else { bl.textContent = CONFIG.brokerName; bl.style.background="var(--ink)"; bl.style.color="#fff"; bl.style.fontFamily="'Bricolage Grotesque',serif"; bl.style.fontWeight="700"; }
+    // nav partner (backed-by) logo
+    const nbl = $("#navBrokerLogo"), np = $("#navPartner");
+    if(CONFIG.brokerLogoUrl && nbl){ nbl.src = CONFIG.brokerLogoUrl; nbl.alt = "Backed by "+CONFIG.brokerName; }
+    else if(np){ np.style.display = "none"; }
     if(CONFIG.phoneDisplay){ $("#footPhone").href = "tel:"+CONFIG.phoneDisplay.replace(/[^\d+]/g,""); } else { $("#footPhoneLi").hidden = true; }
     if(CONFIG.email){ $("#footEmail").href = "mailto:"+CONFIG.email; } else { $("#footEmailLi").hidden = true; }
     if(CONFIG.instagram){
