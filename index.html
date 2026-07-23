@@ -265,6 +265,25 @@ header.nav.scrolled{border-bottom-color:var(--line)}
   .rb-errs{grid-template-columns:1fr}
 }
 
+/* Location autocomplete */
+.ac-wrap{position:relative}
+.ac-list{
+  position:absolute;top:calc(100% + 6px);left:0;right:0;z-index:40;
+  background:#fff;border:1.5px solid var(--line);border-radius:12px;box-shadow:var(--shadow-m);
+  max-height:244px;overflow-y:auto;padding:6px;display:none;
+}
+.ac-list.show{display:block}
+.ac-list li{
+  list-style:none;display:flex;align-items:center;gap:10px;padding:10px 11px;border-radius:8px;
+  font-family:'DM Sans',sans-serif;font-size:.94rem;color:var(--ink);cursor:pointer;letter-spacing:0;text-transform:none;
+}
+.ac-list li .pin{width:16px;height:16px;flex:none;color:var(--silver)}
+.ac-list li.active,.ac-list li:hover{background:var(--accent-soft)}
+.ac-list li.active .pin,.ac-list li:hover .pin{color:var(--accent)}
+.ac-list li b{color:var(--accent);font-weight:700}
+.ac-list::-webkit-scrollbar{width:10px}
+.ac-list::-webkit-scrollbar-thumb{background:var(--line);border-radius:8px;border:3px solid #fff}
+
 .traveler{border:1.5px dashed var(--line);border-radius:var(--r-input);padding:16px;margin-bottom:12px;background:var(--paper);position:relative}
 .tv-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
 .tv-head b{font-family:'DM Mono',monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
@@ -1115,6 +1134,57 @@ const I18N = {
   } else {
     $$("[data-reveal]").forEach(el=>el.classList.add("in"));
   }
+
+  /* ---- Location autocomplete ---- */
+  const COUNTRIES = ["United States","Colombia","Venezuela","Mexico","Canada","Argentina","Peru","Chile","Ecuador","Panama","Costa Rica","Dominican Republic","Guatemala","Honduras","El Salvador","Nicaragua","Cuba","Puerto Rico","Bolivia","Paraguay","Uruguay","Brazil","Spain","Portugal","France","United Kingdom","Italy","Germany","Netherlands","Switzerland","Austria","Belgium","Ireland","Greece","Turkey","Croatia","Czech Republic","Poland","Sweden","Norway","Denmark","Iceland","Finland","Russia","Morocco","Egypt","South Africa","Kenya","Nigeria","United Arab Emirates","Qatar","Saudi Arabia","Israel","India","China","Japan","South Korea","Thailand","Vietnam","Singapore","Malaysia","Indonesia","Philippines","Australia","New Zealand","Jamaica","Bahamas","Barbados","Trinidad and Tobago","Aruba","Curaçao","Belize"];
+  const CITIES = ["Miami, United States","Orlando, United States","Fort Lauderdale, United States","Tampa, United States","Jacksonville, United States","New York, United States","Los Angeles, United States","Chicago, United States","Houston, United States","Dallas, United States","Atlanta, United States","Boston, United States","Washington, United States","Las Vegas, United States","San Francisco, United States","Seattle, United States","Philadelphia, United States","Phoenix, United States","Denver, United States","San Diego, United States","Bogotá, Colombia","Medellín, Colombia","Cali, Colombia","Cartagena, Colombia","Barranquilla, Colombia","Bucaramanga, Colombia","Pereira, Colombia","Santa Marta, Colombia","Cúcuta, Colombia","Caracas, Venezuela","Maracaibo, Venezuela","Valencia, Venezuela","Barquisimeto, Venezuela","Mexico City, Mexico","Cancún, Mexico","Guadalajara, Mexico","Monterrey, Mexico","Tijuana, Mexico","Playa del Carmen, Mexico","Puerto Vallarta, Mexico","Lima, Peru","Cusco, Peru","Arequipa, Peru","Buenos Aires, Argentina","Córdoba, Argentina","Mendoza, Argentina","Santiago, Chile","Valparaíso, Chile","Quito, Ecuador","Guayaquil, Ecuador","Cuenca, Ecuador","Panama City, Panama","San José, Costa Rica","Santo Domingo, Dominican Republic","Punta Cana, Dominican Republic","Puerto Plata, Dominican Republic","Guatemala City, Guatemala","San Salvador, El Salvador","Tegucigalpa, Honduras","Managua, Nicaragua","La Paz, Bolivia","Santa Cruz, Bolivia","Asunción, Paraguay","Montevideo, Uruguay","São Paulo, Brazil","Rio de Janeiro, Brazil","Brasília, Brazil","Havana, Cuba","San Juan, Puerto Rico","Nassau, Bahamas","Montego Bay, Jamaica","Kingston, Jamaica","Oranjestad, Aruba","Madrid, Spain","Barcelona, Spain","Valencia, Spain","Seville, Spain","Málaga, Spain","Lisbon, Portugal","Porto, Portugal","Paris, France","London, United Kingdom","Rome, Italy","Milan, Italy","Venice, Italy","Amsterdam, Netherlands","Berlin, Germany","Munich, Germany","Zurich, Switzerland","Vienna, Austria","Athens, Greece","Istanbul, Turkey","Dublin, Ireland","Toronto, Canada","Vancouver, Canada","Montreal, Canada","Dubai, United Arab Emirates","Doha, Qatar","Tel Aviv, Israel","Tokyo, Japan","Seoul, South Korea","Bangkok, Thailand","Singapore","Sydney, Australia","Auckland, New Zealand"];
+  const PLACES = CITIES.concat(COUNTRIES);
+  const acNorm = s => s.toLowerCase().normalize("NFD").replace(new RegExp("[\\u0300-\\u036f]","g"),"");
+  const PIN = '<svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 0 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>';
+
+  function attachAutocomplete(input, source){
+    if(!input) return;
+    const wrap = document.createElement("div"); wrap.className = "ac-wrap";
+    input.parentNode.insertBefore(wrap, input); wrap.appendChild(input);
+    const list = document.createElement("ul"); list.className = "ac-list"; list.setAttribute("role","listbox"); wrap.appendChild(list);
+    input.setAttribute("role","combobox"); input.setAttribute("aria-autocomplete","list"); input.setAttribute("aria-expanded","false"); input.setAttribute("autocomplete","off");
+    let items = [], active = -1, open = false, suppress = false;
+
+    function render(q){
+      const nq = acNorm(q.trim());
+      if(nq.length < 1){ close(); return; }
+      const starts = [], incl = [];
+      for(const p of source){ const i = acNorm(p).indexOf(nq); if(i===0) starts.push(p); else if(i>0) incl.push(p); if(starts.length+incl.length > 30) break; }
+      items = starts.concat(incl).slice(0,7);
+      if(!items.length){ close(); return; }
+      list.innerHTML = items.map((p,idx)=>{
+        const i = acNorm(p).indexOf(nq), len = nq.length;
+        const a = esc(p.slice(0,i)), b = esc(p.slice(i,i+len)), c = esc(p.slice(i+len));
+        return '<li role="option" id="ac-'+input.id+'-'+idx+'" data-v="'+esc(p)+'">'+PIN+'<span>'+a+'<b>'+b+'</b>'+c+'</span></li>';
+      }).join("");
+      active = -1; open = true; list.classList.add("show"); input.setAttribute("aria-expanded","true");
+    }
+    function close(){ open=false; list.classList.remove("show"); list.innerHTML=""; active=-1; input.setAttribute("aria-expanded","false"); input.removeAttribute("aria-activedescendant"); }
+    function highlight(){
+      $$("li",list).forEach((li,idx)=> li.classList.toggle("active", idx===active));
+      if(active>=0){ const el=$$("li",list)[active]; input.setAttribute("aria-activedescendant", el.id); el.scrollIntoView({block:"nearest"}); }
+    }
+    function choose(v){ suppress=true; input.value=v; close(); input.dispatchEvent(new Event("input",{bubbles:true})); suppress=false; }
+
+    input.addEventListener("input", ()=>{ if(suppress) return; render(input.value); });
+    input.addEventListener("keydown", e=>{
+      if(!open) return;
+      if(e.key==="ArrowDown"){ e.preventDefault(); active=Math.min(active+1,items.length-1); highlight(); }
+      else if(e.key==="ArrowUp"){ e.preventDefault(); active=Math.max(active-1,0); highlight(); }
+      else if(e.key==="Enter"){ if(active>=0){ e.preventDefault(); choose(items[active]); } }
+      else if(e.key==="Escape"){ close(); }
+    });
+    list.addEventListener("mousedown", e=>{ const li=e.target.closest("li"); if(li){ e.preventDefault(); choose(li.getAttribute("data-v")); } });
+    input.addEventListener("blur", ()=> setTimeout(close,120));
+  }
+  attachAutocomplete($("#origin"), PLACES);
+  attachAutocomplete($("#destination"), PLACES);
+  attachAutocomplete($("#residence"), COUNTRIES);
 
   applyConfig();
   addTraveler();
