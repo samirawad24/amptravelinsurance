@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ana María Palacios | Travel Insurance, Personalized | Fast Quote by WhatsApp</title>
 <meta name="description" content="Ana María Palacios helps travelers find the right protection fast. Personalized travel insurance support in English and Español. Get a fast quote by WhatsApp." />
-<meta name="theme-color" content="#faf8f4" />
+<meta name="theme-color" content="#26324a" />
 
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Ana María Palacios | Travel Insurance, Personalized" />
@@ -28,21 +28,23 @@
    ============================================================ */
 
 :root{
-  --paper:#faf8f4;        /* warm off-white canvas */
-  --paper-2:#f2ede4;      /* slightly deeper panel */
+  /* Palette matched to the AMP Instagram brand: navy + slate blue + platinum silver */
+  --paper:#f4f6fa;        /* cool platinum canvas */
+  --paper-2:#e7ecf4;      /* slightly deeper cool panel */
   --card:#ffffff;
-  --ink:#1b1b2e;          /* deep indigo-ink text + dark surfaces */
-  --ink-2:#3d3d52;
-  --muted:#736d61;        /* warm gray secondary text */
-  --accent:#ee5a30;       /* single accent: coral (LOCKED) */
-  --accent-soft:#fdeadf;  /* coral tint surface */
-  --line:#e7e0d3;         /* hairline */
+  --ink:#26324a;          /* deep navy (AMP logo edge): text + dark surfaces */
+  --ink-2:#45526b;
+  --muted:#6b7488;        /* slate gray secondary text */
+  --accent:#41608f;       /* single accent: slate blue (LOCKED) */
+  --accent-soft:#e5ecf6;  /* pale blue tint surface */
+  --silver:#a9b3c5;       /* platinum silver for metallic touches */
+  --line:#dbe2ee;         /* cool silver hairline */
   --wa:#25d366;
   --r-card:22px;
   --r-input:12px;
-  --shadow-s:0 2px 12px rgba(27,27,46,.06);
-  --shadow-m:0 18px 50px rgba(27,27,46,.12);
-  --shadow-l:0 30px 70px rgba(27,27,46,.20);
+  --shadow-s:0 2px 12px rgba(38,50,74,.07);
+  --shadow-m:0 18px 50px rgba(38,50,74,.14);
+  --shadow-l:0 30px 70px rgba(38,50,74,.22);
   --ease:cubic-bezier(.22,.61,.36,1);
   --maxw:1180px;
 }
@@ -93,7 +95,7 @@ header.nav.scrolled{border-bottom-color:var(--line)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;height:70px}
 .brand{display:flex;align-items:center;gap:11px}
 .brand .tick{
-  width:34px;height:34px;border-radius:9px;flex:none;background:var(--ink);color:var(--accent);
+  width:34px;height:34px;border-radius:9px;flex:none;background:radial-gradient(130% 130% at 30% 20%,#455876,#26324a);color:#e8ecf3;
   display:grid;place-items:center;font-family:'Bricolage Grotesque',serif;font-weight:800;font-size:1.05rem;
   position:relative;
 }
@@ -125,15 +127,15 @@ header.nav.scrolled{border-bottom-color:var(--line)}
 .arch{
   position:relative;aspect-ratio:4/5;max-width:420px;margin-left:auto;
   border-radius:210px 210px 26px 26px;overflow:hidden;
-  box-shadow:var(--shadow-m);border:6px solid var(--card);background:var(--paper-2);
+  box-shadow:var(--shadow-m),0 0 0 1px var(--silver);border:6px solid var(--card);background:var(--paper-2);
 }
 .arch img{width:100%;height:100%;object-fit:cover}
 .stamp{
   position:absolute;left:-14px;bottom:26px;width:104px;height:104px;border-radius:50%;
-  border:2px dashed var(--accent);color:var(--accent);background:rgba(250,248,244,.9);
+  border:2px dashed var(--silver);color:var(--ink);background:rgba(244,246,250,.92);
   display:grid;place-items:center;text-align:center;transform:rotate(-11deg);
   font-family:'Bricolage Grotesque',serif;font-weight:700;font-size:.66rem;letter-spacing:.08em;
-  text-transform:uppercase;line-height:1.25;backdrop-filter:blur(3px);
+  text-transform:uppercase;line-height:1.25;backdrop-filter:blur(3px);box-shadow:inset 0 0 0 4px rgba(255,255,255,.6);
 }
 .arc{position:absolute;inset:-30px -20px auto -30px;height:200px;width:100%;pointer-events:none;overflow:visible;z-index:-1}
 .arc path{fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:5 7;opacity:.7}
@@ -163,7 +165,7 @@ header.nav.scrolled{border-bottom-color:var(--line)}
 .cell p{font-size:.98rem;color:var(--muted)}
 .cell .ci{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;margin-bottom:auto}
 .cell .ci svg{width:24px;height:24px}
-.c-feat{grid-area:feat;background:var(--accent-soft);border:1px solid #f6d7c7}
+.c-feat{grid-area:feat;background:var(--accent-soft);border:1px solid #cdd9ec}
 .c-feat .ci{background:var(--accent);color:#fff}
 .c-feat h3{font-size:1.7rem}
 .c-quick{grid-area:quick;background:var(--card);border:1px solid var(--line)}
@@ -213,11 +215,11 @@ header.nav.scrolled{border-bottom-color:var(--line)}
 .assure li svg{width:22px;height:22px;color:var(--accent);flex:none;margin-top:2px}
 
 .ticket{background:var(--card);border-radius:var(--r-card);box-shadow:var(--shadow-l);position:relative;overflow:hidden}
-.ticket-top{background:var(--ink);color:#fff;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.ticket-top{background:radial-gradient(130% 150% at 22% 0%,#425474,var(--ink) 72%);color:#fff;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;gap:14px}
 .ticket-top .tt-l{display:flex;align-items:center;gap:11px}
 .ticket-top .tt-tick{width:30px;height:30px;border-radius:8px;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:'Bricolage Grotesque',serif;font-weight:800;font-size:.95rem}
 .ticket-top .tt-name{font-family:'Bricolage Grotesque',serif;font-weight:700;font-size:1rem;line-height:1.1}
-.ticket-top .tt-name span{display:block;font-family:'DM Sans';font-weight:400;font-size:.72rem;color:#b7b5c8;letter-spacing:.03em}
+.ticket-top .tt-name span{display:block;font-family:'DM Sans';font-weight:400;font-size:.72rem;color:#b9c1d1;letter-spacing:.03em}
 .ticket-top .tt-r{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
 .perf{height:16px;background:var(--ink);position:relative}
 .perf::before,.perf::after{content:"";position:absolute;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;background:var(--paper-2)}
@@ -234,7 +236,7 @@ header.nav.scrolled{border-bottom-color:var(--line)}
 }
 .field input:focus,.field select:focus{border-color:var(--accent);background:#fff;box-shadow:0 0 0 3px var(--accent-soft);outline:none}
 .field input::placeholder{color:#a49d8f}
-.field input[aria-invalid="true"]{border-color:var(--accent);background:#fff5f1}
+.field input[aria-invalid="true"]{border-color:#c23c1c;background:#fdf1ee}
 .err{color:#c23c1c;font-size:.78rem;margin-top:5px;display:none}
 .err.show{display:block}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
