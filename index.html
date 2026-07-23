@@ -95,8 +95,8 @@ header.nav{
 header.nav.scrolled{border-bottom-color:var(--line)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;height:70px}
 .nav-left{display:flex;align-items:center;gap:15px}
-.nav-partner{display:flex;align-items:center;padding-left:15px;border-left:1px solid var(--line)}
-.nav-partner img{height:26px;width:auto;display:block}
+.nav-partner{display:flex;align-items:center;padding-left:17px;border-left:1px solid var(--line)}
+.nav-partner img{height:40px;width:auto;display:block}
 .brand{display:flex;align-items:center;gap:11px}
 .brand .tick{
   width:34px;height:34px;border-radius:9px;flex:none;background:radial-gradient(130% 130% at 30% 20%,#455876,#26324a);color:#e8ecf3;
@@ -139,6 +139,9 @@ header.nav.scrolled{border-bottom-color:var(--line)}
   box-shadow:inset 0 0 0 1px rgba(38,50,74,.08);
 }
 .photo-frame img{width:100%;height:100%;object-fit:cover;display:block}
+.pf-cap{text-align:center;padding:16px 10px 4px}
+.pf-name{display:block;font-family:'Bricolage Grotesque',serif;font-weight:700;font-size:clamp(1.4rem,2vw,1.7rem);color:var(--ink);letter-spacing:-.01em;line-height:1.1}
+.pf-role{display:block;margin-top:6px;font-family:'DM Mono',monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
 
 /* ---------- Trust strip ---------- */
 .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:26px}
@@ -465,6 +468,10 @@ footer.foot{background:var(--paper-2);border-top:1px solid var(--line);padding:5
     <div class="hero-media" data-reveal style="transition-delay:.12s">
       <figure class="photo-frame">
         <div class="pf-img"><img id="heroPortrait" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&h=1000&fit=crop" alt="" /></div>
+        <figcaption class="pf-cap">
+          <span class="pf-name" id="pfName">Ana María Palacios</span>
+          <span class="pf-role" data-i18n="brand_role">Travel Insurance Consultant</span>
+        </figcaption>
       </figure>
     </div>
   </div>
@@ -793,6 +800,7 @@ const CONFIG = {
 const I18N = {
   en:{
     nav_cta:"WhatsApp",
+    brand_role:"Travel Insurance Consultant",
     hero_eyebrow:"Personalized travel insurance",
     hero_h1:'Travel with <span class="em">confidence,</span> wherever you land.',
     hero_sub:"I help travelers find the right protection fast, with personal guidance in English and Español.",
@@ -884,6 +892,7 @@ const I18N = {
   },
   es:{
     nav_cta:"WhatsApp",
+    brand_role:"Asesora de Seguros de Viaje",
     hero_eyebrow:"Seguro de viaje personalizado",
     hero_h1:'Viaja con <span class="em">tranquilidad,</span> llegues a donde llegues.',
     hero_sub:"Ayudo a los viajeros a encontrar la protección adecuada rápido, con atención personal en inglés y español.",
@@ -989,7 +998,7 @@ const I18N = {
   function applyConfig(){
     const name = CONFIG.clientName || "Ana María Palacios";
     const init = (CONFIG.clientInitial || name.trim().charAt(0) || "A").toUpperCase();
-    ["brandName","footName","footLegalName"].forEach(id=>{const el=document.getElementById(id); if(el) el.textContent=name;});
+    ["brandName","footName","footLegalName","pfName"].forEach(id=>{const el=document.getElementById(id); if(el) el.textContent=name;});
     ["brandMark","footMark","ticketMark"].forEach(id=>{const el=document.getElementById(id); if(el) el.textContent=init;});
     const tn = $("#ticketName"); if(tn) tn.childNodes[0].nodeValue = name;
     if(CONFIG.portraitUrl) $("#heroPortrait").src = CONFIG.portraitUrl;
