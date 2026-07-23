@@ -5,9 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ana María Palacios | Travel Insurance, Personalized | Fast Quote by WhatsApp</title>
 <meta name="description" content="Ana María Palacios helps travelers find the right protection fast. Personalized travel insurance support in English and Español. Get a fast quote by WhatsApp." />
-<meta name="theme-color" content="#0b1f3a" />
+<meta name="theme-color" content="#faf8f4" />
 
-<!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Ana María Palacios | Travel Insurance, Personalized" />
 <meta property="og:description" content="I help travelers find the right protection fast. Personalized guidance in English and Español. Get a fast quote by WhatsApp." />
@@ -18,408 +17,348 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
 
 <style>
 /* ============================================================
-   CONFIG NOTE: To change the client name, WhatsApp number,
-   photo, or broker logo, edit the CONFIG object near the
-   bottom of the <script> block. Nothing else needs touching.
+   Ana Maria Palacios - Travel Insurance
+   "Boarding Pass" design language. Single-file build.
+   To change name / number / photos / broker: edit the CONFIG
+   object near the bottom of the <script> block. Nothing else.
    ============================================================ */
 
 :root{
-  --navy:#0b1f3a;
-  --navy-2:#122c53;
-  --midnight:#081832;
-  --teal:#14b8a6;
-  --aqua:#5eead4;
-  --accent:#f0a13b;      /* warm gold */
-  --accent-2:#ef7a5a;    /* coral */
-  --ink:#0f1b2d;
-  --slate:#4a5a72;
-  --line:#e4e9f0;
-  --bg:#ffffff;
-  --off:#f6f8fb;
-  --soft:#eef3f9;
-  --white:#ffffff;
-  --radius:18px;
-  --radius-sm:12px;
-  --shadow-sm:0 2px 10px rgba(11,31,58,.06);
-  --shadow:0 12px 40px rgba(11,31,58,.12);
-  --shadow-lg:0 28px 70px rgba(8,24,50,.28);
-  --maxw:1160px;
+  --paper:#faf8f4;        /* warm off-white canvas */
+  --paper-2:#f2ede4;      /* slightly deeper panel */
+  --card:#ffffff;
+  --ink:#1b1b2e;          /* deep indigo-ink text + dark surfaces */
+  --ink-2:#3d3d52;
+  --muted:#736d61;        /* warm gray secondary text */
+  --accent:#ee5a30;       /* single accent: coral (LOCKED) */
+  --accent-soft:#fdeadf;  /* coral tint surface */
+  --line:#e7e0d3;         /* hairline */
+  --wa:#25d366;
+  --r-card:22px;
+  --r-input:12px;
+  --shadow-s:0 2px 12px rgba(27,27,46,.06);
+  --shadow-m:0 18px 50px rgba(27,27,46,.12);
+  --shadow-l:0 30px 70px rgba(27,27,46,.20);
   --ease:cubic-bezier(.22,.61,.36,1);
+  --maxw:1180px;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
-  font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
-  color:var(--ink);
-  background:var(--bg);
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
+  font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--ink);background:var(--paper);line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
-h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.12;letter-spacing:-.01em;font-weight:600}
+h1,h2,h3{font-family:'Bricolage Grotesque','DM Sans',sans-serif;line-height:1.05;letter-spacing:-.02em;font-weight:700}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
-button{font-family:inherit;cursor:pointer;border:none;background:none}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 section{position:relative}
 
-/* Focus states */
-a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{
-  outline:3px solid var(--aqua);
-  outline-offset:2px;
-  border-radius:6px;
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{
+  outline:3px solid var(--accent);outline-offset:2px;border-radius:6px;
 }
 
 /* ---------- Buttons ---------- */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:9px;
   font-weight:600;font-size:1rem;padding:15px 26px;border-radius:999px;
-  transition:transform .18s var(--ease),box-shadow .25s var(--ease),background .2s;
-  min-height:52px;white-space:nowrap;
+  transition:transform .16s var(--ease),box-shadow .22s var(--ease),background .18s,color .18s,border-color .18s;
+  min-height:54px;white-space:nowrap;
 }
-.btn:active{transform:translateY(1px) scale(.99)}
-.btn-wa{
-  background:linear-gradient(135deg,var(--accent) 0%,var(--accent-2) 100%);
-  color:#3a1c05;box-shadow:0 10px 26px rgba(240,161,59,.38);
-}
-.btn-wa:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(240,161,59,.5)}
-.btn-ghost{
-  background:transparent;color:var(--navy);border:1.5px solid var(--line);
-}
-.btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
-.btn-ghost.on-dark{color:#eaf2ff;border-color:rgba(255,255,255,.28)}
-.btn-ghost.on-dark:hover{border-color:var(--aqua);color:var(--aqua)}
+.btn-primary{background:var(--ink);color:#fff}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(27,27,46,.28)}
+.btn-primary:active{transform:translateY(0)}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+.btn-ghost.on-ink{color:#fff;border-color:rgba(255,255,255,.4)}
+.btn-ghost.on-ink:hover{background:#fff;color:var(--ink)}
 .btn-block{width:100%}
-.wa-ico{width:20px;height:20px;flex:none}
+.wa-ico{width:20px;height:20px;flex:none;color:var(--wa)}
+.btn-primary .wa-ico{color:var(--wa)}
 
 /* ---------- Nav ---------- */
 header.nav{
-  position:sticky;top:0;z-index:60;
-  background:rgba(255,255,255,.86);
-  backdrop-filter:saturate(180%) blur(14px);
-  -webkit-backdrop-filter:saturate(180%) blur(14px);
-  border-bottom:1px solid transparent;
-  transition:border-color .3s,box-shadow .3s;
+  position:sticky;top:0;z-index:60;background:rgba(250,248,244,.82);
+  backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s;
 }
-header.nav.scrolled{border-bottom-color:var(--line);box-shadow:var(--shadow-sm)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;height:72px}
-.brand{display:flex;align-items:center;gap:11px;font-weight:700}
-.brand .mark{
-  width:40px;height:40px;border-radius:12px;flex:none;
-  background:linear-gradient(135deg,var(--navy),var(--teal));
-  display:grid;place-items:center;color:#fff;font-family:'Fraunces',serif;font-size:1.15rem;
-  box-shadow:var(--shadow-sm);
+header.nav.scrolled{border-bottom-color:var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;height:70px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand .tick{
+  width:34px;height:34px;border-radius:9px;flex:none;background:var(--ink);color:var(--accent);
+  display:grid;place-items:center;font-family:'Bricolage Grotesque',serif;font-weight:800;font-size:1.05rem;
+  position:relative;
 }
-.brand .who{display:flex;flex-direction:column;line-height:1.1}
-.brand .who b{font-size:1.02rem;color:var(--navy);letter-spacing:-.01em}
-.brand .who span{font-size:.72rem;color:var(--slate);font-weight:500;letter-spacing:.02em}
+.brand .tick::after{content:"";position:absolute;right:-4px;top:50%;transform:translateY(-50%);width:8px;height:8px;border-radius:50%;background:var(--paper);box-shadow:0 0 0 1px var(--line)}
+.brand b{font-family:'Bricolage Grotesque',serif;font-size:1.06rem;font-weight:700;letter-spacing:-.01em}
 .nav-right{display:flex;align-items:center;gap:12px}
-
-/* Language switch */
-.lang{
-  display:inline-flex;background:var(--soft);border:1px solid var(--line);
-  border-radius:999px;padding:3px;gap:2px;
-}
-.lang button{
-  font-size:.82rem;font-weight:600;color:var(--slate);
-  padding:7px 13px;border-radius:999px;min-height:38px;min-width:44px;transition:.18s;
-}
-.lang button[aria-pressed="true"]{background:var(--navy);color:#fff;box-shadow:var(--shadow-sm)}
-.nav-cta{display:inline-flex}
-@media(max-width:640px){
-  .brand .who span{display:none}
-  .nav-cta .label-long{display:none}
-}
+.lang{display:inline-flex;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden}
+.lang button{font-size:.8rem;font-weight:700;padding:7px 13px;min-height:36px;min-width:44px;transition:.16s;letter-spacing:.02em}
+.lang button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;font-weight:600;padding:10px 18px;border-radius:999px;background:var(--ink);color:#fff;min-height:44px;transition:transform .16s var(--ease)}
+.nav-cta:hover{transform:translateY(-2px)}
+@media(max-width:600px){.nav-cta .txt{display:none} .nav-cta{padding:10px 12px} .brand b{font-size:.98rem}}
 
 /* ---------- Hero ---------- */
-.hero{
-  position:relative;overflow:hidden;
-  background:
-    radial-gradient(1100px 520px at 82% -8%,rgba(20,184,166,.22),transparent 60%),
-    radial-gradient(900px 500px at 8% 110%,rgba(94,234,212,.12),transparent 55%),
-    linear-gradient(165deg,var(--midnight),var(--navy) 55%,var(--navy-2));
-  color:#eef4ff;
-  padding:64px 0 78px;
-}
-.hero:before{
-  content:"";position:absolute;inset:0;opacity:.5;pointer-events:none;
-  background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);
-  background-size:26px 26px;mask-image:linear-gradient(180deg,#000,transparent 70%);
-}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;position:relative}
+.hero{padding:56px 0 30px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
 .eyebrow{
-  display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;
-  letter-spacing:.08em;text-transform:uppercase;color:var(--aqua);
-  background:rgba(94,234,212,.1);border:1px solid rgba(94,234,212,.25);
-  padding:7px 14px;border-radius:999px;margin-bottom:20px;
+  display:inline-flex;align-items:center;gap:9px;font-size:.78rem;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:22px;
 }
-.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--aqua);box-shadow:0 0 0 4px rgba(94,234,212,.2)}
-.hero h1{font-size:clamp(2.4rem,5.4vw,3.9rem);color:#fff;margin-bottom:6px}
-.hero .name-line{
-  font-family:'Inter',sans-serif;font-weight:600;font-size:1rem;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--aqua);margin-bottom:18px;display:block;
-}
-.hero p.sub{font-size:clamp(1.02rem,2vw,1.18rem);color:#c7d6ee;max-width:33ch;margin:18px 0 30px}
-.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:30px}
-.trust-row{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center}
-.trust-chip{display:inline-flex;align-items:center;gap:8px;font-size:.9rem;color:#d3e0f5;font-weight:500}
-.trust-chip svg{width:18px;height:18px;color:var(--aqua);flex:none}
+.eyebrow .ln{width:26px;height:1.5px;background:var(--accent)}
+.hero h1{font-size:clamp(2.7rem,6vw,4.6rem);font-weight:800;letter-spacing:-.03em}
+.hero h1 .em{font-style:italic;color:var(--accent)}
+.hero p.sub{font-size:clamp(1.05rem,1.6vw,1.22rem);color:var(--ink-2);max-width:34ch;margin:22px 0 32px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px}
 
-/* Hero portrait card */
-.portrait-card{
-  position:relative;border-radius:26px;overflow:hidden;
-  box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.12);
-  aspect-ratio:4/5;background:linear-gradient(160deg,#1a3560,#0b1f3a);
+/* Hero photo: arched frame + dashed flight arc + passport stamp */
+.hero-media{position:relative}
+.arch{
+  position:relative;aspect-ratio:4/5;max-width:420px;margin-left:auto;
+  border-radius:210px 210px 26px 26px;overflow:hidden;
+  box-shadow:var(--shadow-m);border:6px solid var(--card);background:var(--paper-2);
 }
-.portrait-card img{width:100%;height:100%;object-fit:cover}
-.portrait-card .glass{
-  position:absolute;left:16px;right:16px;bottom:16px;
-  background:rgba(8,20,40,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:14px 16px;
-  display:flex;align-items:center;gap:12px;
+.arch img{width:100%;height:100%;object-fit:cover}
+.stamp{
+  position:absolute;left:-14px;bottom:26px;width:104px;height:104px;border-radius:50%;
+  border:2px dashed var(--accent);color:var(--accent);background:rgba(250,248,244,.9);
+  display:grid;place-items:center;text-align:center;transform:rotate(-11deg);
+  font-family:'Bricolage Grotesque',serif;font-weight:700;font-size:.66rem;letter-spacing:.08em;
+  text-transform:uppercase;line-height:1.25;backdrop-filter:blur(3px);
 }
-.portrait-card .glass .av{
-  width:44px;height:44px;border-radius:50%;flex:none;
-  background:linear-gradient(135deg,var(--teal),var(--aqua));display:grid;place-items:center;
-  font-family:'Fraunces',serif;color:#06231f;font-size:1.1rem;font-weight:600;
-}
-.portrait-card .glass b{color:#fff;font-size:.95rem;display:block}
-.portrait-card .glass span{color:#bcd0ec;font-size:.8rem}
-.float-badge{
-  position:absolute;top:18px;right:-10px;
-  background:#fff;color:var(--navy);border-radius:14px;padding:11px 15px;
-  box-shadow:var(--shadow);display:flex;align-items:center;gap:10px;font-weight:600;font-size:.86rem;
-  animation:floaty 4.5s ease-in-out infinite;
-}
-.float-badge .pip{width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.18)}
-@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-@media(prefers-reduced-motion:reduce){.float-badge{animation:none}}
+.arc{position:absolute;inset:-30px -20px auto -30px;height:200px;width:100%;pointer-events:none;overflow:visible;z-index:-1}
+.arc path{fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:5 7;opacity:.7}
+.arc .plane{fill:var(--accent)}
+
+/* ---------- Trust strip ---------- */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:26px}
+.strip-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0}
+.strip-item{display:flex;align-items:center;gap:11px;padding:20px 30px;font-weight:500;color:var(--ink-2);font-size:.98rem}
+.strip-item svg{width:20px;height:20px;color:var(--accent);flex:none}
+.strip-item + .strip-item{border-left:1px dashed var(--line)}
+@media(max-width:760px){.strip-item{padding:14px 18px;font-size:.9rem} .strip-item + .strip-item{border-left:none}}
 
 /* ---------- Section shells ---------- */
-.section-pad{padding:78px 0}
-.section-head{max-width:600px;margin:0 auto 46px;text-align:center}
-.kicker{font-size:.8rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
-.section-head h2{font-size:clamp(1.8rem,3.6vw,2.6rem);color:var(--navy)}
-.section-head p{color:var(--slate);margin-top:14px;font-size:1.05rem}
+.sec{padding:84px 0}
+.sec-head{margin-bottom:42px;max-width:30ch}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center;max-width:36ch}
+.sec-head h2{font-size:clamp(2rem,4vw,3rem);font-weight:800}
+.sec-head p{color:var(--muted);margin-top:16px;font-size:1.08rem;max-width:52ch}
+.idx{font-family:'Bricolage Grotesque',serif;color:var(--accent);font-weight:700;font-size:.9rem;letter-spacing:.05em;display:inline-block;margin-bottom:14px}
 
-/* ---------- Why cards ---------- */
-.why{background:var(--off)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{
-  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;
-  box-shadow:var(--shadow-sm);transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s;
+/* ---------- Why: asymmetric bento ---------- */
+.bento{display:grid;gap:18px;grid-template-columns:repeat(3,1fr);
+  grid-template-areas:"feat quick photo" "feat help photo" "lang lang photo";}
+.cell{border-radius:var(--r-card);padding:28px;display:flex;flex-direction:column;justify-content:flex-end;min-height:190px;position:relative;overflow:hidden}
+.cell h3{font-size:1.3rem;font-weight:700;margin-bottom:8px}
+.cell p{font-size:.98rem;color:var(--muted)}
+.cell .ci{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;margin-bottom:auto}
+.cell .ci svg{width:24px;height:24px}
+.c-feat{grid-area:feat;background:var(--accent-soft);border:1px solid #f6d7c7}
+.c-feat .ci{background:var(--accent);color:#fff}
+.c-feat h3{font-size:1.7rem}
+.c-quick{grid-area:quick;background:var(--card);border:1px solid var(--line)}
+.c-quick .ci{background:var(--paper-2);color:var(--accent)}
+.c-help{grid-area:help;background:var(--card);border:1px solid var(--line)}
+.c-help .ci{background:var(--paper-2);color:var(--accent)}
+.c-lang{grid-area:lang;background:var(--ink);color:#fff}
+.c-lang p{color:#c4c2d4}
+.c-lang .ci{background:rgba(255,255,255,.12);color:var(--accent)}
+.c-photo{grid-area:photo;background:#20202f;min-height:400px}
+.c-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.82}
+.c-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(20,20,30,.85))}
+.c-photo h3,.c-photo p{position:relative;color:#fff}
+.c-photo p{color:#dcd9e6}
+@media(max-width:820px){
+  .bento{grid-template-columns:1fr;grid-template-areas:"feat" "quick" "help" "photo" "lang"}
+  .c-photo{min-height:260px}
 }
-.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(20,184,166,.4)}
-.card .ic{
-  width:50px;height:50px;border-radius:14px;display:grid;place-items:center;margin-bottom:18px;
-  background:linear-gradient(135deg,rgba(20,184,166,.14),rgba(94,234,212,.14));color:var(--teal);
-}
-.card .ic svg{width:26px;height:26px}
-.card h3{font-size:1.16rem;color:var(--navy);margin-bottom:8px}
-.card p{color:var(--slate);font-size:.96rem}
 
-/* ---------- How it works ---------- */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;position:relative}
-.step{
-  background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid var(--line);
-  border-radius:var(--radius);padding:30px 26px;position:relative;box-shadow:var(--shadow-sm);
+/* ---------- How it works: itinerary ---------- */
+.route{position:relative}
+.route-line{position:absolute;top:34px;left:8%;right:8%;height:2px;z-index:0;display:block}
+.route-line path{fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:6 8}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;position:relative;z-index:1}
+.step{text-align:center;padding:0 8px}
+.gate{
+  width:68px;height:68px;border-radius:50%;background:var(--paper);border:2px solid var(--accent);
+  color:var(--accent);display:grid;place-items:center;margin:0 auto 22px;
+  font-family:'Bricolage Grotesque',serif;font-weight:800;font-size:1.5rem;box-shadow:0 0 0 6px var(--paper)}
+.step h3{font-size:1.24rem;margin-bottom:8px}
+.step p{color:var(--muted);font-size:.98rem;max-width:32ch;margin:0 auto}
+@media(max-width:820px){
+  .steps{grid-template-columns:1fr;gap:34px}
+  .route-line{display:none}
+  .step{display:grid;grid-template-columns:68px 1fr;gap:18px;text-align:left;align-items:start}
+  .gate{margin:0}
+  .step p{margin:0}
 }
-.step .num{
-  width:46px;height:46px;border-radius:50%;display:grid;place-items:center;margin-bottom:16px;
-  font-family:'Fraunces',serif;font-size:1.3rem;font-weight:600;color:#fff;
-  background:linear-gradient(135deg,var(--navy),var(--teal));box-shadow:var(--shadow-sm);
-}
-.step h3{font-size:1.14rem;color:var(--navy);margin-bottom:8px}
-.step p{color:var(--slate);font-size:.96rem}
 
-/* ---------- Quote form ---------- */
-.quote{
-  background:
-    radial-gradient(900px 440px at 90% 0%,rgba(20,184,166,.14),transparent 55%),
-    linear-gradient(180deg,var(--navy),var(--midnight));
-  color:#eaf2ff;
-}
-.quote-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:44px;align-items:start}
-.quote-copy .kicker{color:var(--aqua)}
-.quote-copy h2{color:#fff;font-size:clamp(1.8rem,3.4vw,2.5rem)}
-.quote-copy p{color:#c3d3ec;margin-top:14px}
-.assure{list-style:none;margin-top:26px;display:grid;gap:14px}
-.assure li{display:flex;gap:12px;align-items:flex-start;color:#dbe6f7;font-size:.98rem}
-.assure li svg{width:22px;height:22px;color:var(--aqua);flex:none;margin-top:1px}
+/* ---------- Quote: boarding pass ---------- */
+.quote{background:var(--paper-2)}
+.quote-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:46px;align-items:start}
+.quote-copy h2{font-size:clamp(2rem,4vw,3rem);font-weight:800}
+.quote-copy p{color:var(--muted);margin-top:16px;font-size:1.06rem}
+.assure{list-style:none;margin-top:28px;display:grid;gap:15px}
+.assure li{display:flex;gap:13px;align-items:flex-start;color:var(--ink-2);font-size:1rem}
+.assure li svg{width:22px;height:22px;color:var(--accent);flex:none;margin-top:2px}
 
-.form-card{
-  background:#fff;color:var(--ink);border-radius:22px;padding:30px;box-shadow:var(--shadow-lg);
-}
+.ticket{background:var(--card);border-radius:var(--r-card);box-shadow:var(--shadow-l);position:relative;overflow:hidden}
+.ticket-top{background:var(--ink);color:#fff;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.ticket-top .tt-l{display:flex;align-items:center;gap:11px}
+.ticket-top .tt-tick{width:30px;height:30px;border-radius:8px;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:'Bricolage Grotesque',serif;font-weight:800;font-size:.95rem}
+.ticket-top .tt-name{font-family:'Bricolage Grotesque',serif;font-weight:700;font-size:1rem;line-height:1.1}
+.ticket-top .tt-name span{display:block;font-family:'DM Sans';font-weight:400;font-size:.72rem;color:#b7b5c8;letter-spacing:.03em}
+.ticket-top .tt-r{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.perf{height:16px;background:var(--ink);position:relative}
+.perf::before,.perf::after{content:"";position:absolute;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;background:var(--paper-2)}
+.perf::before{left:-13px}.perf::after{right:-13px}
+.perf .dline{position:absolute;left:20px;right:20px;top:50%;border-top:2px dashed rgba(255,255,255,.35)}
+.ticket-body{padding:26px 28px 30px}
+
 .field{margin-bottom:16px}
-.field label{display:block;font-weight:600;font-size:.9rem;color:var(--navy);margin-bottom:6px}
-.field .hint{font-weight:400;color:var(--slate);font-size:.82rem}
+.field label{display:block;font-weight:600;font-size:.82rem;color:var(--ink);margin-bottom:7px;letter-spacing:.02em}
+.field .hint{font-weight:400;color:var(--muted);font-size:.78rem}
 .field input,.field select{
-  width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:var(--radius-sm);
-  font-size:1rem;color:var(--ink);background:#fff;transition:border-color .18s,box-shadow .18s;min-height:50px;
+  width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:var(--r-input);
+  font-size:1rem;color:var(--ink);background:var(--paper);transition:border-color .16s,box-shadow .16s,background .16s;min-height:50px;font-family:inherit;
 }
-.field input:focus,.field select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(20,184,166,.16);outline:none}
-.field input[aria-invalid="true"],.field select[aria-invalid="true"]{border-color:var(--accent-2)}
-.err{color:#c23c1c;font-size:.8rem;margin-top:5px;display:none}
+.field input:focus,.field select:focus{border-color:var(--accent);background:#fff;box-shadow:0 0 0 3px var(--accent-soft);outline:none}
+.field input::placeholder{color:#a49d8f}
+.field input[aria-invalid="true"]{border-color:var(--accent);background:#fff5f1}
+.err{color:#c23c1c;font-size:.78rem;margin-top:5px;display:none}
 .err.show{display:block}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .grid-2 .field{margin-bottom:0}
-.group-title{
-  font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);
-  margin:22px 0 12px;padding-top:18px;border-top:1px dashed var(--line);
-}
-.group-title:first-of-type{border-top:none;padding-top:0;margin-top:0}
+.leg{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:24px 0 14px;display:flex;align-items:center;gap:10px}
+.leg::after{content:"";flex:1;height:1px;background:var(--line)}
+.leg:first-child{margin-top:0}
 
-.traveler{
-  border:1px solid var(--line);border-radius:var(--radius-sm);padding:16px;margin-bottom:12px;
-  background:var(--off);position:relative;
-}
-.traveler .tv-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.traveler .tv-head b{font-size:.9rem;color:var(--navy)}
-.rm-traveler{color:var(--accent-2);font-size:.82rem;font-weight:600;padding:4px 6px}
+.traveler{border:1.5px dashed var(--line);border-radius:var(--r-input);padding:16px;margin-bottom:12px;background:var(--paper);position:relative}
+.tv-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.tv-head b{font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.rm-traveler{color:var(--accent);font-size:.8rem;font-weight:600;padding:4px 6px}
 .rm-traveler:hover{text-decoration:underline}
-.add-traveler{
-  display:inline-flex;align-items:center;gap:8px;color:var(--teal);font-weight:600;font-size:.92rem;
-  padding:10px 0;margin-bottom:6px;
-}
+.add-traveler{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-weight:600;font-size:.92rem;padding:8px 0}
 .add-traveler svg{width:18px;height:18px}
-.consent{display:flex;gap:10px;align-items:flex-start;margin:6px 0 18px;font-size:.85rem;color:var(--slate)}
-.consent input{width:20px;height:20px;min-height:auto;flex:none;margin-top:2px;accent-color:var(--teal)}
-.form-foot-note{text-align:center;font-size:.82rem;color:var(--slate);margin-top:14px}
+.consent{display:flex;gap:10px;align-items:flex-start;margin:8px 0 18px;font-size:.85rem;color:var(--muted)}
+.consent input{width:20px;height:20px;min-height:auto;flex:none;margin-top:2px;accent-color:var(--accent)}
+.barcode{height:38px;margin-top:20px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 9px,var(--ink) 9px 12px,transparent 12px 14px);opacity:.85;border-radius:3px}
+.form-note{text-align:center;font-size:.8rem;color:var(--muted);margin-top:16px}
 
-/* Success state */
-.success{
-  display:none;text-align:center;padding:20px 6px;
-}
+/* Success */
+.success{display:none;padding:34px 28px;text-align:center}
 .success.show{display:block;animation:pop .4s var(--ease)}
-@keyframes pop{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
-.success .check{
-  width:70px;height:70px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;
-  background:linear-gradient(135deg,var(--teal),var(--aqua));color:#06231f;
-}
-.success .check svg{width:38px;height:38px}
-.success h3{font-size:1.5rem;color:var(--navy);margin-bottom:8px}
-.success p{color:var(--slate);margin-bottom:20px}
-.success .actions{display:grid;gap:10px;max-width:340px;margin:0 auto}
-.copy-box{
-  background:var(--off);border:1px solid var(--line);border-radius:12px;padding:12px 14px;
-  font-size:.82rem;color:var(--slate);text-align:left;white-space:pre-wrap;max-height:150px;overflow:auto;margin-bottom:12px;
-}
+@keyframes pop{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
+.success .chk{width:70px;height:70px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;background:var(--accent);color:#fff}
+.success .chk svg{width:36px;height:36px}
+.success h3{font-size:1.6rem;margin-bottom:8px}
+.success p{color:var(--muted);margin-bottom:20px}
+.success .acts{display:grid;gap:10px;max-width:340px;margin:0 auto}
+.copy-box{background:var(--paper);border:1px dashed var(--line);border-radius:12px;padding:12px 14px;font-size:.8rem;color:var(--ink-2);text-align:left;white-space:pre-wrap;max-height:150px;overflow:auto;margin-bottom:12px}
 
-/* ---------- About ---------- */
-.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:center}
-.about-photo{
-  border-radius:22px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:1/1;
-  background:linear-gradient(160deg,#dff1ef,#eef3f9);position:relative;
+/* ---------- About: editorial overlap ---------- */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about-photo{position:relative}
+.about-photo .ph{border-radius:var(--r-card);overflow:hidden;box-shadow:var(--shadow-m);aspect-ratio:4/5;max-width:420px;background:var(--paper-2)}
+.about-photo .ph img{width:100%;height:100%;object-fit:cover}
+.about-photo .sig{
+  position:absolute;right:-6px;bottom:-18px;background:var(--card);border:1px solid var(--line);
+  border-radius:16px;padding:16px 20px;box-shadow:var(--shadow-s);max-width:220px;
 }
-.about-photo img{width:100%;height:100%;object-fit:cover}
-.about-copy h2{color:var(--navy);font-size:clamp(1.7rem,3.2vw,2.4rem)}
-.about-copy p{color:var(--slate);margin-top:16px;font-size:1.04rem}
-.about-stats{display:flex;gap:30px;margin-top:26px;flex-wrap:wrap}
-.about-stats .s b{font-family:'Fraunces',serif;font-size:1.7rem;color:var(--teal);display:block}
-.about-stats .s span{font-size:.86rem;color:var(--slate)}
+.about-photo .sig b{font-family:'Bricolage Grotesque',serif;color:var(--accent);font-size:1.4rem;display:block}
+.about-photo .sig span{font-size:.84rem;color:var(--muted)}
+.about-copy h2{font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:800}
+.about-copy p{color:var(--ink-2);margin-top:16px;font-size:1.05rem}
+.about-stats{display:flex;gap:34px;margin-top:28px;flex-wrap:wrap}
+.about-stats .s b{font-family:'Bricolage Grotesque',serif;font-size:1.5rem;color:var(--accent);display:block}
+.about-stats .s span{font-size:.85rem;color:var(--muted)}
+@media(max-width:820px){.about-grid{grid-template-columns:1fr;gap:44px}.about-photo .ph{max-width:340px}}
 
-/* ---------- Broker note ---------- */
-.broker{background:var(--soft)}
-.broker-card{
-  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
-  padding:26px 30px;display:flex;align-items:center;gap:24px;box-shadow:var(--shadow-sm);
-  max-width:820px;margin:0 auto;
-}
-.broker-logo{
-  flex:none;width:190px;height:72px;border-radius:12px;background:var(--navy);
-  display:grid;place-items:center;color:#fff;text-align:center;padding:10px 14px;line-height:1.15;
-  font-family:'Fraunces',serif;font-size:.82rem;font-weight:600;
-}
-.broker-card p{color:var(--slate);font-size:.98rem}
-.broker-card p b{color:var(--navy)}
-@media(max-width:560px){.broker-card{flex-direction:column;text-align:center}}
+/* ---------- Broker: dark color-block ---------- */
+.broker{background:var(--ink);color:#fff}
+.broker-in{display:flex;align-items:center;gap:32px;flex-wrap:wrap;justify-content:center;text-align:left}
+.broker-logo{flex:none;width:210px;height:78px;border-radius:14px;background:#fff;display:grid;place-items:center;padding:12px 16px;box-shadow:var(--shadow-m)}
+.broker-logo img{max-width:100%;max-height:100%;object-fit:contain}
+.broker-txt{max-width:44ch}
+.broker-txt b{font-family:'Bricolage Grotesque',serif;font-size:1.3rem;display:block;margin-bottom:8px}
+.broker-txt p{color:#c4c2d4;font-size:1rem}
+@media(max-width:640px){.broker-in{flex-direction:column;text-align:center}}
 
-/* ---------- FAQ ---------- */
-.faq-list{max-width:780px;margin:0 auto;display:grid;gap:12px}
-.faq-item{border:1px solid var(--line);border-radius:var(--radius-sm);background:#fff;overflow:hidden;transition:border-color .2s,box-shadow .2s}
-.faq-item[open]{border-color:rgba(20,184,166,.4);box-shadow:var(--shadow-sm)}
-.faq-item summary{
-  list-style:none;cursor:pointer;padding:18px 22px;display:flex;justify-content:space-between;
-  align-items:center;gap:14px;font-weight:600;color:var(--navy);font-size:1.02rem;
-}
+/* ---------- FAQ: two-column ---------- */
+.faq-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:48px;align-items:start}
+.faq-aside h2{font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:800}
+.faq-aside p{color:var(--muted);margin-top:14px}
+.faq-aside .btn{margin-top:24px}
+.faq-list{display:grid;gap:0}
+.faq-item{border-top:1px solid var(--line)}
+.faq-item:last-child{border-bottom:1px solid var(--line)}
+.faq-item summary{list-style:none;cursor:pointer;padding:22px 4px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:'Bricolage Grotesque',serif;font-weight:600;font-size:1.12rem}
 .faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary .chev{width:22px;height:22px;color:var(--teal);flex:none;transition:transform .25s}
-.faq-item[open] summary .chev{transform:rotate(180deg)}
-.faq-item .ans{padding:0 22px 20px;color:var(--slate);font-size:.98rem}
+.faq-item summary .pm{width:26px;height:26px;flex:none;position:relative}
+.faq-item summary .pm::before,.faq-item summary .pm::after{content:"";position:absolute;background:var(--accent);border-radius:2px;transition:transform .25s var(--ease)}
+.faq-item summary .pm::before{left:0;right:0;top:12px;height:2px}
+.faq-item summary .pm::after{top:0;bottom:0;left:12px;width:2px}
+.faq-item[open] summary .pm::after{transform:scaleY(0)}
+.faq-item .ans{padding:0 4px 22px;color:var(--muted);font-size:1rem;max-width:60ch}
+@media(max-width:820px){.faq-grid{grid-template-columns:1fr;gap:30px}}
 
 /* ---------- Footer ---------- */
-footer.foot{background:var(--midnight);color:#c7d6ee;padding:56px 0 30px}
-.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.1)}
-.foot-brand .brand .who b{color:#fff}
-.foot-brand p{margin-top:14px;font-size:.94rem;max-width:34ch;color:#a9bcda}
-.foot h4{color:#fff;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
-.foot ul{list-style:none;display:grid;gap:10px}
-.foot ul a,.foot ul span{color:#b7c8e4;font-size:.94rem;transition:color .18s}
-.foot ul a:hover{color:var(--aqua)}
-.foot-contact a{display:flex;align-items:center;gap:9px}
-.foot-contact svg{width:17px;height:17px;color:var(--aqua);flex:none}
-.foot-lang{margin-top:16px}
-.foot-bottom{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding-top:22px}
-.foot-bottom p{font-size:.82rem;color:#8ba0c2;max-width:60ch}
-.foot-bottom .legal{font-size:.78rem;color:#7789a8}
+footer.foot{background:var(--paper-2);border-top:1px solid var(--line);padding:58px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;padding-bottom:34px;border-bottom:1px solid var(--line)}
+.foot-brand p{margin-top:16px;color:var(--muted);font-size:.96rem;max-width:36ch}
+.foot-lang{margin-top:20px}
+.foot h4{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.foot ul{list-style:none;display:grid;gap:11px}
+.foot ul a{color:var(--ink-2);font-size:.96rem;transition:color .16s;display:flex;align-items:center;gap:9px}
+.foot ul a:hover{color:var(--accent)}
+.foot-contact svg{width:17px;height:17px;color:var(--accent);flex:none}
+.foot-bottom{padding-top:22px}
+.foot-bottom p{font-size:.8rem;color:var(--muted);max-width:70ch}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}}
+@media(max-width:480px){.foot-grid{grid-template-columns:1fr}}
 
-/* ---------- Floating contact bubbles (WhatsApp + Instagram) ---------- */
-.fab-group{
-  position:fixed;right:18px;bottom:18px;z-index:80;
-  display:flex;flex-direction:column;gap:13px;align-items:flex-end;
-}
-.fab{
-  position:relative;width:58px;height:58px;border-radius:50%;
-  display:grid;place-items:center;color:#fff;
-  box-shadow:0 10px 26px rgba(8,24,50,.3);
-  transition:transform .18s var(--ease),box-shadow .2s var(--ease);
-}
-.fab:hover{transform:translateY(-3px) scale(1.06);box-shadow:0 16px 34px rgba(8,24,50,.4)}
-.fab:active{transform:scale(.97)}
-.fab svg{width:30px;height:30px}
-.fab-wa{background:#25d366}
-.fab-ig{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285aeb 90%)}
-/* attention pulse on WhatsApp */
-.fab-wa::before{
-  content:"";position:absolute;inset:0;border-radius:50%;background:#25d366;z-index:-1;
-  animation:fabpulse 2.4s cubic-bezier(.66,0,0,1) infinite;
-}
-@keyframes fabpulse{0%{transform:scale(1);opacity:.55}70%,100%{transform:scale(1.9);opacity:0}}
-@media(prefers-reduced-motion:reduce){.fab-wa::before{animation:none}}
-.fab-tip{
-  position:absolute;right:70px;top:50%;transform:translateY(-50%) translateX(6px);
-  background:var(--ink);color:#fff;font-size:.82rem;font-weight:600;
-  padding:8px 13px;border-radius:9px;white-space:nowrap;
-  opacity:0;pointer-events:none;transition:opacity .18s,transform .18s;box-shadow:var(--shadow);
-}
-.fab-tip::after{content:"";position:absolute;right:-5px;top:50%;transform:translateY(-50%);border:5px solid transparent;border-left-color:var(--ink)}
-.fab:hover .fab-tip,.fab:focus-visible .fab-tip{opacity:1;transform:translateY(-50%) translateX(0)}
-@media(max-width:640px){.fab-tip{display:none} .fab-group{right:14px;bottom:14px} .fab{width:54px;height:54px}}
-
-/* ---------- Responsive ---------- */
-@media(max-width:960px){
-  .hero-grid,.quote-grid,.about-grid{grid-template-columns:1fr;gap:40px}
-  .hero-media{order:-1;max-width:400px;margin:0 auto}
-  .cards,.steps{grid-template-columns:1fr}
-  .about-photo{max-width:360px;margin:0 auto}
-  .foot-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:640px){
-  .section-pad{padding:56px 0}
-  .hero{padding:44px 0 60px}
-  .grid-2{grid-template-columns:1fr}
-  .form-card{padding:22px}
-  .foot-grid{grid-template-columns:1fr}
-  .nav-cta{display:none}
+/* ---------- Contact dock: boarding-pass stub ---------- */
+.dock{position:fixed;right:20px;bottom:20px;z-index:80;display:flex;align-items:stretch;
+  background:var(--card);border-radius:16px;box-shadow:var(--shadow-l);overflow:hidden;border:1px solid var(--line)}
+.dock::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent)}
+.dock a{display:flex;align-items:center;gap:9px;padding:14px 18px;font-weight:600;font-size:.95rem;transition:background .16s}
+.dock a:hover{background:var(--paper-2)}
+.dock-wa .wa-ico{width:22px;height:22px}
+.dock-ig{border-left:1.5px dashed var(--line);padding:14px 16px !important}
+.dock-ig svg{width:24px;height:24px}
+.dock-ig-grad{color:#d6249f}
+@media(max-width:600px){
+  .dock{left:14px;right:14px;bottom:14px;border-radius:14px}
+  .dock-wa{flex:1;justify-content:center}
+  .dock a{padding:15px 16px}
 }
 
+/* ---------- Reveal motion ---------- */
+[data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+[data-reveal].in{opacity:1;transform:none}
+.flightpath{stroke-dashoffset:1;stroke-dasharray:1}
+.in .flightpath,.flightpath.in{transition:stroke-dashoffset 1.7s ease .1s;stroke-dashoffset:0}
+
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto}
+  [data-reveal]{opacity:1;transform:none;transition:none}
+  .flightpath{stroke-dashoffset:0;transition:none}
+}
 [hidden]{display:none !important}
-.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+@media(max-width:820px){.hero-grid{grid-template-columns:1fr;gap:36px}.hero-media{order:-1}.arch{max-width:320px;margin:0 auto}.quote-grid{grid-template-columns:1fr;gap:36px}}
+@media(max-width:600px){.sec{padding:60px 0}.grid-2{grid-template-columns:1fr}.ticket-body{padding:22px}body{padding-bottom:84px}}
 </style>
 </head>
 <body>
@@ -428,17 +367,17 @@ footer.foot{background:var(--midnight);color:#c7d6ee;padding:56px 0 30px}
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
     <a class="brand" href="#top" aria-label="Home">
-      <span class="mark" id="brandMark">M</span>
-      <span class="who"><b id="brandName">Client Name</b><span data-i18n="brand_role">Travel Insurance Consultant</span></span>
+      <span class="tick" id="brandMark">A</span>
+      <b id="brandName">Ana María Palacios</b>
     </a>
     <div class="nav-right">
       <div class="lang" role="group" aria-label="Language / Idioma">
         <button type="button" data-lang="en" aria-pressed="true">EN</button>
         <button type="button" data-lang="es" aria-pressed="false">ES</button>
       </div>
-      <a class="btn btn-wa nav-cta" data-wa-link href="#" data-analytics="wa_nav">
-        <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.38A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.17c-1.6 0-3.09-.47-4.34-1.28l-.31-.2-3.11.82.83-3.03-.2-.32A8.13 8.13 0 0 1 3.83 12 8.17 8.17 0 1 1 12 20.17z"/></svg>
-        <span data-i18n="nav_cta" class="label-long">WhatsApp Me</span>
+      <a class="nav-cta" data-wa-link href="#" data-analytics="wa_nav">
+        <svg class="wa-ico" style="color:#fff" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.38A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.17c-1.6 0-3.09-.47-4.34-1.28l-.31-.2-3.11.82.83-3.03-.2-.32A8.13 8.13 0 0 1 3.83 12 8.17 8.17 0 1 1 12 20.17z"/></svg>
+        <span class="txt" data-i18n="nav_cta">WhatsApp</span>
       </a>
     </div>
   </div>
@@ -449,202 +388,207 @@ footer.foot{background:var(--midnight);color:#c7d6ee;padding:56px 0 30px}
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <span class="eyebrow"><span class="dot"></span><span data-i18n="hero_eyebrow">Personalized travel insurance</span></span>
-      <span class="name-line" id="heroName">Client Name</span>
-      <h1 data-i18n="hero_h1">Travel with confidence, wherever you go.</h1>
+    <div class="hero-copy" data-reveal>
+      <span class="eyebrow"><span class="ln"></span><span data-i18n="hero_eyebrow">Personalized travel insurance</span></span>
+      <h1 data-i18n="hero_h1">Travel with <span class="em">confidence,</span> wherever you land.</h1>
       <p class="sub" data-i18n="hero_sub">I help travelers find the right protection fast, with personal guidance in English and Español.</p>
       <div class="hero-cta">
-        <a class="btn btn-wa" data-wa-link href="#" data-analytics="wa_hero">
+        <a class="btn btn-primary" data-wa-link href="#" data-analytics="wa_hero">
           <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.38A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.17c-1.6 0-3.09-.47-4.34-1.28l-.31-.2-3.11.82.83-3.03-.2-.32A8.13 8.13 0 0 1 3.83 12 8.17 8.17 0 1 1 12 20.17z"/></svg>
-          <span data-i18n="cta_primary">Get Your Quote on WhatsApp</span>
+          <span data-i18n="cta_primary">Get your quote on WhatsApp</span>
         </a>
-        <a class="btn btn-ghost on-dark" href="#how" data-i18n="cta_secondary">How it works</a>
-      </div>
-      <div class="trust-row">
-        <span class="trust-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg><span data-i18n="trust_1">Fast response</span></span>
-        <span class="trust-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21a8 8 0 1 0-16 0"/><circle cx="12" cy="7" r="4"/></svg><span data-i18n="trust_2">Personalized help</span></span>
-        <span class="trust-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span data-i18n="trust_3">Backed by Best Travel Assistance</span></span>
+        <a class="btn btn-ghost" href="#how" data-i18n="cta_secondary">How it works</a>
       </div>
     </div>
-    <div class="hero-media">
-      <div class="portrait-card">
+    <div class="hero-media" data-reveal style="transition-delay:.12s">
+      <svg class="arc" viewBox="0 0 400 200" aria-hidden="true" preserveAspectRatio="none">
+        <path class="flightpath" pathLength="1" d="M6 150 C 90 40, 260 20, 392 96" />
+        <g class="plane" transform="translate(384,86) rotate(28)"><path d="M0 6 L20 0 L15 6 L20 12 Z"/></g>
+      </svg>
+      <div class="arch">
         <img id="heroPortrait" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&h=1000&fit=crop" alt="" />
-        <span class="float-badge"><span class="pip"></span><span data-i18n="badge_online">Replies within minutes</span></span>
-        <div class="glass">
-          <span class="av" id="glassAv">M</span>
-          <div>
-            <b id="glassName">Client Name</b>
-            <span data-i18n="glass_role">Your travel insurance consultant</span>
-          </div>
+      </div>
+      <div class="stamp" aria-hidden="true"><span>Travel<br>Insured<br>&#10003;</span></div>
+    </div>
+  </div>
+  <!-- trust strip -->
+  <div class="strip" data-reveal>
+    <div class="wrap strip-in">
+      <div class="strip-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg><span data-i18n="strip_1">Replies in minutes</span></div>
+      <div class="strip-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21a8 8 0 1 0-16 0"/><circle cx="12" cy="7" r="4"/></svg><span data-i18n="strip_2">Personalized guidance</span></div>
+      <div class="strip-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span data-i18n="strip_3">Authorized broker, Best Travel Assistance</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY (bento) ============ -->
+<section class="sec" id="why">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <h2 data-i18n="why_h2">Why travelers come to me.</h2>
+      <p data-i18n="why_sub">One person who knows travel coverage and stays with you from the first quote to the last day of your trip.</p>
+    </div>
+    <div class="bento" data-reveal>
+      <div class="cell c-feat">
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21a8 8 0 1 0-16 0"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <h3 data-i18n="why_1_t">Personalized guidance</h3>
+        <p data-i18n="why_1_d">I match coverage to your trip, your travelers, and your budget, never a one-size template.</p>
+      </div>
+      <div class="cell c-quick">
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></div>
+        <h3 data-i18n="why_2_t">Quick quotes</h3>
+        <p data-i18n="why_2_d">Send your details, get clear options back on WhatsApp.</p>
+      </div>
+      <div class="cell c-help">
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3 data-i18n="why_3_t">There the whole trip</h3>
+        <p data-i18n="why_3_d">Before you book or mid-trip, I am one message away.</p>
+      </div>
+      <div class="cell c-photo">
+        <img id="whyPhoto" src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=700&h=900&fit=crop" alt="" />
+        <h3 data-i18n="why_4_t">Coverage for your trip</h3>
+        <p data-i18n="why_4_d">Medical, cancellation, delays, baggage, and more, tailored to where you are headed.</p>
+      </div>
+      <div class="cell c-lang">
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h12M9 3v2m1.5 3A11 11 0 0 1 5 15M5 8a11 11 0 0 0 8 7m-2-2 6 6M17 12l4 9-2-4-2 4"/></svg></div>
+        <h3 data-i18n="why_5_t">Bilingual, always</h3>
+        <p data-i18n="why_5_d">Full support in English and Español so nothing gets lost in translation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW (itinerary) ============ -->
+<section class="sec" id="how" style="background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head center" data-reveal>
+      <span class="idx" data-i18n="how_kicker">Your itinerary</span>
+      <h2 data-i18n="how_h2">Three simple steps to peace of mind.</h2>
+    </div>
+    <div class="route" data-reveal>
+      <svg class="route-line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path class="flightpath" pathLength="1" d="M0 1 H100" /></svg>
+      <div class="steps">
+        <div class="step">
+          <div class="gate">1</div>
+          <h3 data-i18n="how_1_t">Send your trip details</h3>
+          <p data-i18n="how_1_d">Tell me who is traveling and where you are going using the boarding pass below.</p>
+        </div>
+        <div class="step">
+          <div class="gate">2</div>
+          <h3 data-i18n="how_2_t">Get guidance and options</h3>
+          <p data-i18n="how_2_d">I review your trip and send coverage options that fit your plans and budget.</p>
+        </div>
+        <div class="step">
+          <div class="gate">3</div>
+          <h3 data-i18n="how_3_t">Confirm on WhatsApp</h3>
+          <p data-i18n="how_3_d">Pick your plan, ask anything, and I help you get covered before you go.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ WHY CHOOSE HER ============ -->
-<section class="why section-pad" id="why">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker" data-i18n="why_kicker">Why travelers choose me</div>
-      <h2 data-i18n="why_h2">Real guidance from someone who answers.</h2>
-      <p data-i18n="why_sub">No call centers, no scripts. You get one person who knows travel coverage and stays with you from quote to claim.</p>
-    </div>
-    <div class="cards">
-      <article class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21a8 8 0 1 0-16 0"/><circle cx="12" cy="7" r="4"/></svg></div>
-        <h3 data-i18n="why_1_t">Personalized guidance</h3>
-        <p data-i18n="why_1_d">I match coverage to your trip, your travelers, and your budget, not a one-size template.</p>
-      </article>
-      <article class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></div>
-        <h3 data-i18n="why_2_t">Quick quote support</h3>
-        <p data-i18n="why_2_d">Send your trip details and get clear options back fast, straight to your WhatsApp.</p>
-      </article>
-      <article class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
-        <h3 data-i18n="why_3_t">Help before, during, and after</h3>
-        <p data-i18n="why_3_d">Questions before you book or a problem mid-trip, I am one message away the whole way.</p>
-      </article>
-      <article class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></div>
-        <h3 data-i18n="why_4_t">Coverage for your trip</h3>
-        <p data-i18n="why_4_d">Medical, trip cancellation, delays, baggage, and more, tailored to where you are headed.</p>
-      </article>
-      <article class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h12M9 3v2m1.5 3A11 11 0 0 1 5 15M5 8a11 11 0 0 0 8 7m-2-2 6 6M17 12l4 9-2-4-2 4"/></svg></div>
-        <h3 data-i18n="why_5_t">Bilingual support</h3>
-        <p data-i18n="why_5_d">Full support in English and Español so nothing gets lost in translation.</p>
-      </article>
-      <article class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 8 8 8 8s8-3 8-8V6z"/></svg></div>
-        <h3 data-i18n="why_6_t">Trusted underwriting</h3>
-        <p data-i18n="why_6_d">Policies are backed by Best Travel Assistance, so you get personal service with solid coverage.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ HOW IT WORKS ============ -->
-<section class="section-pad" id="how">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker" data-i18n="how_kicker">How it works</div>
-      <h2 data-i18n="how_h2">Three simple steps to peace of mind.</h2>
-      <p data-i18n="how_sub">No accounts, no long forms. Share a few details and we finish the rest by WhatsApp.</p>
-    </div>
-    <div class="steps">
-      <div class="step">
-        <div class="num">1</div>
-        <h3 data-i18n="how_1_t">Submit your trip details</h3>
-        <p data-i18n="how_1_d">Tell me who is traveling and where you are going using the quick form below.</p>
-      </div>
-      <div class="step">
-        <div class="num">2</div>
-        <h3 data-i18n="how_2_t">Get guidance and options</h3>
-        <p data-i18n="how_2_d">I review your trip and send clear coverage options that fit your plans and budget.</p>
-      </div>
-      <div class="step">
-        <div class="num">3</div>
-        <h3 data-i18n="how_3_t">Confirm on WhatsApp</h3>
-        <p data-i18n="how_3_d">Pick your plan, ask anything, and I help you get covered before you go.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ QUOTE FORM ============ -->
-<section class="quote section-pad" id="quote">
+<!-- ============ QUOTE (boarding pass) ============ -->
+<section class="sec quote" id="quote">
   <div class="wrap quote-grid">
-    <div class="quote-copy">
-      <div class="kicker" data-i18n="quote_kicker">Start your quote</div>
-      <h2 data-i18n="quote_h2">Tell me about your trip.</h2>
-      <p data-i18n="quote_sub">Fill in a few details and I will open WhatsApp with everything ready. It takes about a minute.</p>
+    <div class="quote-copy" data-reveal>
+      <span class="idx" data-i18n="quote_kicker">Start your quote</span>
+      <h2 data-i18n="quote_h2">Fill out your boarding pass.</h2>
+      <p data-i18n="quote_sub">A few details and I will open WhatsApp with everything ready. It takes about a minute.</p>
       <ul class="assure">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="assure_1">Fast, friendly response, usually within minutes.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="assure_1">Fast, friendly reply, usually within minutes.</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="assure_2">Personal help choosing the right coverage.</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="assure_3">No obligation and no pressure, just clear options.</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="assure_4">Your details stay private and go straight to me.</span></li>
       </ul>
     </div>
 
-    <div class="form-card">
-      <form id="quoteForm" novalidate>
-        <div class="group-title" data-i18n="form_g_travelers">Travelers</div>
-        <div id="travelers"></div>
-        <button type="button" class="add-traveler" id="addTraveler">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-          <span data-i18n="form_add_traveler">Add another traveler</span>
-        </button>
-
-        <div class="group-title" data-i18n="form_g_trip">Trip details</div>
-        <div class="field">
-          <label for="residence"><span data-i18n="form_residence">Country of residence</span> <span class="hint" data-i18n="form_req">(required)</span></label>
-          <input id="residence" name="residence" type="text" autocomplete="country-name" data-i18n-ph="form_residence_ph" placeholder="Where you live" required />
-          <div class="err" data-i18n="err_residence">Please enter your country of residence.</div>
+    <div class="ticket" data-reveal style="transition-delay:.1s">
+      <div class="ticket-top">
+        <div class="tt-l">
+          <span class="tt-tick" id="ticketMark">A</span>
+          <span class="tt-name" id="ticketName">Ana María Palacios<span data-i18n="ticket_role">Travel insurance quote</span></span>
         </div>
-        <div class="grid-2">
-          <div class="field">
-            <label for="origin"><span data-i18n="form_origin">Trip starting location</span> <span class="hint" data-i18n="form_req">(required)</span></label>
-            <input id="origin" name="origin" type="text" data-i18n-ph="form_origin_ph" placeholder="City or country" required />
-            <div class="err" data-i18n="err_origin">Please enter where your trip starts.</div>
-          </div>
-          <div class="field">
-            <label for="destination"><span data-i18n="form_destination">Trip ending location</span> <span class="hint" data-i18n="form_req">(required)</span></label>
-            <input id="destination" name="destination" type="text" data-i18n-ph="form_dest_ph" placeholder="City or country" required />
-            <div class="err" data-i18n="err_destination">Please enter your destination.</div>
-          </div>
-        </div>
-        <div class="grid-2">
-          <div class="field">
-            <label for="depart"><span data-i18n="form_depart">Departure date</span> <span class="hint" data-i18n="form_opt">(optional)</span></label>
-            <input id="depart" name="depart" type="date" />
-          </div>
-          <div class="field">
-            <label for="ret"><span data-i18n="form_return">Return date</span> <span class="hint" data-i18n="form_opt">(optional)</span></label>
-            <input id="ret" name="ret" type="date" />
-          </div>
-        </div>
+        <span class="tt-r" data-i18n="ticket_tag">Quote request</span>
+      </div>
+      <div class="perf"><span class="dline"></span></div>
+      <div class="ticket-body">
+        <form id="quoteForm" novalidate>
+          <div class="leg" data-i18n="form_g_travelers">Travelers</div>
+          <div id="travelers"></div>
+          <button type="button" class="add-traveler" id="addTraveler">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            <span data-i18n="form_add_traveler">Add another traveler</span>
+          </button>
 
-        <div class="group-title" data-i18n="form_g_contact">How I reach you</div>
-        <div class="grid-2">
+          <div class="leg" data-i18n="form_g_trip">Trip</div>
           <div class="field">
-            <label for="waNumber"><span data-i18n="form_wa">WhatsApp number</span> <span class="hint" data-i18n="form_opt">(optional)</span></label>
-            <input id="waNumber" name="waNumber" type="tel" autocomplete="tel" placeholder="+1 000 000 0000" />
+            <label for="residence"><span data-i18n="form_residence">Country of residence</span></label>
+            <input id="residence" name="residence" type="text" autocomplete="country-name" data-i18n-ph="form_residence_ph" placeholder="Where you live" required />
+            <div class="err" data-i18n="err_residence">Please enter your country of residence.</div>
           </div>
-          <div class="field">
-            <label for="email"><span data-i18n="form_email">Email</span> <span class="hint" data-i18n="form_opt">(optional)</span></label>
-            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" />
-            <div class="err" data-i18n="err_email">Please enter a valid email.</div>
+          <div class="grid-2">
+            <div class="field">
+              <label for="origin"><span data-i18n="form_origin">From</span></label>
+              <input id="origin" name="origin" type="text" data-i18n-ph="form_city_ph" placeholder="City or country" required />
+              <div class="err" data-i18n="err_origin">Please enter where your trip starts.</div>
+            </div>
+            <div class="field">
+              <label for="destination"><span data-i18n="form_destination">To</span></label>
+              <input id="destination" name="destination" type="text" data-i18n-ph="form_city_ph" placeholder="City or country" required />
+              <div class="err" data-i18n="err_destination">Please enter your destination.</div>
+            </div>
           </div>
-        </div>
+          <div class="grid-2">
+            <div class="field">
+              <label for="depart"><span data-i18n="form_depart">Departure</span> <span class="hint" data-i18n="form_opt">(optional)</span></label>
+              <input id="depart" name="depart" type="date" />
+            </div>
+            <div class="field">
+              <label for="ret"><span data-i18n="form_return">Return</span> <span class="hint" data-i18n="form_opt">(optional)</span></label>
+              <input id="ret" name="ret" type="date" />
+            </div>
+          </div>
 
-        <label class="consent">
-          <input type="checkbox" id="consent" required />
-          <span data-i18n="form_consent">I would like personal help choosing travel insurance and agree to be contacted by WhatsApp.</span>
-        </label>
+          <div class="leg" data-i18n="form_g_contact">How I reach you</div>
+          <div class="grid-2">
+            <div class="field">
+              <label for="waNumber"><span data-i18n="form_wa">WhatsApp</span> <span class="hint" data-i18n="form_opt">(optional)</span></label>
+              <input id="waNumber" name="waNumber" type="tel" autocomplete="tel" placeholder="+1 000 000 0000" />
+            </div>
+            <div class="field">
+              <label for="email"><span data-i18n="form_email">Email</span> <span class="hint" data-i18n="form_opt">(optional)</span></label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" />
+              <div class="err" data-i18n="err_email">Please enter a valid email.</div>
+            </div>
+          </div>
 
-        <button type="submit" class="btn btn-wa btn-block" data-analytics="wa_form">
-          <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.38A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.17c-1.6 0-3.09-.47-4.34-1.28l-.31-.2-3.11.82.83-3.03-.2-.32A8.13 8.13 0 0 1 3.83 12 8.17 8.17 0 1 1 12 20.17z"/></svg>
-          <span data-i18n="cta_primary">Get Your Quote on WhatsApp</span>
-        </button>
-        <p class="form-foot-note" data-i18n="form_foot">We will open WhatsApp with your details ready to send. Nothing is charged and there is no obligation.</p>
-      </form>
+          <label class="consent">
+            <input type="checkbox" id="consent" required />
+            <span data-i18n="form_consent">I would like personal help choosing travel insurance and agree to be contacted by WhatsApp.</span>
+          </label>
 
-      <!-- Success state -->
-      <div class="success" id="success" role="status" aria-live="polite">
-        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></div>
-        <h3 data-i18n="success_h">Your request is ready.</h3>
-        <p data-i18n="success_p">We are opening WhatsApp now. If it did not open, use the button below or copy your details.</p>
-        <div class="copy-box" id="copyBox"></div>
-        <div class="actions">
-          <a class="btn btn-wa" id="successWa" href="#" target="_blank" rel="noopener">
+          <button type="submit" class="btn btn-primary btn-block" data-analytics="wa_form">
             <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.38A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.17c-1.6 0-3.09-.47-4.34-1.28l-.31-.2-3.11.82.83-3.03-.2-.32A8.13 8.13 0 0 1 3.83 12 8.17 8.17 0 1 1 12 20.17z"/></svg>
-            <span data-i18n="success_open">Open WhatsApp</span>
-          </a>
-          <button type="button" class="btn btn-ghost" id="copyBtn" data-i18n="success_copy">Copy my details</button>
-          <button type="button" class="btn btn-ghost" id="editBtn" data-i18n="success_edit">Edit my request</button>
+            <span data-i18n="cta_primary">Get your quote on WhatsApp</span>
+          </button>
+          <div class="barcode" aria-hidden="true"></div>
+          <p class="form-note" data-i18n="form_foot">Opens WhatsApp with your details ready to send. No charge, no obligation.</p>
+        </form>
+
+        <div class="success" id="success" role="status" aria-live="polite">
+          <div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <h3 data-i18n="success_h">Your request is ready.</h3>
+          <p data-i18n="success_p">Opening WhatsApp now. If it did not open, use the button below or copy your details.</p>
+          <div class="copy-box" id="copyBox"></div>
+          <div class="acts">
+            <a class="btn btn-primary" id="successWa" href="#" target="_blank" rel="noopener">
+              <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.38A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.17c-1.6 0-3.09-.47-4.34-1.28l-.31-.2-3.11.82.83-3.03-.2-.32A8.13 8.13 0 0 1 3.83 12 8.17 8.17 0 1 1 12 20.17z"/></svg>
+              <span data-i18n="success_open">Open WhatsApp</span>
+            </a>
+            <button type="button" class="btn btn-ghost" id="copyBtn" data-i18n="success_copy">Copy my details</button>
+            <button type="button" class="btn btn-ghost" id="editBtn" data-i18n="success_edit">Edit my request</button>
+          </div>
         </div>
       </div>
     </div>
@@ -652,18 +596,18 @@ footer.foot{background:var(--midnight);color:#c7d6ee;padding:56px 0 30px}
 </section>
 
 <!-- ============ ABOUT ============ -->
-<section class="section-pad" id="about">
+<section class="sec" id="about">
   <div class="wrap about-grid">
-    <div class="about-photo">
-      <img id="aboutPhoto" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=700&h=700&fit=crop" alt="" />
+    <div class="about-photo" data-reveal>
+      <div class="ph"><img id="aboutPhoto" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=700&h=880&fit=crop" alt="" /></div>
+      <div class="sig"><b data-i18n="stat_1_n">Minutes</b><span data-i18n="stat_1_l">Typical reply time</span></div>
     </div>
-    <div class="about-copy">
-      <div class="kicker" data-i18n="about_kicker">About me</div>
+    <div class="about-copy" data-reveal style="transition-delay:.1s">
+      <span class="idx" data-i18n="about_kicker">About me</span>
       <h2 id="aboutName" data-i18n="about_h2">Hi, I am here to make travel insurance simple.</h2>
       <p data-i18n="about_p1">I have spent years helping travelers protect the trips that matter most. I know the questions people forget to ask and the coverage details that make the difference when something goes wrong.</p>
-      <p data-i18n="about_p2">When you message me, you reach a real person who listens, explains your options in plain language, and stays with you from the first quote through your return home. That is the kind of care I would want for my own family.</p>
+      <p data-i18n="about_p2">When you message me, you reach a real person who listens, explains your options in plain language, and stays with you from the first quote through your return home.</p>
       <div class="about-stats">
-        <div class="s"><b data-i18n="stat_1_n">Minutes</b><span data-i18n="stat_1_l">Typical reply time</span></div>
         <div class="s"><b data-i18n="stat_2_n">EN / ES</b><span data-i18n="stat_2_l">Full bilingual support</span></div>
         <div class="s"><b data-i18n="stat_3_n">End to end</b><span data-i18n="stat_3_l">Before, during, after your trip</span></div>
       </div>
@@ -671,24 +615,30 @@ footer.foot{background:var(--midnight);color:#c7d6ee;padding:56px 0 30px}
   </div>
 </section>
 
-<!-- ============ BROKER TRUST NOTE ============ -->
-<section class="broker section-pad" id="broker">
-  <div class="wrap">
-    <div class="broker-card">
-      <div class="broker-logo" id="brokerLogo">Best Travel Assistance</div>
-      <p><b data-i18n="broker_t">An authorized broker you can trust.</b> <span data-i18n="broker_p">I am an authorized broker for Best Travel Assistance, a specialist travel assistance provider. Your policies are issued and supported through them, so you get my personal service with the strength of an established partner behind every plan.</span></p>
+<!-- ============ BROKER (dark block) ============ -->
+<section class="sec broker" id="broker">
+  <div class="wrap broker-in" data-reveal>
+    <div class="broker-logo" id="brokerLogo">Best Travel Assistance</div>
+    <div class="broker-txt">
+      <b data-i18n="broker_t">An authorized broker you can trust.</b>
+      <p data-i18n="broker_p">I am an authorized broker for Best Travel Assistance, a specialist travel assistance provider. Your policies are issued and supported through them, so you get my personal service with the strength of an established partner behind every plan.</p>
     </div>
   </div>
 </section>
 
 <!-- ============ FAQ ============ -->
-<section class="section-pad" id="faq">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker" data-i18n="faq_kicker">Questions</div>
-      <h2 data-i18n="faq_h2">Everything you might be wondering.</h2>
+<section class="sec" id="faq">
+  <div class="wrap faq-grid">
+    <div class="faq-aside" data-reveal>
+      <span class="idx" data-i18n="faq_kicker">Questions</span>
+      <h2 data-i18n="faq_h2">Good to know before you go.</h2>
+      <p data-i18n="faq_sub">Still wondering something? Message me and I will answer in plain language.</p>
+      <a class="btn btn-primary" data-wa-link href="#" data-analytics="wa_faq">
+        <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.38A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.17c-1.6 0-3.09-.47-4.34-1.28l-.31-.2-3.11.82.83-3.03-.2-.32A8.13 8.13 0 0 1 3.83 12 8.17 8.17 0 1 1 12 20.17z"/></svg>
+        <span data-i18n="nav_cta">WhatsApp</span>
+      </a>
     </div>
-    <div class="faq-list" id="faqList"></div>
+    <div class="faq-list" id="faqList" data-reveal></div>
   </div>
 </section>
 
@@ -699,10 +649,10 @@ footer.foot{background:var(--midnight);color:#c7d6ee;padding:56px 0 30px}
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <div class="brand">
-          <span class="mark" id="footMark">M</span>
-          <span class="who"><b id="footName">Client Name</b><span data-i18n="brand_role" style="color:#a9bcda">Travel Insurance Consultant</span></span>
-        </div>
+        <a class="brand" href="#top" aria-label="Home">
+          <span class="tick" id="footMark">A</span>
+          <b id="footName">Ana María Palacios</b>
+        </a>
         <p data-i18n="foot_tag">Personalized travel insurance support in English and Español. Get a fast quote by WhatsApp and travel with confidence.</p>
         <div class="lang foot-lang" role="group" aria-label="Language / Idioma">
           <button type="button" data-lang="en" aria-pressed="true">EN</button>
@@ -712,7 +662,7 @@ footer.foot{background:var(--midnight);color:#c7d6ee;padding:56px 0 30px}
       <div class="foot-contact">
         <h4 data-i18n="foot_contact">Contact</h4>
         <ul>
-          <li><a data-wa-link href="#" data-analytics="wa_footer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.7 15l-1.3 5 5.2-1.4A10 10 0 1 0 12 2z"/></svg><span data-i18n="nav_cta">WhatsApp Me</span></a></li>
+          <li><a data-wa-link href="#" data-analytics="wa_footer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.7 15l-1.3 5 5.2-1.4A10 10 0 1 0 12 2z"/></svg><span data-i18n="nav_cta">WhatsApp</span></a></li>
           <li id="footPhoneLi"><a id="footPhone" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 2.5a2 2 0 0 1-.5 1.9L7.6 9.8a16 16 0 0 0 6 6l1.7-1.5a2 2 0 0 1 1.9-.5l2.5.5A2 2 0 0 1 22 16.9z"/></svg><span id="footPhoneTxt">Call me</span></a></li>
           <li id="footEmailLi"><a id="footEmail" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg><span id="footEmailTxt">Email me</span></a></li>
           <li id="footIgLi"><a id="footIg" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg><span id="footIgTxt">@amptravelinsurance</span></a></li>
@@ -721,28 +671,27 @@ footer.foot{background:var(--midnight);color:#c7d6ee;padding:56px 0 30px}
       <div class="foot-links">
         <h4 data-i18n="foot_explore">Explore</h4>
         <ul>
-          <li><a href="#why" data-i18n="why_kicker">Why choose me</a></li>
-          <li><a href="#how" data-i18n="how_kicker">How it works</a></li>
+          <li><a href="#why" data-i18n="foot_l_why">Why choose me</a></li>
+          <li><a href="#how" data-i18n="how_kicker">Your itinerary</a></li>
           <li><a href="#quote" data-i18n="quote_kicker">Start your quote</a></li>
           <li><a href="#faq" data-i18n="faq_kicker">Questions</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
-      <p class="legal"><span id="footYear"></span> <span id="footLegalName">Client Name</span>. <span data-i18n="foot_legal">Travel insurance policies are issued and underwritten through Best Travel Assistance. This site is for general information and does not constitute an insurance contract. Coverage is subject to policy terms and eligibility.</span></p>
+      <p><span id="footYear"></span> <span id="footLegalName">Ana María Palacios</span>. <span data-i18n="foot_legal">Travel insurance policies are issued and underwritten through Best Travel Assistance. This site is for general information and does not constitute an insurance contract. Coverage is subject to policy terms and eligibility.</span></p>
     </div>
   </div>
 </footer>
 
-<!-- ============ FLOATING CONTACT BUBBLES ============ -->
-<div class="fab-group" aria-label="Quick contact">
-  <a class="fab fab-ig" id="fabIg" href="#" target="_blank" rel="noopener" data-analytics="ig_fab" aria-label="Instagram">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"/></svg>
-    <span class="fab-tip" id="fabIgTip">@amptravelinsurance</span>
+<!-- ============ CONTACT DOCK (boarding-pass stub) ============ -->
+<div class="dock" aria-label="Quick contact">
+  <a class="dock-wa" data-wa-link href="#" data-analytics="wa_dock">
+    <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.38A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.17c-1.6 0-3.09-.47-4.34-1.28l-.31-.2-3.11.82.83-3.03-.2-.32A8.13 8.13 0 0 1 3.83 12 8.17 8.17 0 1 1 12 20.17z"/></svg>
+    <span data-i18n="dock_wa">Chat on WhatsApp</span>
   </a>
-  <a class="fab fab-wa" data-wa-link href="#" data-analytics="wa_fab" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.38A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.17c-1.6 0-3.09-.47-4.34-1.28l-.31-.2-3.11.82.83-3.03-.2-.32A8.13 8.13 0 0 1 3.83 12 8.17 8.17 0 1 1 12 20.17z"/></svg>
-    <span class="fab-tip" data-i18n="nav_cta">WhatsApp Me</span>
+  <a class="dock-ig" id="dockIg" href="#" target="_blank" rel="noopener" data-analytics="ig_dock" aria-label="Instagram">
+    <svg class="dock-ig-grad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"/></svg>
   </a>
 </div>
 
@@ -751,114 +700,101 @@ footer.foot{background:var(--midnight);color:#c7d6ee;padding:56px 0 30px}
    CONFIG  —  EDIT THESE VALUES, then save. Nothing else required.
    ===================================================================== */
 const CONFIG = {
-  clientName:   "Ana María Palacios",         // Her full name
-  clientInitial:"A",                          // One letter for the logo mark
-  whatsapp:     "19545341345",                // Number in FULL international format, digits only. (US 954)
-  phoneDisplay: "+1 (954) 534-1345",          // Optional phone shown in footer. Leave "" to hide.
-  email:        "anamariapalacios1608@gmail.com", // Optional email for footer. Leave "" to hide.
-  instagram:    "amptravelinsurance",         // Instagram handle without the @. Leave "" to hide.
-  portraitUrl:  "",                           // Optional hero photo URL. Leave "" to use the default stock image.
-  aboutUrl:     "",                           // Optional About photo URL. Leave "" to use the default.
-  brokerName:   "Best Travel Assistance",     // Underwriting partner name
-  brokerLogoUrl:"assets/best-travel-assistance-logo.svg" // Broker logo. Leave "" to use a text badge.
+  clientName:   "Ana María Palacios",
+  clientInitial:"A",
+  whatsapp:     "19545341345",                     // full international, digits only (US 954)
+  phoneDisplay: "+1 (954) 534-1345",               // footer phone; "" to hide
+  email:        "anamariapalacios1608@gmail.com",  // footer email; "" to hide
+  instagram:    "amptravelinsurance",              // handle without @; "" to hide
+  portraitUrl:  "",                                // hero photo URL; "" uses default
+  aboutUrl:     "",                                // about photo URL; "" uses default
+  brokerName:   "Best Travel Assistance",
+  brokerLogoUrl:"assets/best-travel-assistance-logo.svg"
 };
 
 /* =====================================================================
-   BILINGUAL CONTENT  —  every visible string, English + Spanish.
+   BILINGUAL CONTENT
    ===================================================================== */
 const I18N = {
   en:{
-    brand_role:"Travel Insurance Consultant",
-    nav_cta:"WhatsApp Me",
+    nav_cta:"WhatsApp",
     hero_eyebrow:"Personalized travel insurance",
-    hero_h1:"Travel with confidence, wherever you go.",
+    hero_h1:'Travel with <span class="em">confidence,</span> wherever you land.',
     hero_sub:"I help travelers find the right protection fast, with personal guidance in English and Español.",
-    cta_primary:"Get Your Quote on WhatsApp",
+    cta_primary:"Get your quote on WhatsApp",
     cta_secondary:"How it works",
-    trust_1:"Fast response",
-    trust_2:"Personalized help",
-    trust_3:"Backed by Best Travel Assistance",
-    badge_online:"Replies within minutes",
-    glass_role:"Your travel insurance consultant",
-    why_kicker:"Why travelers choose me",
-    why_h2:"Real guidance from someone who answers.",
-    why_sub:"No call centers, no scripts. You get one person who knows travel coverage and stays with you from quote to claim.",
-    why_1_t:"Personalized guidance", why_1_d:"I match coverage to your trip, your travelers, and your budget, not a one-size template.",
-    why_2_t:"Quick quote support", why_2_d:"Send your trip details and get clear options back fast, straight to your WhatsApp.",
-    why_3_t:"Help before, during, and after", why_3_d:"Questions before you book or a problem mid-trip, I am one message away the whole way.",
-    why_4_t:"Coverage for your trip", why_4_d:"Medical, trip cancellation, delays, baggage, and more, tailored to where you are headed.",
-    why_5_t:"Bilingual support", why_5_d:"Full support in English and Español so nothing gets lost in translation.",
-    why_6_t:"Trusted underwriting", why_6_d:"Policies are backed by Best Travel Assistance, so you get personal service with solid coverage.",
-    how_kicker:"How it works",
+    strip_1:"Replies in minutes",
+    strip_2:"Personalized guidance",
+    strip_3:"Authorized broker, Best Travel Assistance",
+    why_h2:"Why travelers come to me.",
+    why_sub:"One person who knows travel coverage and stays with you from the first quote to the last day of your trip.",
+    why_1_t:"Personalized guidance", why_1_d:"I match coverage to your trip, your travelers, and your budget, never a one-size template.",
+    why_2_t:"Quick quotes", why_2_d:"Send your details, get clear options back on WhatsApp.",
+    why_3_t:"There the whole trip", why_3_d:"Before you book or mid-trip, I am one message away.",
+    why_4_t:"Coverage for your trip", why_4_d:"Medical, cancellation, delays, baggage, and more, tailored to where you are headed.",
+    why_5_t:"Bilingual, always", why_5_d:"Full support in English and Español so nothing gets lost in translation.",
+    how_kicker:"Your itinerary",
     how_h2:"Three simple steps to peace of mind.",
-    how_sub:"No accounts, no long forms. Share a few details and we finish the rest by WhatsApp.",
-    how_1_t:"Submit your trip details", how_1_d:"Tell me who is traveling and where you are going using the quick form below.",
-    how_2_t:"Get guidance and options", how_2_d:"I review your trip and send clear coverage options that fit your plans and budget.",
+    how_1_t:"Send your trip details", how_1_d:"Tell me who is traveling and where you are going using the boarding pass below.",
+    how_2_t:"Get guidance and options", how_2_d:"I review your trip and send coverage options that fit your plans and budget.",
     how_3_t:"Confirm on WhatsApp", how_3_d:"Pick your plan, ask anything, and I help you get covered before you go.",
     quote_kicker:"Start your quote",
-    quote_h2:"Tell me about your trip.",
-    quote_sub:"Fill in a few details and I will open WhatsApp with everything ready. It takes about a minute.",
-    assure_1:"Fast, friendly response, usually within minutes.",
+    quote_h2:"Fill out your boarding pass.",
+    quote_sub:"A few details and I will open WhatsApp with everything ready. It takes about a minute.",
+    assure_1:"Fast, friendly reply, usually within minutes.",
     assure_2:"Personal help choosing the right coverage.",
     assure_3:"No obligation and no pressure, just clear options.",
     assure_4:"Your details stay private and go straight to me.",
+    ticket_role:"Travel insurance quote",
+    ticket_tag:"Quote request",
     form_g_travelers:"Travelers",
     form_traveler:"Traveler",
     form_name:"Full name", form_name_ph:"As shown on passport",
     form_dob:"Date of birth",
     form_add_traveler:"Add another traveler",
     form_remove:"Remove",
-    form_g_trip:"Trip details",
+    form_g_trip:"Trip",
     form_residence:"Country of residence", form_residence_ph:"Where you live",
-    form_origin:"Trip starting location", form_origin_ph:"City or country",
-    form_destination:"Trip ending location", form_dest_ph:"City or country",
-    form_depart:"Departure date", form_return:"Return date",
+    form_origin:"From", form_destination:"To", form_city_ph:"City or country",
+    form_depart:"Departure", form_return:"Return",
     form_g_contact:"How I reach you",
-    form_wa:"WhatsApp number", form_email:"Email",
-    form_req:"(required)", form_opt:"(optional)",
+    form_wa:"WhatsApp", form_email:"Email",
+    form_opt:"(optional)",
     form_consent:"I would like personal help choosing travel insurance and agree to be contacted by WhatsApp.",
-    form_foot:"We will open WhatsApp with your details ready to send. Nothing is charged and there is no obligation.",
+    form_foot:"Opens WhatsApp with your details ready to send. No charge, no obligation.",
     err_name:"Please enter this traveler's full name.",
     err_dob:"Please enter a date of birth.",
     err_residence:"Please enter your country of residence.",
     err_origin:"Please enter where your trip starts.",
     err_destination:"Please enter your destination.",
     err_email:"Please enter a valid email.",
-    err_consent:"Please check the box so I can contact you.",
     success_h:"Your request is ready.",
-    success_p:"We are opening WhatsApp now. If it did not open, use the button below or copy your details.",
-    success_open:"Open WhatsApp",
-    success_copy:"Copy my details",
-    success_copied:"Copied",
-    success_edit:"Edit my request",
+    success_p:"Opening WhatsApp now. If it did not open, use the button below or copy your details.",
+    success_open:"Open WhatsApp", success_copy:"Copy my details", success_copied:"Copied", success_edit:"Edit my request",
     about_kicker:"About me",
     about_h2:"Hi, I am here to make travel insurance simple.",
     about_p1:"I have spent years helping travelers protect the trips that matter most. I know the questions people forget to ask and the coverage details that make the difference when something goes wrong.",
-    about_p2:"When you message me, you reach a real person who listens, explains your options in plain language, and stays with you from the first quote through your return home. That is the kind of care I would want for my own family.",
+    about_p2:"When you message me, you reach a real person who listens, explains your options in plain language, and stays with you from the first quote through your return home.",
     stat_1_n:"Minutes", stat_1_l:"Typical reply time",
     stat_2_n:"EN / ES", stat_2_l:"Full bilingual support",
     stat_3_n:"End to end", stat_3_l:"Before, during, after your trip",
     broker_t:"An authorized broker you can trust.",
     broker_p:"I am an authorized broker for Best Travel Assistance, a specialist travel assistance provider. Your policies are issued and supported through them, so you get my personal service with the strength of an established partner behind every plan.",
     faq_kicker:"Questions",
-    faq_h2:"Everything you might be wondering.",
-    foot_contact:"Contact", foot_explore:"Explore",
+    faq_h2:"Good to know before you go.",
+    faq_sub:"Still wondering something? Message me and I will answer in plain language.",
+    foot_contact:"Contact", foot_explore:"Explore", foot_l_why:"Why choose me",
     foot_tag:"Personalized travel insurance support in English and Español. Get a fast quote by WhatsApp and travel with confidence.",
     foot_call:"Call me", foot_email:"Email me",
     foot_legal:"Travel insurance policies are issued and underwritten through Best Travel Assistance. This site is for general information and does not constitute an insurance contract. Coverage is subject to policy terms and eligibility.",
-    wa_greeting:"Hi! I would like a travel insurance quote.",
+    dock_wa:"Chat on WhatsApp",
+    wa_greeting:"Hi Ana! I would like a travel insurance quote.",
     wa_lead_title:"New travel insurance quote request",
-    wa_travelers:"Travelers",
-    wa_dob:"DOB",
-    wa_residence:"Country of residence",
-    wa_origin:"Trip start",
-    wa_destination:"Trip end",
-    wa_dates:"Travel dates",
-    wa_to:"to",
-    wa_contact_wa:"WhatsApp",
-    wa_contact_email:"Email",
+    wa_travelers:"Travelers", wa_dob:"DOB",
+    wa_residence:"Country of residence", wa_origin:"Trip start", wa_destination:"Trip end",
+    wa_dates:"Travel dates", wa_to:"to", wa_contact_wa:"WhatsApp", wa_contact_email:"Email",
     faq:[
-      {q:"How does getting a quote on WhatsApp work?",a:"Fill in the short form or message me directly. I review your trip, then send clear coverage options right in the chat. You ask questions, pick a plan, and I help you get covered. No accounts or long forms."},
+      {q:"How does getting a quote on WhatsApp work?",a:"Fill in the short boarding pass or message me directly. I review your trip, then send clear coverage options right in the chat. You ask questions, pick a plan, and I help you get covered. No accounts or long forms."},
       {q:"How fast will you reply?",a:"Usually within a few minutes during the day, and always the same day. You will talk to me, not a call center."},
       {q:"What does travel insurance cover?",a:"Plans can include emergency medical care, trip cancellation and interruption, delays, lost or delayed baggage, and more. I help you match the coverage to your specific trip and travelers."},
       {q:"Who is eligible?",a:"Most travelers qualify. Eligibility depends on your country of residence, destination, ages, and trip dates, which is exactly what the quote form asks so I can confirm your options."},
@@ -868,97 +804,84 @@ const I18N = {
     ]
   },
   es:{
-    brand_role:"Asesora de Seguros de Viaje",
-    nav_cta:"Escríbeme por WhatsApp",
+    nav_cta:"WhatsApp",
     hero_eyebrow:"Seguro de viaje personalizado",
-    hero_h1:"Viaja con tranquilidad, vayas donde vayas.",
+    hero_h1:'Viaja con <span class="em">tranquilidad,</span> llegues a donde llegues.',
     hero_sub:"Ayudo a los viajeros a encontrar la protección adecuada rápido, con atención personal en inglés y español.",
     cta_primary:"Recibe tu cotización por WhatsApp",
     cta_secondary:"Cómo funciona",
-    trust_1:"Respuesta rápida",
-    trust_2:"Atención personalizada",
-    trust_3:"Respaldado por Best Travel Assistance",
-    badge_online:"Respondo en minutos",
-    glass_role:"Tu asesora de seguros de viaje",
-    why_kicker:"Por qué me eligen",
-    why_h2:"Atención real de alguien que sí responde.",
-    why_sub:"Sin call centers ni guiones. Tratas con una sola persona que conoce los seguros de viaje y te acompaña desde la cotización hasta el reclamo.",
-    why_1_t:"Atención personalizada", why_1_d:"Ajusto la cobertura a tu viaje, a quienes viajan y a tu presupuesto, no a una plantilla genérica.",
-    why_2_t:"Cotización rápida", why_2_d:"Envíame los datos de tu viaje y recibe opciones claras rápido, directo a tu WhatsApp.",
-    why_3_t:"Ayuda antes, durante y después", why_3_d:"Ya sea antes de reservar o ante un problema en pleno viaje, estoy a un mensaje de distancia.",
+    strip_1:"Respondo en minutos",
+    strip_2:"Atención personalizada",
+    strip_3:"Bróker autorizada, Best Travel Assistance",
+    why_h2:"Por qué me eligen los viajeros.",
+    why_sub:"Una sola persona que conoce los seguros de viaje y te acompaña desde la primera cotización hasta el último día de tu viaje.",
+    why_1_t:"Atención personalizada", why_1_d:"Ajusto la cobertura a tu viaje, a quienes viajan y a tu presupuesto, nunca una plantilla genérica.",
+    why_2_t:"Cotización rápida", why_2_d:"Envíame tus datos y recibe opciones claras por WhatsApp.",
+    why_3_t:"Contigo todo el viaje", why_3_d:"Antes de reservar o en pleno viaje, estoy a un mensaje de distancia.",
     why_4_t:"Cobertura para tu viaje", why_4_d:"Médica, cancelación, demoras, equipaje y más, según tu destino.",
-    why_5_t:"Atención bilingüe", why_5_d:"Te atiendo por completo en inglés y español, sin que nada se pierda en la traducción.",
-    why_6_t:"Respaldo confiable", why_6_d:"Las pólizas están respaldadas por Best Travel Assistance, así unes atención personal y buena cobertura.",
-    how_kicker:"Cómo funciona",
+    why_5_t:"Bilingüe, siempre", why_5_d:"Atención completa en inglés y español, sin que nada se pierda en la traducción.",
+    how_kicker:"Tu itinerario",
     how_h2:"Tres pasos simples hacia tu tranquilidad.",
-    how_sub:"Sin cuentas ni formularios largos. Comparte unos datos y terminamos el resto por WhatsApp.",
-    how_1_t:"Envía los datos de tu viaje", how_1_d:"Cuéntame quiénes viajan y a dónde van con el formulario rápido de abajo.",
-    how_2_t:"Recibe orientación y opciones", how_2_d:"Reviso tu viaje y te envío opciones de cobertura claras según tus planes y presupuesto.",
+    how_1_t:"Envía los datos de tu viaje", how_1_d:"Cuéntame quiénes viajan y a dónde van con el boarding pass de abajo.",
+    how_2_t:"Recibe orientación y opciones", how_2_d:"Reviso tu viaje y te envío opciones de cobertura según tus planes y presupuesto.",
     how_3_t:"Confirma por WhatsApp", how_3_d:"Elige tu plan, pregúntame lo que quieras y te ayudo a quedar cubierto antes de viajar.",
     quote_kicker:"Inicia tu cotización",
-    quote_h2:"Cuéntame sobre tu viaje.",
-    quote_sub:"Completa unos datos y abriré WhatsApp con todo listo. Toma alrededor de un minuto.",
+    quote_h2:"Completa tu boarding pass.",
+    quote_sub:"Unos datos y abriré WhatsApp con todo listo. Toma alrededor de un minuto.",
     assure_1:"Respuesta rápida y amable, normalmente en minutos.",
     assure_2:"Ayuda personal para elegir la cobertura adecuada.",
     assure_3:"Sin compromiso ni presión, solo opciones claras.",
     assure_4:"Tus datos son privados y llegan directo a mí.",
+    ticket_role:"Cotización de seguro de viaje",
+    ticket_tag:"Solicitud",
     form_g_travelers:"Viajeros",
     form_traveler:"Viajero",
     form_name:"Nombre completo", form_name_ph:"Como aparece en el pasaporte",
     form_dob:"Fecha de nacimiento",
     form_add_traveler:"Agregar otro viajero",
     form_remove:"Quitar",
-    form_g_trip:"Datos del viaje",
+    form_g_trip:"Viaje",
     form_residence:"País de residencia", form_residence_ph:"Dónde vives",
-    form_origin:"Lugar de inicio del viaje", form_origin_ph:"Ciudad o país",
-    form_destination:"Lugar de destino del viaje", form_dest_ph:"Ciudad o país",
-    form_depart:"Fecha de salida", form_return:"Fecha de regreso",
+    form_origin:"Desde", form_destination:"Hacia", form_city_ph:"Ciudad o país",
+    form_depart:"Salida", form_return:"Regreso",
     form_g_contact:"Cómo te contacto",
-    form_wa:"Número de WhatsApp", form_email:"Correo electrónico",
-    form_req:"(obligatorio)", form_opt:"(opcional)",
+    form_wa:"WhatsApp", form_email:"Correo",
+    form_opt:"(opcional)",
     form_consent:"Quiero ayuda personal para elegir mi seguro de viaje y acepto que me contacten por WhatsApp.",
-    form_foot:"Abriremos WhatsApp con tus datos listos para enviar. No hay ningún cobro ni compromiso.",
+    form_foot:"Abre WhatsApp con tus datos listos para enviar. Sin cargo ni compromiso.",
     err_name:"Por favor ingresa el nombre completo de este viajero.",
     err_dob:"Por favor ingresa una fecha de nacimiento.",
     err_residence:"Por favor ingresa tu país de residencia.",
     err_origin:"Por favor ingresa dónde inicia tu viaje.",
     err_destination:"Por favor ingresa tu destino.",
     err_email:"Por favor ingresa un correo válido.",
-    err_consent:"Por favor marca la casilla para poder contactarte.",
     success_h:"Tu solicitud está lista.",
-    success_p:"Estamos abriendo WhatsApp ahora. Si no se abrió, usa el botón de abajo o copia tus datos.",
-    success_open:"Abrir WhatsApp",
-    success_copy:"Copiar mis datos",
-    success_copied:"Copiado",
-    success_edit:"Editar mi solicitud",
+    success_p:"Abriendo WhatsApp ahora. Si no se abrió, usa el botón de abajo o copia tus datos.",
+    success_open:"Abrir WhatsApp", success_copy:"Copiar mis datos", success_copied:"Copiado", success_edit:"Editar mi solicitud",
     about_kicker:"Sobre mí",
     about_h2:"Hola, estoy aquí para hacer simple tu seguro de viaje.",
     about_p1:"He dedicado años a ayudar a viajeros a proteger los viajes que más importan. Conozco las preguntas que la gente olvida hacer y los detalles de cobertura que marcan la diferencia cuando algo sale mal.",
-    about_p2:"Cuando me escribes, hablas con una persona real que te escucha, te explica tus opciones en palabras claras y te acompaña desde la primera cotización hasta tu regreso a casa. Es el cuidado que querría para mi propia familia.",
+    about_p2:"Cuando me escribes, hablas con una persona real que te escucha, te explica tus opciones en palabras claras y te acompaña desde la primera cotización hasta tu regreso a casa.",
     stat_1_n:"Minutos", stat_1_l:"Tiempo de respuesta típico",
     stat_2_n:"EN / ES", stat_2_l:"Atención bilingüe completa",
     stat_3_n:"De principio a fin", stat_3_l:"Antes, durante y después de tu viaje",
     broker_t:"Una bróker autorizada en quien confiar.",
     broker_p:"Soy bróker autorizada de Best Travel Assistance, un proveedor especializado en asistencia al viajero. Tus pólizas se emiten y respaldan a través de ellos, así recibes mi atención personal con la solidez de un socio establecido detrás de cada plan.",
     faq_kicker:"Preguntas",
-    faq_h2:"Todo lo que quizás te preguntas.",
-    foot_contact:"Contacto", foot_explore:"Explora",
+    faq_h2:"Bueno saberlo antes de viajar.",
+    faq_sub:"¿Te queda alguna duda? Escríbeme y te respondo en palabras claras.",
+    foot_contact:"Contacto", foot_explore:"Explora", foot_l_why:"Por qué elegirme",
     foot_tag:"Atención personalizada en seguros de viaje, en inglés y español. Recibe tu cotización rápido por WhatsApp y viaja con tranquilidad.",
     foot_call:"Llámame", foot_email:"Escríbeme",
     foot_legal:"Las pólizas de seguro de viaje se emiten y suscriben a través de Best Travel Assistance. Este sitio es solo informativo y no constituye un contrato de seguro. La cobertura está sujeta a los términos de la póliza y a los requisitos de elegibilidad.",
-    wa_greeting:"¡Hola! Me gustaría una cotización de seguro de viaje.",
+    dock_wa:"Escríbeme por WhatsApp",
+    wa_greeting:"¡Hola Ana! Me gustaría una cotización de seguro de viaje.",
     wa_lead_title:"Nueva solicitud de cotización de seguro de viaje",
-    wa_travelers:"Viajeros",
-    wa_dob:"Nacimiento",
-    wa_residence:"País de residencia",
-    wa_origin:"Inicio del viaje",
-    wa_destination:"Destino del viaje",
-    wa_dates:"Fechas de viaje",
-    wa_to:"a",
-    wa_contact_wa:"WhatsApp",
-    wa_contact_email:"Correo",
+    wa_travelers:"Viajeros", wa_dob:"Nacimiento",
+    wa_residence:"País de residencia", wa_origin:"Inicio del viaje", wa_destination:"Destino del viaje",
+    wa_dates:"Fechas de viaje", wa_to:"a", wa_contact_wa:"WhatsApp", wa_contact_email:"Correo",
     faq:[
-      {q:"¿Cómo funciona cotizar por WhatsApp?",a:"Completa el formulario corto o escríbeme directo. Reviso tu viaje y te envío opciones de cobertura claras en el chat. Preguntas lo que necesites, eliges un plan y te ayudo a quedar cubierto. Sin cuentas ni formularios largos."},
+      {q:"¿Cómo funciona cotizar por WhatsApp?",a:"Completa el boarding pass corto o escríbeme directo. Reviso tu viaje y te envío opciones de cobertura claras en el chat. Preguntas lo que necesites, eliges un plan y te ayudo a quedar cubierto. Sin cuentas ni formularios largos."},
       {q:"¿Qué tan rápido respondes?",a:"Normalmente en pocos minutos durante el día, y siempre el mismo día. Hablas conmigo, no con un call center."},
       {q:"¿Qué cubre el seguro de viaje?",a:"Los planes pueden incluir atención médica de emergencia, cancelación e interrupción del viaje, demoras, equipaje perdido o retrasado y más. Te ayudo a ajustar la cobertura a tu viaje y a quienes viajan."},
       {q:"¿Quién puede contratarlo?",a:"La mayoría de los viajeros califican. La elegibilidad depende de tu país de residencia, destino, edades y fechas del viaje, que es justo lo que pide el formulario para confirmar tus opciones."},
@@ -970,113 +893,76 @@ const I18N = {
 };
 
 /* =====================================================================
-   APP LOGIC
+   APP
    ===================================================================== */
 (function(){
   "use strict";
   let lang = "en";
-  const $ = (s,ctx=document)=>ctx.querySelector(s);
-  const $$ = (s,ctx=document)=>Array.from(ctx.querySelectorAll(s));
+  const $ = (s,c=document)=>c.querySelector(s);
+  const $$ = (s,c=document)=>Array.from(c.querySelectorAll(s));
   const t = (k)=> (I18N[lang][k] !== undefined ? I18N[lang][k] : k);
+  const esc = (s)=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 
-  /* ---- Apply CONFIG identity ---- */
   function applyConfig(){
-    const name = CONFIG.clientName || "Client Name";
-    const init = (CONFIG.clientInitial || name.trim().charAt(0) || "M").toUpperCase();
-    ["brandName","heroName","glassName","aboutName","footName","footLegalName"].forEach(id=>{
-      const el = document.getElementById(id);
-      if(el && (id==="brandName"||id==="heroName"||id==="glassName"||id==="footName"||id==="footLegalName")) el.textContent = name;
-    });
-    ["brandMark","glassAv","footMark"].forEach(id=>{ const el=document.getElementById(id); if(el) el.textContent = init; });
+    const name = CONFIG.clientName || "Ana María Palacios";
+    const init = (CONFIG.clientInitial || name.trim().charAt(0) || "A").toUpperCase();
+    ["brandName","footName","footLegalName"].forEach(id=>{const el=document.getElementById(id); if(el) el.textContent=name;});
+    ["brandMark","footMark","ticketMark"].forEach(id=>{const el=document.getElementById(id); if(el) el.textContent=init;});
+    const tn = $("#ticketName"); if(tn) tn.childNodes[0].nodeValue = name;
     if(CONFIG.portraitUrl) $("#heroPortrait").src = CONFIG.portraitUrl;
     if(CONFIG.aboutUrl) $("#aboutPhoto").src = CONFIG.aboutUrl;
-    $("#heroPortrait").alt = name + " — travel insurance consultant";
+    $("#heroPortrait").alt = name + ", travel insurance consultant";
     $("#aboutPhoto").alt = name;
-    // Broker
-    const bl = document.getElementById("brokerLogo");
-    if(CONFIG.brokerLogoUrl){
-      bl.innerHTML = '<img src="'+CONFIG.brokerLogoUrl+'" alt="'+CONFIG.brokerName+'" style="max-width:100%;max-height:100%;object-fit:contain">';
-      bl.style.background = "#fff"; bl.style.border = "1px solid var(--line)";
-    } else {
-      bl.textContent = CONFIG.brokerName;
-    }
-    // Footer contact
-    const phoneLi=$("#footPhoneLi"), emailLi=$("#footEmailLi");
-    if(CONFIG.phoneDisplay){ $("#footPhone").href = "tel:"+CONFIG.phoneDisplay.replace(/[^\d+]/g,""); } else { phoneLi.hidden = true; }
-    if(CONFIG.email){ $("#footEmail").href = "mailto:"+CONFIG.email; } else { emailLi.hidden = true; }
-    const igLi = $("#footIgLi");
-    const fabIg = $("#fabIg");
+    const bl = $("#brokerLogo");
+    if(CONFIG.brokerLogoUrl){ bl.innerHTML = '<img src="'+CONFIG.brokerLogoUrl+'" alt="'+esc(CONFIG.brokerName)+'">'; }
+    else { bl.textContent = CONFIG.brokerName; bl.style.background="var(--ink)"; bl.style.color="#fff"; bl.style.fontFamily="'Bricolage Grotesque',serif"; bl.style.fontWeight="700"; }
+    if(CONFIG.phoneDisplay){ $("#footPhone").href = "tel:"+CONFIG.phoneDisplay.replace(/[^\d+]/g,""); } else { $("#footPhoneLi").hidden = true; }
+    if(CONFIG.email){ $("#footEmail").href = "mailto:"+CONFIG.email; } else { $("#footEmailLi").hidden = true; }
     if(CONFIG.instagram){
-      const handle = CONFIG.instagram.replace(/^@/,"");
-      const igUrl = "https://instagram.com/"+handle;
-      $("#footIg").href = igUrl;
-      $("#footIgTxt").textContent = "@"+handle;
-      if(fabIg){ fabIg.href = igUrl; $("#fabIgTip").textContent = "@"+handle; }
-    } else { igLi.hidden = true; if(fabIg) fabIg.style.display = "none"; }
+      const h = CONFIG.instagram.replace(/^@/,""), u = "https://instagram.com/"+h;
+      $("#footIg").href = u; $("#footIgTxt").textContent = "@"+h;
+      $("#dockIg").href = u; $("#dockIg").setAttribute("aria-label","Instagram @"+h);
+    } else { $("#footIgLi").hidden = true; $("#dockIg").style.display = "none"; }
     $("#footYear").textContent = "© " + new Date().getFullYear();
   }
 
-  /* ---- Language ---- */
   function setLang(next){
-    lang = next;
-    document.documentElement.lang = next;
-    $$("[data-i18n]").forEach(el=>{ el.textContent = t(el.getAttribute("data-i18n")); });
-    $$("[data-i18n-ph]").forEach(el=>{ el.setAttribute("placeholder", t(el.getAttribute("data-i18n-ph"))); });
+    lang = next; document.documentElement.lang = next;
+    $$("[data-i18n]").forEach(el=>{
+      const k = el.getAttribute("data-i18n"), v = t(k);
+      if(k==="hero_h1") el.innerHTML = v; else el.textContent = v;
+    });
+    $$("[data-i18n-ph]").forEach(el=> el.setAttribute("placeholder", t(el.getAttribute("data-i18n-ph"))));
     $$(".lang button").forEach(b=> b.setAttribute("aria-pressed", String(b.dataset.lang===next)));
-    // dynamic bits
     $("#footPhoneTxt").textContent = t("foot_call");
     $("#footEmailTxt").textContent = t("foot_email");
-    relabelTravelers();
-    buildFaq();
-    refreshWaLinks();
-    try{ localStorage.setItem("ti_lang", next); }catch(e){}
+    relabelTravelers(); buildFaq(); refreshWaLinks();
+    try{ localStorage.setItem("amp_lang", next); }catch(e){}
   }
   $$(".lang button").forEach(b=> b.addEventListener("click", ()=> setLang(b.dataset.lang)));
 
-  /* ---- FAQ (with schema-friendly semantics) ---- */
   function buildFaq(){
-    const list = $("#faqList");
-    list.innerHTML = "";
-    t("faq").forEach((item,i)=>{
-      const d = document.createElement("details");
-      d.className = "faq-item";
-      d.innerHTML =
-        '<summary>'+escapeHtml(item.q)+
-        '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>'+
-        '<div class="ans">'+escapeHtml(item.a)+'</div>';
+    const list = $("#faqList"); list.innerHTML = "";
+    t("faq").forEach(item=>{
+      const d = document.createElement("details"); d.className = "faq-item";
+      d.innerHTML = '<summary>'+esc(item.q)+'<span class="pm" aria-hidden="true"></span></summary><div class="ans">'+esc(item.a)+'</div>';
       list.appendChild(d);
     });
   }
 
-  /* ---- Travelers ---- */
-  let travelerCount = 0;
-  const MAX_TRAVELERS = 10;
+  let travelerCount = 0; const MAX = 10;
   function addTraveler(){
-    if(travelerCount >= MAX_TRAVELERS) return;
+    if(travelerCount >= MAX) return;
     travelerCount++;
     const idx = travelerCount;
-    const wrap = document.createElement("div");
-    wrap.className = "traveler";
-    wrap.dataset.idx = idx;
-    wrap.innerHTML =
-      '<div class="tv-head"><b class="tv-title"></b>'+
-        (idx>1 ? '<button type="button" class="rm-traveler"></button>' : '')+
-      '</div>'+
-      '<div class="field">'+
-        '<label>'+
-          '<span class="lbl-name"></span> <span class="hint req-txt"></span>'+
-        '</label>'+
-        '<input type="text" class="tv-name" autocomplete="name" required />'+
-        '<div class="err err-name"></div>'+
-      '</div>'+
-      '<div class="field" style="margin-bottom:0">'+
-        '<label><span class="lbl-dob"></span> <span class="hint req-txt"></span></label>'+
-        '<input type="date" class="tv-dob" required />'+
-        '<div class="err err-dob"></div>'+
-      '</div>';
-    $("#travelers").appendChild(wrap);
-    const rm = wrap.querySelector(".rm-traveler");
-    if(rm) rm.addEventListener("click", ()=>{ wrap.remove(); relabelTravelers(); });
+    const w = document.createElement("div"); w.className = "traveler";
+    w.innerHTML =
+      '<div class="tv-head"><b class="tv-title"></b>'+(idx>1?'<button type="button" class="rm-traveler"></button>':'')+'</div>'+
+      '<div class="field"><label><span class="lbl-name"></span></label><input type="text" class="tv-name" autocomplete="name" required /><div class="err err-name"></div></div>'+
+      '<div class="field" style="margin-bottom:0"><label><span class="lbl-dob"></span></label><input type="date" class="tv-dob" required /><div class="err err-dob"></div></div>';
+    $("#travelers").appendChild(w);
+    const rm = w.querySelector(".rm-traveler");
+    if(rm) rm.addEventListener("click", ()=>{ w.remove(); relabelTravelers(); });
     relabelTravelers();
   }
   function relabelTravelers(){
@@ -1084,136 +970,93 @@ const I18N = {
       tv.querySelector(".tv-title").textContent = t("form_traveler")+" "+(i+1);
       tv.querySelector(".lbl-name").textContent = t("form_name");
       tv.querySelector(".lbl-dob").textContent = t("form_dob");
-      tv.querySelectorAll(".req-txt").forEach(e=> e.textContent = t("form_req"));
       const rm = tv.querySelector(".rm-traveler"); if(rm) rm.textContent = t("form_remove");
-      const nameInput = tv.querySelector(".tv-name");
-      nameInput.placeholder = t("form_name_ph");
+      tv.querySelector(".tv-name").placeholder = t("form_name_ph");
       tv.querySelector(".err-name").textContent = t("err_name");
       tv.querySelector(".err-dob").textContent = t("err_dob");
     });
   }
   $("#addTraveler").addEventListener("click", addTraveler);
 
-  /* ---- Validation ---- */
-  function showErr(input, on){
-    input.setAttribute("aria-invalid", on?"true":"false");
-    const err = input.parentElement.querySelector(".err");
-    if(err) err.classList.toggle("show", on);
-  }
-  function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
-
-  function validateForm(){
-    let ok = true, firstBad = null;
-    // travelers
+  function showErr(input,on){ input.setAttribute("aria-invalid", on?"true":"false"); const e=input.parentElement.querySelector(".err"); if(e) e.classList.toggle("show",on); }
+  const validEmail = v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  function validate(){
+    let ok=true, first=null;
     $$("#travelers .traveler").forEach(tv=>{
-      const n = tv.querySelector(".tv-name"), d = tv.querySelector(".tv-dob");
-      const nBad = !n.value.trim(); showErr(n,nBad); if(nBad){ok=false; firstBad=firstBad||n;}
-      const dBad = !d.value; showErr(d,dBad); if(dBad){ok=false; firstBad=firstBad||d;}
+      const n=tv.querySelector(".tv-name"), d=tv.querySelector(".tv-dob");
+      const nb=!n.value.trim(); showErr(n,nb); if(nb){ok=false; first=first||n;}
+      const db=!d.value; showErr(d,db); if(db){ok=false; first=first||d;}
     });
-    // required trip fields
-    ["residence","origin","destination"].forEach(id=>{
-      const el = $("#"+id), bad = !el.value.trim();
-      showErr(el,bad); if(bad){ok=false; firstBad=firstBad||el;}
-    });
-    // email optional but must be valid if present
-    const em = $("#email");
-    const emBad = em.value.trim() && !validEmail(em.value.trim());
-    showErr(em, emBad); if(emBad){ok=false; firstBad=firstBad||em;}
-    // consent
-    const c = $("#consent");
-    if(!c.checked){ ok=false; firstBad=firstBad||c; c.parentElement.style.color="#c23c1c"; }
-    else { c.parentElement.style.color=""; }
-    if(firstBad){ firstBad.focus({preventScroll:false}); }
+    ["residence","origin","destination"].forEach(id=>{ const el=$("#"+id), b=!el.value.trim(); showErr(el,b); if(b){ok=false; first=first||el;} });
+    const em=$("#email"), eb=em.value.trim() && !validEmail(em.value.trim()); showErr(em,eb); if(eb){ok=false; first=first||em;}
+    const c=$("#consent"); if(!c.checked){ ok=false; first=first||c; c.parentElement.style.color="#c23c1c"; } else c.parentElement.style.color="";
+    if(first) first.focus();
     return ok;
   }
 
-  /* ---- Build WhatsApp message ---- */
-  function fmtDate(v){ if(!v) return ""; const p=v.split("-"); return p.length===3 ? p[2]+"/"+p[1]+"/"+p[0] : v; }
+  const fmtDate = v=>{ if(!v) return ""; const p=v.split("-"); return p.length===3?p[2]+"/"+p[1]+"/"+p[0]:v; };
   function buildMessage(){
     const L = I18N[lang];
-    let m = "*"+L.wa_lead_title+"*\n\n";
-    m += "*"+L.wa_travelers+":*\n";
+    let m = "*"+L.wa_lead_title+"*\n\n*"+L.wa_travelers+":*\n";
     $$("#travelers .traveler").forEach((tv,i)=>{
-      const n = tv.querySelector(".tv-name").value.trim();
-      const d = fmtDate(tv.querySelector(".tv-dob").value);
-      m += (i+1)+". "+n+"  ("+L.wa_dob+": "+d+")\n";
+      m += (i+1)+". "+tv.querySelector(".tv-name").value.trim()+"  ("+L.wa_dob+": "+fmtDate(tv.querySelector(".tv-dob").value)+")\n";
     });
     m += "\n*"+L.wa_residence+":* "+$("#residence").value.trim()+"\n";
     m += "*"+L.wa_origin+":* "+$("#origin").value.trim()+"\n";
     m += "*"+L.wa_destination+":* "+$("#destination").value.trim()+"\n";
     const dep=$("#depart").value, ret=$("#ret").value;
-    if(dep||ret){ m += "*"+L.wa_dates+":* "+(fmtDate(dep)||"?")+" "+L.wa_to+" "+(fmtDate(ret)||"?")+"\n"; }
+    if(dep||ret) m += "*"+L.wa_dates+":* "+(fmtDate(dep)||"?")+" "+L.wa_to+" "+(fmtDate(ret)||"?")+"\n";
     const wa=$("#waNumber").value.trim(), em=$("#email").value.trim();
     if(wa) m += "*"+L.wa_contact_wa+":* "+wa+"\n";
     if(em) m += "*"+L.wa_contact_email+":* "+em+"\n";
     return m;
   }
-  function waUrl(text){
-    const num = (CONFIG.whatsapp||"").replace(/[^\d]/g,"");
-    return "https://wa.me/"+num+"?text="+encodeURIComponent(text);
-  }
+  const waUrl = txt => "https://wa.me/"+(CONFIG.whatsapp||"").replace(/[^\d]/g,"")+"?text="+encodeURIComponent(txt);
+  function refreshWaLinks(){ const u = waUrl(t("wa_greeting")); $$("[data-wa-link]").forEach(a=> a.href=u); }
 
-  /* ---- Generic WA links (nav, hero, sticky, footer) ---- */
-  function refreshWaLinks(){
-    const greetUrl = waUrl(t("wa_greeting"));
-    $$("[data-wa-link]").forEach(a=> a.href = greetUrl);
-  }
-
-  /* ---- Form submit ---- */
-  const form = $("#quoteForm");
-  const successEl = $("#success");
+  const form = $("#quoteForm"), successEl = $("#success");
   form.addEventListener("submit", function(e){
     e.preventDefault();
-    if(!validateForm()) return;
-    const msg = buildMessage();
-    const url = waUrl(msg);
-    // fill success state
+    if(!validate()) return;
+    const msg = buildMessage(), url = waUrl(msg);
     $("#copyBox").textContent = msg.replace(/\*/g,"");
     $("#successWa").href = url;
-    form.hidden = true;
-    successEl.classList.add("show");
-    successEl.scrollIntoView({behavior:"smooth", block:"center"});
+    form.hidden = true; successEl.classList.add("show");
+    successEl.scrollIntoView({behavior:"smooth",block:"center"});
     if(window.plausible) window.plausible("QuoteSubmit");
-    // open WhatsApp
-    window.open(url, "_blank", "noopener");
+    window.open(url,"_blank","noopener");
+  });
+  $("#editBtn").addEventListener("click", ()=>{ successEl.classList.remove("show"); form.hidden=false; form.scrollIntoView({behavior:"smooth",block:"center"}); });
+  $("#copyBtn").addEventListener("click", ()=>{
+    navigator.clipboard.writeText($("#copyBox").textContent).then(()=>{ const b=$("#copyBtn"),o=b.textContent; b.textContent=t("success_copied"); setTimeout(()=>b.textContent=o,1800); }).catch(()=>{});
   });
 
-  $("#editBtn").addEventListener("click", function(){
-    successEl.classList.remove("show");
-    form.hidden = false;
-    form.scrollIntoView({behavior:"smooth", block:"center"});
-  });
-  $("#copyBtn").addEventListener("click", function(){
-    const txt = $("#copyBox").textContent;
-    navigator.clipboard.writeText(txt).then(()=>{
-      const b=$("#copyBtn"); const orig=b.textContent;
-      b.textContent = t("success_copied");
-      setTimeout(()=> b.textContent = orig, 1800);
-    }).catch(()=>{});
-  });
+  $$("[data-analytics]").forEach(el=> el.addEventListener("click", ()=>{
+    const ev = el.getAttribute("data-analytics");
+    if(window.plausible) window.plausible(ev);
+    if(window.gtag) window.gtag("event","cta_click",{cta:ev});
+  }));
 
-  /* ---- Analytics-ready hooks ---- */
-  $$("[data-analytics]").forEach(el=>{
-    el.addEventListener("click", ()=>{
-      const ev = el.getAttribute("data-analytics");
-      if(window.plausible) window.plausible(ev);
-      if(window.gtag) window.gtag("event","cta_click",{cta:ev});
-    });
-  });
-
-  /* ---- Nav shadow on scroll ---- */
   const nav = $("#nav");
   const onScroll = ()=> nav.classList.toggle("scrolled", window.scrollY>8);
   window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
 
-  /* ---- Helpers ---- */
-  function escapeHtml(s){ return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+  // Reveal on scroll (IntersectionObserver, not scroll listener)
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(!reduce && "IntersectionObserver" in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+    },{threshold:0.14,rootMargin:"0px 0px -8% 0px"});
+    $$("[data-reveal]").forEach(el=>io.observe(el));
+    // flight-path SVGs animate their stroke when scrolled into view
+    $$(".flightpath").forEach(p=>{ const svg=p.closest("svg"); if(svg) io.observe(svg); });
+  } else {
+    $$("[data-reveal]").forEach(el=>el.classList.add("in"));
+  }
 
-  /* ---- Init ---- */
   applyConfig();
-  addTraveler();               // start with 1 traveler
-  let saved = "en";
-  try{ saved = localStorage.getItem("ti_lang") || "en"; }catch(e){}
+  addTraveler();
+  let saved="en"; try{ saved = localStorage.getItem("amp_lang") || "en"; }catch(e){}
   setLang(saved);
 })();
 </script>
