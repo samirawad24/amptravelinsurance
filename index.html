@@ -360,9 +360,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,.
 .num{width:26px;height:26px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:.82rem;font-weight:700;flex:none}
 .field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;min-width:0}
 .field label,.flabel{font-size:.9rem;font-weight:500;color:var(--ink)}
-.tv-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:end}
-.tv-row .field{margin-bottom:0}
-.tv-age{max-width:140px}
 .field .opt{color:var(--ink-2);font-weight:400}
 .field input{
   width:100%;min-width:0;min-height:50px;padding:12px 14px;border-radius:var(--r-input);
@@ -381,7 +378,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,.
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
 @media(max-width:560px){.grid-2{grid-template-columns:1fr}}
 
-.traveler{margin-bottom:12px}
+.traveler{border:1px solid var(--line);border-radius:14px;padding:16px 16px 2px;margin-bottom:12px;background:var(--surface)}
 .tv-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
 .tv-title{font-size:.88rem;font-weight:600;color:var(--accent)}
 .rm-traveler{display:inline-flex;align-items:center;gap:4px;font-size:.86rem;color:var(--ink-2);min-height:36px;padding:0 8px;border-radius:999px}
@@ -659,7 +656,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,.
       <p class="lede" data-i18n="quote_sub">Fill this in and WhatsApp opens with your details ready to send. No cost, no obligation.</p>
       <ul class="assure">
         <li><i class="ph ph-user-circle" aria-hidden="true"></i><span data-i18n="assure_1">I read and answer your request myself.</span></li>
-        <li><i class="ph ph-lock-simple" aria-hidden="true"></i><span data-i18n="assure_2">Only what a quote needs. No names, no passport numbers.</span></li>
+        <li><i class="ph ph-lock-simple" aria-hidden="true"></i><span data-i18n="assure_2">Your details go only to me.</span></li>
         <li><i class="ph ph-check" aria-hidden="true"></i><span data-i18n="assure_3">No account and no long forms.</span></li>
       </ul>
       <div class="side-contact">
@@ -728,12 +725,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,.
 
         <fieldset class="fgroup">
           <legend><span class="num">4</span><span data-i18n="g_contact">How to reach you</span></legend>
+          <div class="grid-2">
             <div class="field">
-              <label for="email"><span data-i18n="f_email">Email, if you prefer it</span> <span class="opt" data-i18n="opt">(optional)</span></label>
-              <input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@email.com" aria-describedby="emailHint" />
-              <div class="hint" id="emailHint" data-i18n="email_hint">I reply on WhatsApp. Add an email only if you also want the quote there.</div>
+              <label for="waNumber"><span data-i18n="f_wa">WhatsApp number</span> <span class="opt" data-i18n="opt">(optional)</span></label>
+              <input id="waNumber" name="waNumber" type="tel" autocomplete="tel" inputmode="tel" placeholder="+1 305 555 0142" />
+            </div>
+            <div class="field">
+              <label for="email"><span data-i18n="f_email">Email</span> <span class="opt" data-i18n="opt">(optional)</span></label>
+              <input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@email.com" />
               <div class="err" data-i18n="err_email">Enter a valid email.</div>
             </div>
+          </div>
           <div class="consent">
             <input type="checkbox" id="consent" required aria-describedby="consentErr" />
             <label for="consent"><span data-i18n="consent">I agree to send these trip details to Ana María Palacios on WhatsApp so she can prepare my quote and contact me about it.</span> <a href="privacy.html" data-i18n="consent_link">Read the Privacy Policy</a>.</label>
@@ -886,21 +888,23 @@ const I18N = {
     quote_h2:"Tell me about your trip",
     quote_sub:"Fill this in and WhatsApp opens with your details ready to send. No cost, no obligation.",
     assure_1:"I read and answer your request myself.",
-    assure_2:"Only what a quote needs. No names, no passport numbers.",
+    assure_2:"Your details go only to me.",
     assure_3:"No account and no long forms.",
     g_travelers:"Who is traveling", g_trip:"Your trip", g_needs:"What matters to you", g_contact:"How to reach you",
-    f_age:"Traveler {n}: age",
+    traveler:"Traveler", f_name:"Full name", ph_name:"As shown on passport", f_dob:"Date of birth",
     add_traveler:"Add another traveler", remove:"Remove", remove_n:"Remove traveler {n}",
     f_origin:"Leaving from", f_destination:"Going to", ph_city:"City or country",
     f_residence:"Country where you live", ph_country:"Country",
     f_depart:"Departure", f_return:"Return", opt:"(optional)",
     f_purpose:"Trip purpose", p_vacation:"Vacation", p_business:"Business", p_study:"Study", p_family:"Visiting family",
     f_priorities:"Coverage you care about", c_medical:"Medical", c_cancel:"Cancellation", c_baggage:"Baggage", c_delays:"Delays",
-    f_email:"Email, if you prefer it", email_hint:"I reply on WhatsApp. Add an email only if you also want the quote there.",
+    f_wa:"WhatsApp number", f_email:"Email",
     consent:"I agree to send these trip details to Ana María Palacios on WhatsApp so she can prepare my quote and contact me about it.", consent_link:"Read the Privacy Policy",
     submit:"Send on WhatsApp",
     form_note:"WhatsApp opens with your message ready to review. Nothing is sent until you tap send. Please do not include health details or passport numbers.",
-    err_age:"Enter an age from 0 to 120.",
+    err_name:"Enter this traveler's full name.",
+    err_dob:"Enter a date of birth.",
+    err_dob_future:"Date of birth cannot be in the future.",
     err_residence:"Enter your country of residence.",
     err_origin:"Enter where your trip starts.",
     err_destination:"Enter your destination.",
@@ -922,10 +926,10 @@ const I18N = {
     foot_legal:"Plans are provided through Best Travel Assistance. Your plan documents set out your coverage, benefits, exclusions, price, and the company responsible for paying claims, and they control over anything on this site. This site gives general information only. It is not an insurance contract, and a quote does not guarantee eligibility or coverage.",
     wa_greeting:"Hi Ana! I would like a travel insurance quote.",
     wa_title:"New travel insurance quote request",
-    wa_travelers:"Travelers", wa_age:"Age",
+    wa_travelers:"Travelers", wa_dob:"DOB", wa_age:"age",
     wa_residence:"Country of residence", wa_origin:"Leaving from", wa_destination:"Going to",
     wa_dates:"Travel dates", wa_to:"to", wa_purpose:"Trip purpose", wa_priorities:"Coverage priorities",
-    wa_contact_email:"Email",
+    wa_contact_wa:"WhatsApp", wa_contact_email:"Email",
     faq:[
       {q:"How does a WhatsApp quote work?",a:"Fill in the short quote form or message me directly. I review your trip and send coverage options in the chat. You ask questions, pick a plan if you want one, and I help you with the next steps. No accounts, no long forms."},
       {q:"Who will answer my message?",a:"I answer quote requests myself. You talk to me, not a call center."},
@@ -965,21 +969,23 @@ const I18N = {
     quote_h2:"Cuéntame de tu viaje",
     quote_sub:"Completa esto y WhatsApp se abre con tus datos listos para enviar. Sin costo ni compromiso.",
     assure_1:"Leo y respondo tu solicitud personalmente.",
-    assure_2:"Solo lo que una cotización necesita. Sin nombres ni números de pasaporte.",
+    assure_2:"Tus datos llegan solo a mí.",
     assure_3:"Sin cuentas ni formularios largos.",
     g_travelers:"Quiénes viajan", g_trip:"Tu viaje", g_needs:"Lo que te importa", g_contact:"Cómo contactarte",
-    f_age:"Viajero {n}: edad",
+    traveler:"Viajero", f_name:"Nombre completo", ph_name:"Como aparece en el pasaporte", f_dob:"Fecha de nacimiento",
     add_traveler:"Agregar otro viajero", remove:"Quitar", remove_n:"Quitar viajero {n}",
     f_origin:"Sales desde", f_destination:"Vas a", ph_city:"Ciudad o país",
     f_residence:"País donde vives", ph_country:"País",
     f_depart:"Salida", f_return:"Regreso", opt:"(opcional)",
     f_purpose:"Motivo del viaje", p_vacation:"Vacaciones", p_business:"Negocios", p_study:"Estudios", p_family:"Visitar familia",
     f_priorities:"Cobertura que te importa", c_medical:"Médica", c_cancel:"Cancelación", c_baggage:"Equipaje", c_delays:"Demoras",
-    f_email:"Correo, si lo prefieres", email_hint:"Respondo por WhatsApp. Agrega un correo solo si también quieres la cotización allí.",
+    f_wa:"Número de WhatsApp", f_email:"Correo",
     consent:"Acepto enviar estos datos del viaje a Ana María Palacios por WhatsApp para que prepare mi cotización y me contacte sobre ella.", consent_link:"Lee la Política de privacidad",
     submit:"Enviar por WhatsApp",
     form_note:"WhatsApp se abre con tu mensaje listo para revisar. No se envía nada hasta que toques enviar. Por favor no incluyas datos de salud ni números de pasaporte.",
-    err_age:"Escribe una edad de 0 a 120.",
+    err_name:"Escribe el nombre completo de este viajero.",
+    err_dob:"Escribe una fecha de nacimiento.",
+    err_dob_future:"La fecha de nacimiento no puede ser futura.",
     err_residence:"Escribe tu país de residencia.",
     err_origin:"Escribe dónde empieza tu viaje.",
     err_destination:"Escribe tu destino.",
@@ -1001,10 +1007,10 @@ const I18N = {
     foot_legal:"Los planes se ofrecen a través de Best Travel Assistance. Los documentos de tu plan definen tu cobertura, beneficios, exclusiones, precio y la compañía responsable de pagar los reclamos, y prevalecen sobre cualquier contenido de este sitio. Este sitio es solo informativo. No es un contrato de seguro, y una cotización no garantiza elegibilidad ni cobertura.",
     wa_greeting:"¡Hola Ana! Me gustaría una cotización de seguro de viaje.",
     wa_title:"Nueva solicitud de cotización de seguro de viaje",
-    wa_travelers:"Viajeros", wa_age:"Edad",
+    wa_travelers:"Viajeros", wa_dob:"Nacimiento", wa_age:"edad",
     wa_residence:"País de residencia", wa_origin:"Sale desde", wa_destination:"Va a",
     wa_dates:"Fechas de viaje", wa_to:"a", wa_purpose:"Motivo del viaje", wa_priorities:"Cobertura prioritaria",
-    wa_contact_email:"Correo",
+    wa_contact_wa:"WhatsApp", wa_contact_email:"Correo",
     faq:[
       {q:"¿Cómo funciona cotizar por WhatsApp?",a:"Completa el formulario corto o escríbeme directo. Reviso tu viaje y te envío opciones de cobertura en el chat. Preguntas lo que necesites, eliges un plan si quieres y te ayudo con los siguientes pasos. Sin cuentas ni formularios largos."},
       {q:"¿Quién responde mi mensaje?",a:"Respondo las solicitudes de cotización personalmente. Hablas conmigo, no con un call center."},
@@ -1077,29 +1083,35 @@ const I18N = {
     const id = ++uid;
     const w = document.createElement("div"); w.className = "traveler";
     w.innerHTML =
-      '<div class="tv-row">'+
-        '<div class="field"><label for="tva'+id+'" class="lbl-age"></label><input id="tva'+id+'" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3" class="tv-age" autocomplete="off" required /><div class="err err-age"></div></div>'+
-        '<button type="button" class="rm-traveler"><i class="ph ph-x" aria-hidden="true"></i><span></span></button>'+
+      '<div class="tv-head"><b class="tv-title"></b><button type="button" class="rm-traveler"><i class="ph ph-x" aria-hidden="true"></i><span></span></button></div>'+
+      '<div class="grid-2">'+
+        '<div class="field"><label for="tvn'+id+'" class="lbl-name"></label><input id="tvn'+id+'" type="text" class="tv-name" autocomplete="'+(id===1?"name":"off")+'" required /><div class="err err-name"></div></div>'+
+        '<div class="field"><label for="tvd'+id+'" class="lbl-dob"></label><input id="tvd'+id+'" type="date" class="tv-dob" max="'+todayISO+'" min="1900-01-01" required /><div class="err err-dob"></div></div>'+
       '</div>';
     $("#travelers").appendChild(w);
     w.querySelector(".rm-traveler").addEventListener("click", ()=>{
       const next = w.nextElementSibling || w.previousElementSibling;
       w.remove(); relabelTravelers();
-      if(next) next.querySelector(".tv-age").focus();
+      if(next) next.querySelector(".tv-name").focus();
     });
     relabelTravelers();
-    if(focus) w.querySelector(".tv-age").focus();
+    if(focus) w.querySelector(".tv-name").focus();
   }
   function relabelTravelers(){
     const rows = $$("#travelers .traveler");
     rows.forEach((tv,i)=>{
       const n = i+1;
-      tv.querySelector(".lbl-age").textContent = t("f_age").replace("{n}", n);
+      tv.querySelector(".tv-title").textContent = t("traveler")+" "+n;
+      tv.querySelector(".lbl-name").textContent = t("f_name");
+      tv.querySelector(".lbl-dob").textContent = t("f_dob");
+      tv.querySelector(".tv-name").placeholder = t("ph_name");
       const rm = tv.querySelector(".rm-traveler");
       rm.querySelector("span").textContent = t("remove");
       rm.setAttribute("aria-label", t("remove_n").replace("{n}", n));
       rm.hidden = rows.length === 1;
-      tv.querySelector(".err-age").textContent = t("err_age");
+      tv.querySelector(".err-name").textContent = t("err_name");
+      const de = tv.querySelector(".err-dob");
+      de.textContent = t(de.dataset.k || "err_dob");
     });
     $("#addTraveler").hidden = rows.length >= MAX;
   }
@@ -1120,8 +1132,10 @@ const I18N = {
     let first = null;
     const flag = (el,bad,key)=>{ showErr(el,bad,key); if(bad && !first) first = el; };
     $$("#travelers .traveler").forEach(tv=>{
-      const a = tv.querySelector(".tv-age"), v = a.value.trim();
-      flag(a, !/^\d{1,3}$/.test(v) || +v > 120);
+      const n = tv.querySelector(".tv-name"), d = tv.querySelector(".tv-dob");
+      flag(n, !n.value.trim());
+      if(!d.value) flag(d, true, "err_dob");
+      else flag(d, d.value > todayISO || d.value < "1900-01-01", d.value > todayISO ? "err_dob_future" : "err_dob");
     });
     ["origin","destination","residence"].forEach(id=>{ const el=$("#"+id); flag(el, !el.value.trim()); });
     const dep = $("#depart").value, ret = $("#ret");
@@ -1136,7 +1150,6 @@ const I18N = {
   // clear an error as soon as the user fixes the field
   $("#quoteForm").addEventListener("input", e=>{
     const el = e.target;
-    if(el.classList && el.classList.contains("tv-age")) el.value = el.value.replace(/\D/g,"").slice(0,3);
     if(el.getAttribute && el.getAttribute("aria-invalid")==="true" && el.value) showErr(el,false);
     if(el.id==="consent" && el.checked) $("#consentErr").classList.remove("show");
   });
@@ -1149,11 +1162,14 @@ const I18N = {
   /* ---- WhatsApp message ---- */
   const fmtDate = v=>{ if(!v) return ""; const p=v.split("-"); return p.length===3 ? p[1]+"/"+p[2]+"/"+p[0] : v; };
   const fmtDateES = v=>{ if(!v) return ""; const p=v.split("-"); return p.length===3 ? p[2]+"/"+p[1]+"/"+p[0] : v; };
+  const ageOn = iso=>{ const [y,m,d] = iso.split("-").map(Number), [ty,tm,td] = todayISO.split("-").map(Number);
+    return ty - y - ((tm < m || (tm === m && td < d)) ? 1 : 0); };
   function buildMessage(){
     const L = I18N[lang], fd = lang==="es" ? fmtDateES : fmtDate;
     let m = "*"+L.wa_title+"*\n\n*"+L.wa_travelers+":*\n";
     $$("#travelers .traveler").forEach((tv,i)=>{
-      m += (i+1)+". "+L.wa_age+" "+tv.querySelector(".tv-age").value.trim()+"\n";
+      const dob = tv.querySelector(".tv-dob").value;
+      m += (i+1)+". "+tv.querySelector(".tv-name").value.trim()+" ("+L.wa_dob+": "+fd(dob)+", "+L.wa_age+": "+ageOn(dob)+")\n";
     });
     m += "\n*"+L.wa_origin+":* "+$("#origin").value.trim()+"\n";
     m += "*"+L.wa_destination+":* "+$("#destination").value.trim()+"\n";
@@ -1164,8 +1180,10 @@ const I18N = {
     if(purpose) m += "*"+L.wa_purpose+":* "+t("p_"+purpose.value)+"\n";
     const prios = $$('input[name="priority"]:checked').map(c=> t("c_"+c.value));
     if(prios.length) m += "*"+L.wa_priorities+":* "+prios.join(", ")+"\n";
-    const em=$("#email").value.trim();
-    if(em) m += "\n*"+L.wa_contact_email+":* "+em+"\n";
+    const wa=$("#waNumber").value.trim(), em=$("#email").value.trim();
+    if(wa||em) m += "\n";
+    if(wa) m += "*"+L.wa_contact_wa+":* "+wa+"\n";
+    if(em) m += "*"+L.wa_contact_email+":* "+em+"\n";
     return m.trim();
   }
   const waUrl = txt => "https://wa.me/"+String(CONFIG.whatsapp).replace(/\D/g,"")+"?text="+encodeURIComponent(txt);
