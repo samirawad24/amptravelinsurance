@@ -7,7 +7,7 @@ Keys used by the shared script (site.js) live in COMMON. Each page adds its own 
 
 BRAND = "AMP Insurance Assistance"
 OWNER = "Ana María Palacios"
-BROKER = "Best Travel Assistance"
+BROKER = "AGB Insurance"
 
 # ---------------------------------------------------------------- COMMON
 COMMON = {
@@ -69,7 +69,7 @@ COMMON = {
   "b_wc": "Workers' comp", "b_pro": "Professional liability", "b_unsure": "Not sure",
   # contact
   "f_wa": "WhatsApp number", "f_email": "Email",
-  "consent": "I agree to send these details to Ana María Palacios on WhatsApp so she, or a licensed agent at her brokerage, can prepare my quote and contact me about it.",
+  "consent": "I agree to send these details to Ana María Palacios on WhatsApp so she, or a licensed agent at her agency, can prepare my quote and contact me about it.",
   "consent_link": "Read the Privacy Policy",
   "submit": "Send on WhatsApp",
   "form_note": "WhatsApp opens with your message ready to review. Nothing is sent until you tap send. Please do not include driver's license numbers, VINs, Social Security numbers, health details, or passport numbers.",
@@ -94,11 +94,11 @@ COMMON = {
   "quote_h2": "Request a quote",
   "quote_sub": "Choose the type of insurance, answer a few questions, and WhatsApp opens with your details ready to send.",
   "assure_1": "I read and answer your request myself.",
-  "assure_2": "Your details go only to me and my brokerage.",
+  "assure_2": "Your details go only to me and my agency.",
   "assure_3": "No account and no long forms.",
   # trust band
-  "broker_t": "Policies through Best Travel Assistance",
-  "broker_p": "The insurance brokerage Ana works with",
+  "broker_t": "Policies through AGB Insurance",
+  "broker_p": "The independent insurance agency Ana works with",
   "fact_1": "You talk to me, not a call center",
   "fact_2": "Free quotes with no obligation",
   "fact_3": "Help in English and Spanish",
@@ -106,7 +106,7 @@ COMMON = {
   "foot_tag": "Auto, home, renters, travel, and business insurance help in English and Spanish.",
   "foot_contact": "Contact", "foot_ins": "Insurance", "foot_legal_h": "Legal",
   "l_privacy": "Privacy Policy", "l_terms": "Terms and Conditions", "l_cookies": "Cookie Policy", "l_refund": "Refund Policy",
-  "foot_legal": "AMP Insurance Assistance is the insurance service of Ana María Palacios. Ana is a licensed travel insurance agent. For auto, home, renters, and business insurance, Ana acts as your advisor, and a licensed agent at Best Travel Assistance prepares your quote and issues your policy. Your policy documents set out your coverage, exclusions, price, and the company responsible for paying claims, and they control over anything on this site. This site gives general information only. It is not an insurance contract, and a quote does not guarantee eligibility or coverage.",
+  "foot_legal": "AMP Insurance Assistance is the insurance service of Ana María Palacios. Ana is a licensed travel insurance agent. For auto, home, renters, and business insurance, Ana acts as your advisor, and a licensed agent at AGB Insurance prepares your quote and issues your policy. Your policy documents set out your coverage, exclusions, price, and the company responsible for paying claims, and they control over anything on this site. This site gives general information only. It is not an insurance contract, and a quote does not guarantee eligibility or coverage.",
   "faq_more": "Still have a question?",
   "faq_h2": "Questions and answers",
   "learn_more": "Learn more",
@@ -114,7 +114,7 @@ COMMON = {
   "cov_fine": "Coverage, limits, deductibles, and exclusions depend on the policy you choose.",
   "more_h": "Other insurance I can help with",
   "adv_h": "How I help with this insurance",
-  "adv_p": "I am your advisor for this type of insurance. I gather your details, explain your options in plain words, and connect you with a licensed agent at Best Travel Assistance, who prepares your quote and issues your policy. You keep talking to me the whole time.",
+  "adv_p": "I am your advisor for this type of insurance. I gather your details, explain your options in plain words, and connect you with a licensed agent at AGB Insurance, who prepares your quote and issues your policy. You keep talking to me the whole time.",
   "agent_h": "I am your travel insurance agent",
   "agent_p": "I am licensed to sell travel insurance. I prepare your quote, explain each plan, and help you buy it, all in the same WhatsApp chat.",
  },
@@ -194,15 +194,15 @@ COMMON = {
   "assure_1": "Leo y respondo tu solicitud personalmente.",
   "assure_2": "Tus datos llegan solo a mí y a mi agencia.",
   "assure_3": "Sin cuentas ni formularios largos.",
-  "broker_t": "Pólizas a través de Best Travel Assistance",
-  "broker_p": "La agencia de seguros con la que trabaja Ana",
+  "broker_t": "Pólizas a través de AGB Insurance",
+  "broker_p": "La agencia de seguros independiente con la que trabaja Ana",
   "fact_1": "Hablas conmigo, no con un call center",
   "fact_2": "Cotización gratis y sin compromiso",
   "fact_3": "Atención en español e inglés",
   "foot_tag": "Ayuda con seguros de auto, hogar, inquilinos, viaje y negocios en español e inglés.",
   "foot_contact": "Contacto", "foot_ins": "Seguros", "foot_legal_h": "Legal",
   "l_privacy": "Política de privacidad", "l_terms": "Términos y condiciones", "l_cookies": "Política de cookies", "l_refund": "Política de reembolsos",
-  "foot_legal": "AMP Insurance Assistance es el servicio de seguros de Ana María Palacios. Ana es agente con licencia de seguros de viaje. Para seguros de auto, hogar, inquilinos y negocios, Ana es tu asesora, y un agente con licencia de Best Travel Assistance prepara tu cotización y emite tu póliza. Los documentos de tu póliza definen tu cobertura, exclusiones, precio y la compañía responsable de pagar los reclamos, y prevalecen sobre cualquier contenido de este sitio. Este sitio es solo informativo. No es un contrato de seguro, y una cotización no garantiza elegibilidad ni cobertura.",
+  "foot_legal": "AMP Insurance Assistance es el servicio de seguros de Ana María Palacios. Ana es agente con licencia de seguros de viaje. Para seguros de auto, hogar, inquilinos y negocios, Ana es tu asesora, y un agente con licencia de AGB Insurance prepara tu cotización y emite tu póliza. Los documentos de tu póliza definen tu cobertura, exclusiones, precio y la compañía responsable de pagar los reclamos, y prevalecen sobre cualquier contenido de este sitio. Este sitio es solo informativo. No es un contrato de seguro, y una cotización no garantiza elegibilidad ni cobertura.",
   "faq_more": "¿Te queda alguna duda?",
   "faq_h2": "Preguntas y respuestas",
   "learn_more": "Ver más",
@@ -210,7 +210,7 @@ COMMON = {
   "cov_fine": "La cobertura, los límites, los deducibles y las exclusiones dependen de la póliza que elijas.",
   "more_h": "Otros seguros con los que te ayudo",
   "adv_h": "Cómo te ayudo con este seguro",
-  "adv_p": "Soy tu asesora para este tipo de seguro. Reúno tus datos, te explico tus opciones en palabras claras y te conecto con un agente con licencia de Best Travel Assistance, que prepara tu cotización y emite tu póliza. Sigues hablando conmigo todo el tiempo.",
+  "adv_p": "Soy tu asesora para este tipo de seguro. Reúno tus datos, te explico tus opciones en palabras claras y te conecto con un agente con licencia de AGB Insurance, que prepara tu cotización y emite tu póliza. Sigues hablando conmigo todo el tiempo.",
   "agent_h": "Soy tu agente de seguros de viaje",
   "agent_p": "Tengo licencia para vender seguros de viaje. Preparo tu cotización, te explico cada plan y te ayudo a comprarlo, todo en el mismo chat de WhatsApp.",
  },
@@ -268,7 +268,7 @@ HOME = {
    {"q": "Which types of insurance can you quote?", "a": "Auto, home and property, renters, travel, and business insurance. I do not offer life or health insurance."},
    {"q": "How does a WhatsApp quote work?", "a": "Fill in the quote form or message me directly. I review what you need and send options in the chat. You ask questions, pick a policy if you want one, and I help with the next steps."},
    {"q": "Is there any cost to get a quote?", "a": "No. Quotes and guidance are free with no obligation."},
-   {"q": "Are you my agent or my advisor?", "a": "For travel insurance, I am your agent. For auto, home, renters, and business insurance, I am your advisor: I gather your details and explain your options, and a licensed agent at Best Travel Assistance prepares your quote and issues your policy. You keep talking to me the whole time."},
+   {"q": "Are you my agent or my advisor?", "a": "For travel insurance, I am your agent. For auto, home, renters, and business insurance, I am your advisor: I gather your details and explain your options, and a licensed agent at AGB Insurance prepares your quote and issues your policy. You keep talking to me the whole time."},
    {"q": "Do you help in Spanish?", "a": "Yes. I help you fully in English and Spanish."},
    {"q": "What information should I not send?", "a": "Please do not send driver's license numbers, VINs, Social Security numbers, health details, passport numbers, or payment information through the form. If a quote needs any of these, I will ask for it in our chat."},
   ],
@@ -291,7 +291,7 @@ HOME = {
    {"q": "¿Qué tipos de seguro puedes cotizar?", "a": "Seguros de auto, hogar y propiedad, inquilinos, viaje y negocios. No ofrezco seguros de vida ni de salud."},
    {"q": "¿Cómo funciona cotizar por WhatsApp?", "a": "Completa el formulario o escríbeme directo. Reviso lo que necesitas y te envío opciones en el chat. Preguntas lo que quieras, eliges una póliza si te conviene y te ayudo con los siguientes pasos."},
    {"q": "¿Cotizar tiene algún costo?", "a": "No. Las cotizaciones y la orientación son gratis y sin compromiso."},
-   {"q": "¿Eres mi agente o mi asesora?", "a": "Para seguros de viaje, soy tu agente. Para seguros de auto, hogar, inquilinos y negocios, soy tu asesora: reúno tus datos y te explico tus opciones, y un agente con licencia de Best Travel Assistance prepara tu cotización y emite tu póliza. Sigues hablando conmigo todo el tiempo."},
+   {"q": "¿Eres mi agente o mi asesora?", "a": "Para seguros de viaje, soy tu agente. Para seguros de auto, hogar, inquilinos y negocios, soy tu asesora: reúno tus datos y te explico tus opciones, y un agente con licencia de AGB Insurance prepara tu cotización y emite tu póliza. Sigues hablando conmigo todo el tiempo."},
    {"q": "¿Me ayudas en español?", "a": "Sí. Te atiendo por completo en español e inglés."},
    {"q": "¿Qué información no debo enviar?", "a": "Por favor no envíes por el formulario números de licencia de conducir, VIN, Seguro Social, datos de salud, números de pasaporte ni datos de pago. Si una cotización necesita alguno de ellos, te lo pediré en nuestro chat."},
   ],
@@ -460,7 +460,7 @@ PAGES = {
    "faq": [
     {"q": "What does travel insurance cover?", "a": "Depending on the plan, coverage can include emergency medical care, trip cancellation and interruption, delays, and lost or delayed baggage. Each plan has its own benefits, limits, and exclusions, and I help you compare them for your trip."},
     {"q": "Who is eligible?", "a": "Eligibility depends on the plan and on your country of residence, destination, ages, and trip dates. The quote form asks for those so I can check your options."},
-    {"q": "Which company provides the plan?", "a": "I work with Best Travel Assistance. Before you buy, I share the plan documents, which name the company that provides your coverage and pays claims."},
+    {"q": "Which company provides the plan?", "a": "I work with AGB Insurance. Before you buy, I share the plan documents, which name the company that provides your coverage and pays claims."},
    ],
   },
   "es": {
@@ -477,7 +477,7 @@ PAGES = {
    "faq": [
     {"q": "¿Qué cubre el seguro de viaje?", "a": "Según el plan, la cobertura puede incluir atención médica de emergencia, cancelación e interrupción del viaje, demoras y equipaje perdido o demorado. Cada plan tiene sus propios beneficios, límites y exclusiones, y te ayudo a compararlos para tu viaje."},
     {"q": "¿Quién puede contratarlo?", "a": "La elegibilidad depende del plan y de tu país de residencia, destino, edades y fechas del viaje. El formulario pide esos datos para revisar tus opciones."},
-    {"q": "¿Qué compañía provee el plan?", "a": "Trabajo con Best Travel Assistance. Antes de comprar, te comparto los documentos del plan, que indican la compañía que provee tu cobertura y paga los reclamos."},
+    {"q": "¿Qué compañía provee el plan?", "a": "Trabajo con AGB Insurance. Antes de comprar, te comparto los documentos del plan, que indican la compañía que provee tu cobertura y paga los reclamos."},
    ],
   },
  },

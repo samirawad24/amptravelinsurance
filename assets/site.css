@@ -517,3 +517,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,.
 .lhero-grid{grid-template-columns:1.1fr .9fr}
 .lhero h1{font-size:clamp(2.2rem,1.3rem + 2.6vw,3.25rem)}
 @media(max-width:900px){.lhero-grid{grid-template-columns:1fr}}
+
+/* AGB Insurance logo in the trust band */
+.trust-brk img{height:56px;width:auto}
+@media (prefers-color-scheme: dark){ .trust-brk img{height:64px;padding:6px 10px} }
+
+/* Mobile menu: the quote button keeps its own colors (the panel link color was overriding it) */
+.menu-panel a.btn{justify-content:center;min-height:52px;padding:0 26px;gap:10px}
+.menu-panel a.btn-primary{color:var(--btn-ink);background:var(--btn-bg);font-weight:600;font-size:1.02rem}
+.menu-panel a.btn-primary:hover{background:var(--btn-hover)}
+
+/* Trust band keeps the page side gutters (its vertical padding was resetting them) */
+.wrap.trust-in{padding-left:20px;padding-right:20px}
+@media(min-width:768px){.wrap.trust-in{padding-left:32px;padding-right:32px}}

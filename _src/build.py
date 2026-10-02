@@ -338,7 +338,7 @@ def trust_band():
     return f'''<section class="trust" id="broker" aria-label="{BROKER}">
   <div class="wrap trust-in" data-reveal>
     <div class="trust-brk">
-      <img src="assets/best-travel-assistance-logo.svg" alt="{BROKER}" width="150" height="44" />
+      <img src="assets/agb-insurance-logo.png" alt="{BROKER}" width="385" height="159" />
       <p><b data-i18n="broker_t">{tx("broker_t")}</b><span data-i18n="broker_p">{tx("broker_p")}</span></p>
     </div>
     <ul class="facts">
@@ -355,7 +355,7 @@ PERSON_ID = BASE + "#person"
 def biz_schema():
     return {
         "@type": ["InsuranceAgency", "LocalBusiness"], "@id": BIZ_ID, "name": BRAND,
-        "description": "Bilingual (English and Spanish) insurance help from Ana María Palacios for auto, home, renters, travel, and business insurance, through Best Travel Assistance.",
+        "description": "Bilingual (English and Spanish) insurance help from Ana María Palacios for auto, home, renters, travel, and business insurance, through AGB Insurance.",
         "url": BASE, "logo": BASE + "assets/amp-logo-512.png", "image": BASE + "assets/ana-headshot.jpg",
         "telephone": "+19545341345", "email": SITE["email"],
         "address": {"@type": "PostalAddress", "addressCountry": "US"},

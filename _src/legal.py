@@ -52,7 +52,7 @@ LEGAL["privacy"] = {
      "I do not sell or rent your information. I do not use it for advertising, and I do not add you to marketing lists without your permission."]),
    ("Who else receives it", [
      ("ul", [f"<b>WhatsApp (Meta)</b> carries our messages. <a href=\"{WAP}\" rel=\"noopener\">WhatsApp's privacy policy</a> applies to its service.",
-             "<b>Best Travel Assistance</b>, the insurance brokerage I work through, and its licensed agents receive the details needed to prepare a quote or issue a policy when you ask me to do that.",
+             "<b>AGB Insurance</b>, the insurance agency I work through, and its licensed agents receive the details needed to prepare a quote or issue a policy when you ask me to do that.",
              "<b>Insurance companies</b> receive the details needed to price or issue the policy you ask about. They handle it under their own privacy notices.",
              f"<b>GitHub</b> hosts this website and may log technical data, such as your IP address, to deliver and protect the site. See the <a href=\"{GH}\" rel=\"noopener\">GitHub privacy statement</a>.",
              "<b>Email</b>: if you write to me by email, your message is handled by my email provider.",
@@ -99,7 +99,7 @@ LEGAL["privacy"] = {
      "No vendo ni alquilo tu información. No la uso para publicidad y no te agrego a listas de mercadeo sin tu permiso."]),
    ("Quién más la recibe", [
      ("ul", [f"<b>WhatsApp (Meta)</b> transmite nuestros mensajes. La <a href=\"{WAP}\" rel=\"noopener\">política de privacidad de WhatsApp</a> aplica a su servicio.",
-             "<b>Best Travel Assistance</b>, la agencia de seguros con la que trabajo, y sus agentes con licencia reciben los datos necesarios para preparar una cotización o emitir una póliza cuando me pides hacerlo.",
+             "<b>AGB Insurance</b>, la agencia de seguros con la que trabajo, y sus agentes con licencia reciben los datos necesarios para preparar una cotización o emitir una póliza cuando me pides hacerlo.",
              "<b>Compañías de seguros</b> reciben los datos necesarios para cotizar o emitir la póliza que consultas. Ellas los manejan según sus propios avisos de privacidad.",
              f"<b>GitHub</b> aloja este sitio y puede registrar datos técnicos, como tu dirección IP, para entregar y proteger el sitio. Consulta la <a href=\"{GH}\" rel=\"noopener\">declaración de privacidad de GitHub</a>.",
              "<b>Correo electrónico</b>: si me escribes por correo, tu mensaje lo maneja mi proveedor de correo.",
@@ -185,7 +185,7 @@ LEGAL["terms"] = {
   "en": [
    ("About this site", [
      "Ana María Palacios runs this website under the name AMP Insurance Assistance. It shares general information about auto, home, renters, travel, and business insurance and lets you request a quote through WhatsApp.",
-     "Ana is a licensed travel insurance agent. For auto, home, renters, and business insurance, she acts as your advisor, and a licensed agent at Best Travel Assistance, an insurance brokerage, prepares your quote and issues your policy."]),
+     "Ana is a licensed travel insurance agent. For auto, home, renters, and business insurance, she acts as your advisor, and a licensed agent at AGB Insurance, an independent insurance agency, prepares your quote and issues your policy."]),
    ("General information only", [
      "The content on this site is general information. It is not legal, financial, or tax advice, and it does not describe the terms of any specific policy. Laws and requirements mentioned on this site can change."]),
    ("Quotes", [
@@ -202,7 +202,7 @@ LEGAL["terms"] = {
    ("Using the site", [
      "Please do not misuse the site, try to break or overload it, or send other people's information without their permission."]),
    ("Ownership", [
-     "The text, design, and AMP logo belong to Ana María Palacios or the people who licensed them to her. The Best Travel Assistance name and logo belong to their owner and are used with permission. Photos are used under their licenses. Please do not copy content from this site for commercial use without permission."]),
+     "The text, design, and AMP logo belong to Ana María Palacios or the people who licensed them to her. The AGB Insurance name and logo belong to their owner and are used with permission. Photos are used under their licenses. Please do not copy content from this site for commercial use without permission."]),
    ("Links", [
      "Links to other websites are for convenience. I do not control those sites and I am not responsible for their content or practices."]),
    ("No guarantees", [
@@ -218,7 +218,7 @@ LEGAL["terms"] = {
   "es": [
    ("Sobre este sitio", [
      "Ana María Palacios administra este sitio bajo el nombre AMP Insurance Assistance. El sitio comparte información general sobre seguros de auto, hogar, inquilinos, viaje y negocios, y te permite pedir una cotización por WhatsApp.",
-     "Ana es agente con licencia de seguros de viaje. Para seguros de auto, hogar, inquilinos y negocios, ella es tu asesora, y un agente con licencia de Best Travel Assistance, una agencia de seguros, prepara tu cotización y emite tu póliza."]),
+     "Ana es agente con licencia de seguros de viaje. Para seguros de auto, hogar, inquilinos y negocios, ella es tu asesora, y un agente con licencia de AGB Insurance, una agencia de seguros independiente, prepara tu cotización y emite tu póliza."]),
    ("Solo información general", [
      "El contenido de este sitio es información general. No es asesoría legal, financiera ni tributaria, y no describe los términos de ninguna póliza específica. Las leyes y requisitos mencionados en este sitio pueden cambiar."]),
    ("Cotizaciones", [
@@ -235,7 +235,7 @@ LEGAL["terms"] = {
    ("Uso del sitio", [
      "Por favor no hagas mal uso del sitio, no intentes dañarlo o sobrecargarlo, y no envíes información de otras personas sin su permiso."]),
    ("Propiedad", [
-     "Los textos, el diseño y el logo AMP pertenecen a Ana María Palacios o a quienes le dieron licencia. El nombre y el logo de Best Travel Assistance pertenecen a su dueño y se usan con permiso. Las fotos se usan bajo sus licencias. Por favor no copies contenido de este sitio para uso comercial sin permiso."]),
+     "Los textos, el diseño y el logo AMP pertenecen a Ana María Palacios o a quienes le dieron licencia. El nombre y el logo de AGB Insurance pertenecen a su dueño y se usan con permiso. Las fotos se usan bajo sus licencias. Por favor no copies contenido de este sitio para uso comercial sin permiso."]),
    ("Enlaces", [
      "Los enlaces a otros sitios son para tu conveniencia. No controlo esos sitios y no soy responsable de su contenido ni de sus prácticas."]),
    ("Sin garantías", [
