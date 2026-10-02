@@ -530,3 +530,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,.
 /* Trust band keeps the page side gutters (its vertical padding was resetting them) */
 .wrap.trust-in{padding-left:20px;padding-right:20px}
 @media(min-width:768px){.wrap.trust-in{padding-left:32px;padding-right:32px}}
+
+/* Trust band: two partners (AGB Insurance for policies, Best Travel Assistance for travel) */
+.trust-brk{flex-direction:column;align-items:flex-start;gap:16px}
+.partner{display:flex;align-items:center;gap:14px}
+.partner img{flex:none;width:auto}
+.partner img.bta{height:34px}
+.partner p{font-size:.9rem;line-height:1.35;max-width:24ch}
+.partner p b{display:block;color:var(--ink);font-weight:600}
+@media (prefers-color-scheme: dark){ .partner img.bta{height:46px;background:#e8ecf4;border-radius:10px;padding:6px 10px} }
+@media(max-width:900px){.trust-brk{gap:18px}}
+
+/* Equal logo boxes so the two partner captions line up */
+.partner img,.partner img.bta{width:132px;height:56px;object-fit:contain;object-position:left center;padding:0;background:none;border-radius:0}
+@media (prefers-color-scheme: dark){ .partner img,.partner img.bta{width:152px;height:66px;padding:8px 10px;background:#e8ecf4;border-radius:10px;object-position:center} }

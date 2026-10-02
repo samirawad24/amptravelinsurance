@@ -9,7 +9,7 @@ Folders starting with "_" are not published by GitHub Pages.
 """
 import io, os, json, html, sys
 sys.path.insert(0, os.path.dirname(__file__))
-from content import BRAND, OWNER, BROKER, COMMON, LINES, LINE_URL, LINE_ICON, LINE_IMG, CARD, HOME, PAGES, PAGE_GREETING
+from content import BRAND, OWNER, BROKER, TRAVEL_PARTNER, COMMON, LINES, LINE_URL, LINE_ICON, LINE_IMG, CARD, HOME, PAGES, PAGE_GREETING
 from legal import LEGAL, LEGAL_ORDER, UPDATED
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -335,11 +335,17 @@ def faq_section(faq_en):
 </section>'''
 
 def trust_band():
-    return f'''<section class="trust" id="broker" aria-label="{BROKER}">
+    return f'''<section class="trust" id="broker" aria-label="{BROKER}, {TRAVEL_PARTNER}">
   <div class="wrap trust-in" data-reveal>
     <div class="trust-brk">
-      <img src="assets/agb-insurance-logo.png" alt="{BROKER}" width="385" height="159" />
-      <p><b data-i18n="broker_t">{tx("broker_t")}</b><span data-i18n="broker_p">{tx("broker_p")}</span></p>
+      <div class="partner">
+        <img src="assets/agb-insurance-logo.png" alt="{BROKER}" width="385" height="159" />
+        <p><b data-i18n="broker_t">{tx("broker_t")}</b><span data-i18n="broker_p">{tx("broker_p")}</span></p>
+      </div>
+      <div class="partner">
+        <img class="bta" src="assets/best-travel-assistance-logo.svg" alt="{TRAVEL_PARTNER}" width="424" height="133" />
+        <p><b data-i18n="travel_t">{tx("travel_t")}</b><span data-i18n="travel_p">{tx("travel_p")}</span></p>
+      </div>
     </div>
     <ul class="facts">
       <li><i class="ph ph-user-circle" aria-hidden="true"></i><span data-i18n="fact_1">{tx("fact_1")}</span></li>
@@ -355,7 +361,7 @@ PERSON_ID = BASE + "#person"
 def biz_schema():
     return {
         "@type": ["InsuranceAgency", "LocalBusiness"], "@id": BIZ_ID, "name": BRAND,
-        "description": "Bilingual (English and Spanish) insurance help from Ana María Palacios for auto, home, renters, travel, and business insurance, through AGB Insurance.",
+        "description": "Bilingual (English and Spanish) insurance help from Ana María Palacios for auto, home, renters, travel, and business insurance, through AGB Insurance and, for travel plans, Best Travel Assistance.",
         "url": BASE, "logo": BASE + "assets/amp-logo-512.png", "image": BASE + "assets/ana-headshot.jpg",
         "telephone": "+19545341345", "email": SITE["email"],
         "address": {"@type": "PostalAddress", "addressCountry": "US"},

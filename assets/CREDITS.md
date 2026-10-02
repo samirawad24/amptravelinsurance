@@ -6,6 +6,7 @@
 | amp-logo-512.png, amp-logo-128.png | Interim AMP Insurance Assistance badge, recreated in the style of Ana's original AMP logo | Owner's mark. Replace with the final logo file when ready. |
 | og-share.jpg | Built from the AMP badge for link previews | Owner's mark |
 | agb-insurance-logo.png | AGB Insurance (agbinsurance.com), the agency Ana works with | Their trademark. Used for Ana's affiliation with the agency, at the site owner's request (2026-10-02). |
+| best-travel-assistance-logo.svg | Best Travel Assistance (travel plans only) | Their trademark. Used with their permission (confirmed by site owner 2026-10-02) |
 | line-auto.jpg | https://images.unsplash.com/photo-1449965408869-eaa3f722e40d | Unsplash License (free commercial use, no attribution required) |
 | line-home.jpg | https://images.unsplash.com/photo-1564013799919-ab600027ffc6 | Unsplash License |
 | line-renters.jpg | https://images.unsplash.com/photo-1522708323590-d24dbb6b0267 | Unsplash License |

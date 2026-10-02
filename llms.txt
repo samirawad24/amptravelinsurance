@@ -1,9 +1,9 @@
 # AMP Insurance Assistance
 
-> AMP Insurance Assistance is the bilingual (English and Spanish) insurance service of Ana María Palacios. She helps people quote auto, home and property, renters, travel, and business insurance through AGB Insurance, an independent insurance agency, with one-on-one help by WhatsApp. She does not offer life or health insurance.
+> AMP Insurance Assistance is the bilingual (English and Spanish) insurance service of Ana María Palacios. She helps people quote auto, home and property, renters, travel, and business insurance through AGB Insurance, an independent insurance agency (auto, home, renters, business), and Best Travel Assistance (travel plans), with one-on-one help by WhatsApp. She does not offer life or health insurance.
 
 ## Who does what
-- Travel insurance: Ana María Palacios is the licensed travel insurance agent.
+- Travel insurance: Ana María Palacios is the licensed travel insurance agent. Travel plans come through Best Travel Assistance.
 - Auto, home, renters, and business insurance: Ana is the client's advisor. A licensed agent at AGB Insurance prepares the quote and issues the policy.
 
 ## Insurance pages
