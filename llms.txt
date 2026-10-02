@@ -1,32 +1,35 @@
-# Ana María Palacios | Travel Insurance
+# AMP Insurance Assistance
 
-> Ana María Palacios is a bilingual (English and Spanish) travel insurance agent who works with Best Travel Assistance. She prepares personalized travel insurance quotes and supports clients one on one by WhatsApp before, during, and after their trip.
+> AMP Insurance Assistance is the bilingual (English and Spanish) insurance service of Ana María Palacios. She helps people quote auto, home and property, renters, travel, and business insurance through Best Travel Assistance, an insurance brokerage, with one-on-one help by WhatsApp. She does not offer life or health insurance.
 
-## About
-- Name: Ana María Palacios
-- Role: Travel insurance agent working with Best Travel Assistance
-- Languages: English and Español
-- Coverage types (depending on the plan): emergency medical care, trip cancellation and interruption, travel delays, lost or delayed baggage. Each plan has its own benefits, limits, and exclusions.
-- Cost: quotes and guidance are free with no obligation
-- Contact: you talk to Ana directly, not a call center
+## Who does what
+- Travel insurance: Ana María Palacios is the licensed travel insurance agent.
+- Auto, home, renters, and business insurance: Ana is the client's advisor. A licensed agent at Best Travel Assistance prepares the quote and issues the policy.
+
+## Insurance pages
+- Auto insurance: https://samirawad24.github.io/amptravelinsurance/auto-insurance.html
+- Home and property insurance (homeowners, condo, landlord, flood, umbrella): https://samirawad24.github.io/amptravelinsurance/home-insurance.html
+- Renters insurance: https://samirawad24.github.io/amptravelinsurance/renters-insurance.html
+- Travel insurance: https://samirawad24.github.io/amptravelinsurance/travel-insurance.html
+- Business insurance (general liability, commercial property, commercial auto, workers' comp, professional liability): https://samirawad24.github.io/amptravelinsurance/business-insurance.html
 
 ## How to get a quote
-1. Send your trip details (number of travelers and their ages, where you are going, and your country of residence) using the quote form or WhatsApp.
-2. Ana reviews your trip and sends plan options and prices.
-3. If you choose a plan, Ana helps you complete the purchase before you travel.
+1. Choose the type of insurance in the quote form and answer a few questions.
+2. WhatsApp opens with the details ready to send to Ana.
+3. You get options and prices on WhatsApp, and Ana helps with the purchase.
+
+Quotes are free with no obligation. Languages: English and Spanish.
 
 ## Contact
 - WhatsApp: https://wa.me/19545341345 (+1 954-534-1345)
-- Instagram: https://www.instagram.com/amptravelinsurance
 - Email: anamariapalacios1608@gmail.com
+- Instagram: https://www.instagram.com/amptravelinsurance
 - Website: https://samirawad24.github.io/amptravelinsurance/
 
 ## Policies
-- Privacy Policy: https://samirawad24.github.io/amptravelinsurance/privacy.html
-- Terms and Conditions: https://samirawad24.github.io/amptravelinsurance/terms.html
-- Cookie Policy: https://samirawad24.github.io/amptravelinsurance/cookies.html
-- Refund Policy: https://samirawad24.github.io/amptravelinsurance/refund.html
-
-Plan documents set out the coverage and name the company that provides it and pays claims.
+- Privacy: https://samirawad24.github.io/amptravelinsurance/privacy.html
+- Terms: https://samirawad24.github.io/amptravelinsurance/terms.html
+- Cookies: https://samirawad24.github.io/amptravelinsurance/cookies.html
+- Refunds: https://samirawad24.github.io/amptravelinsurance/refund.html
 
 Last updated: 2026-10-02
