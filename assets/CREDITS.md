@@ -13,3 +13,4 @@
 | fonts/phosphor-*.woff2 | Phosphor Icons 2.1.1 (subset) | MIT (fonts/LICENSE-phosphor.txt) |
 
 Unsplash License: https://unsplash.com/license
+| og-share.jpg | Built from amp-logo.png for link previews | Owner's own mark |
