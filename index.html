@@ -31,11 +31,8 @@
 <meta name="twitter:image" content="https://samirawad24.github.io/amptravelinsurance/assets/ana-headshot.jpg" />
 
 <link rel="preload" as="image" href="assets/ana-headshot.jpg" fetchpriority="high" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
-<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+<link rel="preload" href="assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="assets/fonts/fonts.css" />
 
 <!-- Structured data for search + AI engines -->
 <script type="application/ld+json">
@@ -53,16 +50,8 @@
       "email": "anamariapalacios1608@gmail.com",
       "image": "https://samirawad24.github.io/amptravelinsurance/assets/ana-headshot.jpg",
       "logo": "https://samirawad24.github.io/amptravelinsurance/assets/amp-logo.png",
-      "priceRange": "$$",
       "address": { "@type": "PostalAddress", "addressCountry": "US" },
-      "areaServed": [
-        { "@type": "Country", "name": "United States" },
-        { "@type": "Country", "name": "Colombia" },
-        { "@type": "Country", "name": "Venezuela" },
-        { "@type": "Country", "name": "Mexico" },
-        { "@type": "Country", "name": "Ecuador" },
-        { "@type": "Country", "name": "Peru" }
-      ],
+      "areaServed": { "@type": "Country", "name": "United States" },
       "knowsLanguage": ["en", "es"],
       "sameAs": [
         "https://www.instagram.com/amptravelinsurance",
@@ -103,13 +92,13 @@
       "@type": "FAQPage",
       "@id": "https://samirawad24.github.io/amptravelinsurance/#faq",
       "mainEntity": [
-        { "@type": "Question", "name": "How does getting a travel insurance quote on WhatsApp work?", "acceptedAnswer": { "@type": "Answer", "text": "Fill in the short quote form or message me directly. I review your trip and send coverage options in the chat. You ask questions, pick a plan, and I help you get covered. No accounts, no long forms." } },
-        { "@type": "Question", "name": "How fast will you reply?", "acceptedAnswer": { "@type": "Answer", "text": "Usually within a few minutes during the day, and always the same day. You talk to me, not a call center." } },
-        { "@type": "Question", "name": "What does travel insurance cover?", "acceptedAnswer": { "@type": "Answer", "text": "Plans can include emergency medical care, trip cancellation and interruption, delays, lost or delayed baggage, and more. I help you match the coverage to your trip and the people traveling." } },
-        { "@type": "Question", "name": "Who is eligible for travel insurance?", "acceptedAnswer": { "@type": "Answer", "text": "Most travelers qualify. Eligibility depends on your country of residence, destination, ages, and trip dates. The quote form asks for those so I can confirm your options." } },
+        { "@type": "Question", "name": "How does getting a travel insurance quote on WhatsApp work?", "acceptedAnswer": { "@type": "Answer", "text": "Fill in the short quote form or message me directly. I review your trip and send coverage options in the chat. You ask questions, pick a plan if you want one, and I help you with the next steps. No accounts, no long forms." } },
+        { "@type": "Question", "name": "Who will answer my message?", "acceptedAnswer": { "@type": "Answer", "text": "I answer quote requests myself. You talk to me, not a call center." } },
+        { "@type": "Question", "name": "What does travel insurance cover?", "acceptedAnswer": { "@type": "Answer", "text": "Depending on the plan, coverage can include emergency medical care, trip cancellation and interruption, delays, and lost or delayed baggage. Each plan has its own benefits, limits, and exclusions, and I help you compare them for your trip." } },
+        { "@type": "Question", "name": "Who is eligible for travel insurance?", "acceptedAnswer": { "@type": "Answer", "text": "Eligibility depends on the plan and on your country of residence, destination, ages, and trip dates. The quote form asks for those so I can check your options." } },
         { "@type": "Question", "name": "Do you help in Spanish?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. I support you fully in English and Español, before, during, and after your trip." } },
         { "@type": "Question", "name": "Is there any cost to get a quote?", "acceptedAnswer": { "@type": "Answer", "text": "No. Quotes and guidance are free with no obligation. You only pay if you choose a policy that fits you." } },
-        { "@type": "Question", "name": "Who underwrites the policies?", "acceptedAnswer": { "@type": "Answer", "text": "Policies are issued and supported through Best Travel Assistance. You get my personal service with an established travel assistance company behind your coverage." } }
+        { "@type": "Question", "name": "Which company provides the plan?", "acceptedAnswer": { "@type": "Answer", "text": "I work with Best Travel Assistance. Before you buy, I share the plan documents, which name the company that provides your coverage and pays claims." } }
       ]
     }
   ]
@@ -195,8 +184,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .lede{font-size:1.075rem;max-width:58ch;margin-top:14px}
 .ph{line-height:1}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;z-index:40;background:var(--btn-bg);color:var(--btn-ink);padding:10px 16px;border-radius:999px;font-weight:600}
+.skip:focus{top:12px}
+main:focus{outline:none}
 
-a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,label:focus-within>.chip-face{
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,.chip input:focus-visible+.chip-face{
   outline:3px solid var(--accent);outline-offset:3px;
 }
 
@@ -368,6 +360,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,l
 .num{width:26px;height:26px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:.82rem;font-weight:700;flex:none}
 .field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;min-width:0}
 .field label,.flabel{font-size:.9rem;font-weight:500;color:var(--ink)}
+.tv-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:end}
+.tv-row .field{margin-bottom:0}
+.tv-age{max-width:140px}
 .field .opt{color:var(--ink-2);font-weight:400}
 .field input{
   width:100%;min-width:0;min-height:50px;padding:12px 14px;border-radius:var(--r-input);
@@ -386,7 +381,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,l
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
 @media(max-width:560px){.grid-2{grid-template-columns:1fr}}
 
-.traveler{border:1px solid var(--line);border-radius:14px;padding:16px 16px 2px;margin-bottom:12px;background:var(--surface)}
+.traveler{margin-bottom:12px}
 .tv-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
 .tv-title{font-size:.88rem;font-weight:600;color:var(--accent)}
 .rm-traveler{display:inline-flex;align-items:center;gap:4px;font-size:.86rem;color:var(--ink-2);min-height:36px;padding:0 8px;border-radius:999px}
@@ -411,7 +406,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,l
 .chip input:checked+.chip-face .ph{display:inline}
 .chip:hover .chip-face{border-color:var(--accent)}
 
-.consent{display:flex;gap:12px;align-items:flex-start;font-size:.93rem;color:var(--ink);line-height:1.45;cursor:pointer;padding:4px 0}
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:.93rem;color:var(--ink);line-height:1.45;padding:4px 0}
+.consent label{cursor:pointer}
+.consent a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.hint{font-size:.86rem;color:var(--ink-2)}
 .consent input{width:22px;height:22px;flex:none;margin-top:1px;accent-color:var(--accent)}
 .consent-err{margin:6px 0 0 34px}
 .submit-row{margin-top:22px}
@@ -474,16 +472,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,l
 
 /* ---------- Footer ---------- */
 .foot{padding:64px 0 36px}
-.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1.2fr .8fr 1fr;gap:36px}
 .foot-brand p{margin-top:14px;max-width:40ch;font-size:.95rem}
-.foot h4{font-size:.95rem;font-weight:600;margin-bottom:14px;color:var(--ink)}
+.foot .fh{font-size:.95rem;font-weight:600;margin-bottom:14px;color:var(--ink);letter-spacing:0;max-width:none}
 .foot ul{list-style:none;display:grid;gap:4px}
-.foot ul a{display:inline-flex;align-items:center;gap:10px;color:var(--ink-2);min-height:36px;font-size:.95rem}
+.foot ul a{display:inline-flex;align-items:center;gap:10px;color:var(--ink-2);min-height:36px;font-size:.95rem;word-break:break-word}
 .foot ul a:hover{color:var(--accent)}
 .foot ul .ph{font-size:1.15rem}
 .foot-bottom{margin-top:48px;padding-top:24px;border-top:1px solid var(--line)}
 .foot-bottom p{font-size:.82rem;max-width:110ch;line-height:1.55}
-@media(max-width:767px){.foot-grid{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}}
+@media(max-width:960px){.foot-grid{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}}
+@media(max-width:480px){.foot-grid{grid-template-columns:1fr}}
 
 /* ---------- Mobile quick bar ---------- */
 .mbar{
@@ -519,26 +518,27 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,l
 </head>
 <body>
 
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 <div id="top-sentinel" style="position:absolute;top:0;height:1px;width:1px"></div>
 
 <!-- ============ NAV ============ -->
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="#top" aria-label="AMP Travel Insurance, home">
+    <a class="brand" href="#" aria-label="AMP Travel Insurance, home">
       <img src="assets/amp-logo.png" alt="AMP Travel Insurance" width="42" height="42" />
       <span class="brand-txt"><b class="js-name">Ana María Palacios</b><small data-i18n="brand_role">Travel insurance agent</small></span>
     </a>
     <div class="nav-r">
       <div class="lang" role="group" aria-label="Language / Idioma">
-        <button type="button" data-lang="en" aria-pressed="true">EN</button>
-        <button type="button" data-lang="es" aria-pressed="false">ES</button>
+        <button type="button" data-lang="en" aria-pressed="true" aria-label="English">EN</button>
+        <button type="button" data-lang="es" aria-pressed="false" aria-label="Español">ES</button>
       </div>
-      <a class="btn btn-primary" href="#quote" data-analytics="go_quote_nav"><span data-i18n="cta_quote">Get a quote</span></a>
+      <a class="btn btn-primary" href="#quote"><span data-i18n="cta_quote">Get a quote</span></a>
     </div>
   </div>
 </header>
 
-<main id="top">
+<main id="main" tabindex="-1">
 
 <!-- ============ HERO ============ -->
 <section class="hero">
@@ -548,8 +548,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,l
       <h1 data-enter="2" data-i18n="hero_h1" data-html>Travel insurance in <em>one WhatsApp chat.</em></h1>
       <p class="lede" data-enter="3" data-i18n="hero_sub">Tell me who is traveling and where. I will send plan options that fit your trip and budget.</p>
       <div class="hero-cta" data-enter="4">
-        <a class="btn btn-primary" href="#quote" data-analytics="go_quote_hero"><span data-i18n="cta_quote">Get a quote</span><i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-        <a class="btn btn-ghost" data-wa-link href="#" target="_blank" rel="noopener" data-analytics="wa_hero"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i><span data-i18n="cta_whatsapp">Chat on WhatsApp</span></a>
+        <a class="btn btn-primary" href="#quote"><span data-i18n="cta_quote">Get a quote</span><i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        <a class="btn btn-ghost" data-wa-link href="#" target="_blank" rel="noopener"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i><span data-i18n="cta_whatsapp">Chat on WhatsApp</span></a>
       </div>
     </div>
     <figure class="hero-media" data-enter="5">
@@ -571,7 +571,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,l
       <p><b data-i18n="broker_t">Authorized broker</b><span data-i18n="broker_p">Policies issued through Best Travel Assistance</span></p>
     </div>
     <ul class="facts">
-      <li><i class="ph ph-lightning" aria-hidden="true"></i><span data-i18n="fact_1">Same-day replies, often within minutes</span></li>
+      <li><i class="ph ph-user-circle" aria-hidden="true"></i><span data-i18n="fact_1">You talk to me, not a call center</span></li>
       <li><i class="ph ph-currency-circle-dollar" aria-hidden="true"></i><span data-i18n="fact_2">Free quotes with no obligation</span></li>
       <li><i class="ph ph-translate" aria-hidden="true"></i><span data-i18n="fact_3">Help in English and Spanish</span></li>
     </ul>
@@ -590,39 +590,39 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,l
         <img src="assets/cover-medical.jpg" width="1100" height="733" loading="lazy" decoding="async" alt="" />
         <div class="tile-txt">
           <h3 data-i18n="cov_1_t">Emergency medical care</h3>
-          <p data-i18n="cov_1_d">Doctor visits, hospital stays, and medical evacuation if you get sick or hurt abroad.</p>
+          <p data-i18n="cov_1_d">Help with medical costs if you get sick or hurt while you are away.</p>
         </div>
       </article>
       <article class="tile">
         <img src="assets/cover-cancel.jpg" width="800" height="533" loading="lazy" decoding="async" alt="" />
         <div class="tile-txt">
           <h3 data-i18n="cov_2_t">Trip cancellation</h3>
-          <p data-i18n="cov_2_d">Get prepaid costs back when a covered reason stops your trip.</p>
+          <p data-i18n="cov_2_d">Reimbursement of prepaid costs when a covered reason stops your trip.</p>
         </div>
       </article>
       <article class="tile">
         <img src="assets/cover-delay.jpg" width="800" height="533" loading="lazy" decoding="async" alt="" />
         <div class="tile-txt">
           <h3 data-i18n="cov_3_t">Delays and missed connections</h3>
-          <p data-i18n="cov_3_d">Meals and a hotel when your flight leaves hours late.</p>
+          <p data-i18n="cov_3_d">Help with extra costs when a covered delay disrupts your trip.</p>
         </div>
       </article>
       <article class="tile">
         <img src="assets/cover-baggage.jpg" width="800" height="533" loading="lazy" decoding="async" alt="" />
         <div class="tile-txt">
           <h3 data-i18n="cov_4_t">Lost or delayed baggage</h3>
-          <p data-i18n="cov_4_d">Essentials to get by while the airline finds your bag.</p>
+          <p data-i18n="cov_4_d">Help with essentials and lost items, up to your plan's limits.</p>
         </div>
       </article>
       <article class="tile tile-solid">
         <i class="ph ph-chat-circle-dots" aria-hidden="true"></i>
         <div class="tile-txt">
           <h3 data-i18n="cov_5_t">Help from me, start to finish</h3>
-          <p data-i18n="cov_5_d">A question before you buy or a claim mid-trip: message me and I will walk you through it.</p>
+          <p data-i18n="cov_5_d">A question before you buy or a claim during your trip: message me and I will help you with the next steps.</p>
         </div>
       </article>
     </div>
-    <p class="fine" data-i18n="cov_fine">Benefits and limits depend on the plan you choose.</p>
+    <p class="fine" data-i18n="cov_fine">Not every plan includes every benefit. Benefits, limits, and exclusions depend on the plan you choose and are set out in its documents.</p>
   </div>
 </section>
 
@@ -639,12 +639,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,l
       <li>
         <span class="step-ico"><i class="ph ph-list-checks" aria-hidden="true"></i></span>
         <h3 data-i18n="how_2_t">Compare your options</h3>
-        <p data-i18n="how_2_d">I reply on WhatsApp with plans and prices that fit your trip.</p>
+        <p data-i18n="how_2_d">I reply on WhatsApp with plan options and prices for your trip.</p>
       </li>
       <li>
         <span class="step-ico"><i class="ph ph-shield-check" aria-hidden="true"></i></span>
         <h3 data-i18n="how_3_t">Get covered</h3>
-        <p data-i18n="how_3_d">Pick a plan, and I help you finish the purchase before you fly.</p>
+        <p data-i18n="how_3_d">If you pick a plan, I help you finish the purchase before you travel.</p>
       </li>
     </ol>
   </div>
@@ -658,8 +658,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,l
       <h2 style="margin-top:14px" data-i18n="quote_h2">Tell me about your trip</h2>
       <p class="lede" data-i18n="quote_sub">Fill this in and WhatsApp opens with your details ready to send. No cost, no obligation.</p>
       <ul class="assure">
-        <li><i class="ph ph-lightning" aria-hidden="true"></i><span data-i18n="assure_1">I usually reply within minutes during the day.</span></li>
-        <li><i class="ph ph-lock-simple" aria-hidden="true"></i><span data-i18n="assure_2">Your details go only to me.</span></li>
+        <li><i class="ph ph-user-circle" aria-hidden="true"></i><span data-i18n="assure_1">I read and answer your request myself.</span></li>
+        <li><i class="ph ph-lock-simple" aria-hidden="true"></i><span data-i18n="assure_2">Only what a quote needs. No names, no passport numbers.</span></li>
         <li><i class="ph ph-check" aria-hidden="true"></i><span data-i18n="assure_3">No account and no long forms.</span></li>
       </ul>
       <div class="side-contact">
@@ -728,27 +728,22 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,l
 
         <fieldset class="fgroup">
           <legend><span class="num">4</span><span data-i18n="g_contact">How to reach you</span></legend>
-          <div class="grid-2">
             <div class="field">
-              <label for="waNumber"><span data-i18n="f_wa">WhatsApp number</span> <span class="opt" data-i18n="opt">(optional)</span></label>
-              <input id="waNumber" name="waNumber" type="tel" autocomplete="tel" inputmode="tel" placeholder="+1 305 555 0142" />
-            </div>
-            <div class="field">
-              <label for="email"><span data-i18n="f_email">Email</span> <span class="opt" data-i18n="opt">(optional)</span></label>
-              <input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@email.com" />
+              <label for="email"><span data-i18n="f_email">Email, if you prefer it</span> <span class="opt" data-i18n="opt">(optional)</span></label>
+              <input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@email.com" aria-describedby="emailHint" />
+              <div class="hint" id="emailHint" data-i18n="email_hint">I reply on WhatsApp. Add an email only if you also want the quote there.</div>
               <div class="err" data-i18n="err_email">Enter a valid email.</div>
             </div>
+          <div class="consent">
+            <input type="checkbox" id="consent" required aria-describedby="consentErr" />
+            <label for="consent"><span data-i18n="consent">I agree to send these trip details to Ana María Palacios on WhatsApp so she can prepare my quote and contact me about it.</span> <a href="privacy.html" data-i18n="consent_link">Read the Privacy Policy</a>.</label>
           </div>
-          <label class="consent">
-            <input type="checkbox" id="consent" required />
-            <span data-i18n="consent">I want personal help choosing travel insurance and agree to be contacted by WhatsApp.</span>
-          </label>
           <div class="err consent-err" id="consentErr" data-i18n="err_consent">Check this box so I can contact you.</div>
         </fieldset>
 
         <div class="submit-row">
-          <button type="submit" class="btn btn-primary btn-block" data-analytics="wa_form"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i><span data-i18n="submit">Send on WhatsApp</span></button>
-          <p class="form-note" data-i18n="form_note">WhatsApp opens with your message ready. Tap send and I take it from there.</p>
+          <button type="submit" class="btn btn-primary btn-block"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i><span data-i18n="submit">Send on WhatsApp</span></button>
+          <p class="form-note" data-i18n="form_note">WhatsApp opens with your message ready to review. Nothing is sent until you tap send. Please do not include health details or passport numbers.</p>
         </div>
       </form>
 
@@ -758,7 +753,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,l
         <p data-i18n="s_p">WhatsApp should open with your request. Tap send there so it reaches me. If it did not open, use the button below.</p>
         <div class="copy-box" id="copyBox"></div>
         <div class="acts">
-          <a class="btn btn-primary" id="successWa" href="#" target="_blank" rel="noopener" data-analytics="wa_success"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i><span data-i18n="s_open">Open WhatsApp</span></a>
+          <a class="btn btn-primary" id="successWa" href="#" target="_blank" rel="noopener"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i><span data-i18n="s_open">Open WhatsApp</span></a>
           <button type="button" class="btn btn-ghost" id="copyBtn"><i class="ph ph-copy" aria-hidden="true"></i><span data-i18n="s_copy">Copy details</span></button>
           <button type="button" class="btn btn-ghost" id="editBtn"><i class="ph ph-pencil-simple" aria-hidden="true"></i><span data-i18n="s_edit">Edit</span></button>
         </div>
@@ -773,9 +768,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,l
     <img class="avatar" src="assets/ana-headshot.jpg" width="132" height="132" loading="lazy" decoding="async" alt="Ana María Palacios" />
     <h2 data-i18n="about_h2">Hi, I am Ana María</h2>
     <p data-i18n="about_p1">I help travelers protect the trips that matter to them. I know the questions people forget to ask and the plan details that count when something goes wrong.</p>
-    <p data-i18n="about_p2">When you message me, you talk to me. I explain your options in plain words and stay with you from the first quote until you are home.</p>
+    <p data-i18n="about_p2">When you message me, you talk to me. I explain your options in plain words and help you before, during, and after your trip.</p>
     <div class="about-links">
-      <a class="btn btn-ghost" id="aboutIg" href="#" target="_blank" rel="noopener" data-analytics="ig_about"><i class="ph ph-instagram-logo" aria-hidden="true"></i><span id="aboutIgTxt">@amptravelinsurance</span></a>
+      <a class="btn btn-ghost" id="aboutIg" href="#" target="_blank" rel="noopener"><i class="ph ph-instagram-logo" aria-hidden="true"></i><span id="aboutIgTxt">@amptravelinsurance</span></a>
     </div>
   </div>
 </section>
@@ -787,7 +782,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,l
     <div class="faq-list" id="faqList" data-reveal></div>
     <div class="faq-more" data-reveal>
       <b data-i18n="faq_more">Still have a question?</b>
-      <a class="btn btn-primary" data-wa-link href="#" target="_blank" rel="noopener" data-analytics="wa_faq"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i><span data-i18n="cta_whatsapp">Chat on WhatsApp</span></a>
+      <a class="btn btn-primary" data-wa-link href="#" target="_blank" rel="noopener"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i><span data-i18n="cta_whatsapp">Chat on WhatsApp</span></a>
     </div>
   </div>
 </section>
@@ -799,23 +794,23 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,l
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a class="brand" href="#top" aria-label="Home">
+        <a class="brand" href="#" aria-label="AMP Travel Insurance, home">
           <img src="assets/amp-logo.png" alt="" width="42" height="42" loading="lazy" />
           <span><b class="js-name">Ana María Palacios</b><small data-i18n="brand_role">Travel insurance agent</small></span>
         </a>
         <p data-i18n="foot_tag">Travel insurance help in English and Spanish. Send your trip details and get options by WhatsApp.</p>
       </div>
       <div>
-        <h4 data-i18n="foot_contact">Contact</h4>
+        <h2 class="fh" data-i18n="foot_contact">Contact</h2>
         <ul>
-          <li><a data-wa-link href="#" target="_blank" rel="noopener" data-analytics="wa_footer"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>WhatsApp</a></li>
+          <li><a data-wa-link href="#" target="_blank" rel="noopener"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>WhatsApp</a></li>
           <li id="footPhoneLi"><a id="footPhone" href="#"><i class="ph ph-phone" aria-hidden="true"></i><span class="js-phone">+1 (954) 534-1345</span></a></li>
-          <li id="footEmailLi"><a id="footEmail" href="#"><i class="ph ph-envelope-simple" aria-hidden="true"></i><span data-i18n="foot_email">Email</span></a></li>
-          <li id="footIgLi"><a id="footIg" href="#" target="_blank" rel="noopener"><i class="ph ph-instagram-logo" aria-hidden="true"></i>Instagram</a></li>
+          <li id="footEmailLi"><a id="footEmail" href="#"><i class="ph ph-envelope-simple" aria-hidden="true"></i><span class="js-email">anamariapalacios1608@gmail.com</span></a></li>
+          <li id="footIgLi"><a id="footIg" href="#" target="_blank" rel="noopener"><i class="ph ph-instagram-logo" aria-hidden="true"></i>@amptravelinsurance</a></li>
         </ul>
       </div>
       <div>
-        <h4 data-i18n="foot_explore">Explore</h4>
+        <h2 class="fh" data-i18n="foot_explore">Explore</h2>
         <ul>
           <li><a href="#why" data-i18n="l_cov">Coverage</a></li>
           <li><a href="#how" data-i18n="l_how">How it works</a></li>
@@ -823,17 +818,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,l
           <li><a href="#faq" data-i18n="l_faq">FAQ</a></li>
         </ul>
       </div>
+      <div>
+        <h2 class="fh" data-i18n="foot_legal_h">Legal</h2>
+        <ul>
+          <li><a href="privacy.html" data-i18n="l_privacy">Privacy Policy</a></li>
+          <li><a href="terms.html" data-i18n="l_terms">Terms and Conditions</a></li>
+          <li><a href="cookies.html" data-i18n="l_cookies">Cookie Policy</a></li>
+          <li><a href="refund.html" data-i18n="l_refund">Refund Policy</a></li>
+        </ul>
+      </div>
     </div>
     <div class="foot-bottom">
-      <p><span id="footYear"></span> <span class="js-name">Ana María Palacios</span>. <span data-i18n="foot_legal">Travel insurance policies are issued and underwritten through Best Travel Assistance. This site is for general information and does not constitute an insurance contract. Coverage is subject to policy terms and eligibility.</span></p>
+      <p><span id="footYear"></span> <span class="js-name">Ana María Palacios</span>. <span data-i18n="foot_legal">Plans are provided through Best Travel Assistance. Your plan documents set out your coverage, benefits, exclusions, price, and the company responsible for paying claims, and they control over anything on this site. This site gives general information only. It is not an insurance contract, and a quote does not guarantee eligibility or coverage.</span></p>
     </div>
   </div>
 </footer>
 
 <!-- ============ MOBILE QUICK BAR ============ -->
 <div class="mbar" id="mbar" aria-hidden="true">
-  <a class="btn btn-primary" href="#quote" tabindex="-1" data-analytics="go_quote_bar"><span data-i18n="cta_quote">Get a quote</span></a>
-  <a class="btn btn-ghost wa" data-wa-link href="#" target="_blank" rel="noopener" tabindex="-1" aria-label="WhatsApp" data-analytics="wa_bar"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i></a>
+  <a class="btn btn-primary" href="#quote" tabindex="-1"><span data-i18n="cta_quote">Get a quote</span></a>
+  <a class="btn btn-ghost wa" data-wa-link href="#" target="_blank" rel="noopener" tabindex="-1" aria-label="Chat on WhatsApp"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i></a>
 </div>
 
 <script>
@@ -863,42 +867,40 @@ const I18N = {
     hero_role:"Authorized broker, Best Travel Assistance",
     broker_t:"Authorized broker",
     broker_p:"Policies issued through Best Travel Assistance",
-    fact_1:"Same-day replies, often within minutes",
+    fact_1:"You talk to me, not a call center",
     fact_2:"Free quotes with no obligation",
     fact_3:"Help in English and Spanish",
     cov_h2:"What your plan can cover",
     cov_sub:"I match each plan to your destination, your dates, and the people traveling with you.",
-    cov_1_t:"Emergency medical care", cov_1_d:"Doctor visits, hospital stays, and medical evacuation if you get sick or hurt abroad.",
-    cov_2_t:"Trip cancellation", cov_2_d:"Get prepaid costs back when a covered reason stops your trip.",
-    cov_3_t:"Delays and missed connections", cov_3_d:"Meals and a hotel when your flight leaves hours late.",
-    cov_4_t:"Lost or delayed baggage", cov_4_d:"Essentials to get by while the airline finds your bag.",
-    cov_5_t:"Help from me, start to finish", cov_5_d:"A question before you buy or a claim mid-trip: message me and I will walk you through it.",
-    cov_fine:"Benefits and limits depend on the plan you choose.",
+    cov_1_t:"Emergency medical care", cov_1_d:"Help with medical costs if you get sick or hurt while you are away.",
+    cov_2_t:"Trip cancellation", cov_2_d:"Reimbursement of prepaid costs when a covered reason stops your trip.",
+    cov_3_t:"Delays and missed connections", cov_3_d:"Help with extra costs when a covered delay disrupts your trip.",
+    cov_4_t:"Lost or delayed baggage", cov_4_d:"Help with essentials and lost items, up to your plan's limits.",
+    cov_5_t:"Help from me, start to finish", cov_5_d:"A question before you buy or a claim during your trip: message me and I will help you with the next steps.",
+    cov_fine:"Not every plan includes every benefit. Benefits, limits, and exclusions depend on the plan you choose and are set out in its documents.",
     how_h2:"Covered in three steps",
     how_1_t:"Send your trip", how_1_d:"Fill in the quote form below. It takes about a minute.",
-    how_2_t:"Compare your options", how_2_d:"I reply on WhatsApp with plans and prices that fit your trip.",
-    how_3_t:"Get covered", how_3_d:"Pick a plan, and I help you finish the purchase before you fly.",
+    how_2_t:"Compare your options", how_2_d:"I reply on WhatsApp with plan options and prices for your trip.",
+    how_3_t:"Get covered", how_3_d:"If you pick a plan, I help you finish the purchase before you travel.",
     quote_eyebrow:"Free quote",
     quote_h2:"Tell me about your trip",
     quote_sub:"Fill this in and WhatsApp opens with your details ready to send. No cost, no obligation.",
-    assure_1:"I usually reply within minutes during the day.",
-    assure_2:"Your details go only to me.",
+    assure_1:"I read and answer your request myself.",
+    assure_2:"Only what a quote needs. No names, no passport numbers.",
     assure_3:"No account and no long forms.",
     g_travelers:"Who is traveling", g_trip:"Your trip", g_needs:"What matters to you", g_contact:"How to reach you",
-    traveler:"Traveler", f_name:"Full name", ph_name:"As shown on passport", f_dob:"Date of birth",
-    add_traveler:"Add another traveler", remove:"Remove",
+    f_age:"Traveler {n}: age",
+    add_traveler:"Add another traveler", remove:"Remove", remove_n:"Remove traveler {n}",
     f_origin:"Leaving from", f_destination:"Going to", ph_city:"City or country",
     f_residence:"Country where you live", ph_country:"Country",
     f_depart:"Departure", f_return:"Return", opt:"(optional)",
     f_purpose:"Trip purpose", p_vacation:"Vacation", p_business:"Business", p_study:"Study", p_family:"Visiting family",
     f_priorities:"Coverage you care about", c_medical:"Medical", c_cancel:"Cancellation", c_baggage:"Baggage", c_delays:"Delays",
-    f_wa:"WhatsApp number", f_email:"Email",
-    consent:"I want personal help choosing travel insurance and agree to be contacted by WhatsApp.",
+    f_email:"Email, if you prefer it", email_hint:"I reply on WhatsApp. Add an email only if you also want the quote there.",
+    consent:"I agree to send these trip details to Ana María Palacios on WhatsApp so she can prepare my quote and contact me about it.", consent_link:"Read the Privacy Policy",
     submit:"Send on WhatsApp",
-    form_note:"WhatsApp opens with your message ready. Tap send and I take it from there.",
-    err_name:"Enter this traveler's full name.",
-    err_dob:"Enter a date of birth.",
-    err_dob_future:"Date of birth cannot be in the future.",
+    form_note:"WhatsApp opens with your message ready to review. Nothing is sent until you tap send. Please do not include health details or passport numbers.",
+    err_age:"Enter an age from 0 to 120.",
     err_residence:"Enter your country of residence.",
     err_origin:"Enter where your trip starts.",
     err_destination:"Enter your destination.",
@@ -910,27 +912,28 @@ const I18N = {
     s_open:"Open WhatsApp", s_copy:"Copy details", s_copied:"Copied", s_edit:"Edit",
     about_h2:"Hi, I am Ana María",
     about_p1:"I help travelers protect the trips that matter to them. I know the questions people forget to ask and the plan details that count when something goes wrong.",
-    about_p2:"When you message me, you talk to me. I explain your options in plain words and stay with you from the first quote until you are home.",
+    about_p2:"When you message me, you talk to me. I explain your options in plain words and help you before, during, and after your trip.",
     faq_h2:"Questions before you go",
     faq_more:"Still have a question?",
     foot_tag:"Travel insurance help in English and Spanish. Send your trip details and get options by WhatsApp.",
-    foot_contact:"Contact", foot_explore:"Explore", foot_email:"Email",
+    foot_contact:"Contact", foot_explore:"Explore", foot_legal_h:"Legal", skip:"Skip to content",
+    l_privacy:"Privacy Policy", l_terms:"Terms and Conditions", l_cookies:"Cookie Policy", l_refund:"Refund Policy",
     l_cov:"Coverage", l_how:"How it works", l_faq:"FAQ",
-    foot_legal:"Travel insurance policies are issued and underwritten through Best Travel Assistance. This site is for general information and does not constitute an insurance contract. Coverage is subject to policy terms and eligibility.",
+    foot_legal:"Plans are provided through Best Travel Assistance. Your plan documents set out your coverage, benefits, exclusions, price, and the company responsible for paying claims, and they control over anything on this site. This site gives general information only. It is not an insurance contract, and a quote does not guarantee eligibility or coverage.",
     wa_greeting:"Hi Ana! I would like a travel insurance quote.",
     wa_title:"New travel insurance quote request",
-    wa_travelers:"Travelers", wa_dob:"DOB",
+    wa_travelers:"Travelers", wa_age:"Age",
     wa_residence:"Country of residence", wa_origin:"Leaving from", wa_destination:"Going to",
     wa_dates:"Travel dates", wa_to:"to", wa_purpose:"Trip purpose", wa_priorities:"Coverage priorities",
-    wa_contact_wa:"WhatsApp", wa_contact_email:"Email",
+    wa_contact_email:"Email",
     faq:[
-      {q:"How does a WhatsApp quote work?",a:"Fill in the short quote form or message me directly. I review your trip and send coverage options in the chat. You ask questions, pick a plan, and I help you get covered. No accounts, no long forms."},
-      {q:"How fast will you reply?",a:"Usually within a few minutes during the day, and always the same day. You talk to me, not a call center."},
-      {q:"What does travel insurance cover?",a:"Plans can include emergency medical care, trip cancellation and interruption, delays, lost or delayed baggage, and more. I help you match the coverage to your trip and the people traveling."},
-      {q:"Who is eligible?",a:"Most travelers qualify. Eligibility depends on your country of residence, destination, ages, and trip dates. The quote form asks for those so I can confirm your options."},
+      {q:"How does a WhatsApp quote work?",a:"Fill in the short quote form or message me directly. I review your trip and send coverage options in the chat. You ask questions, pick a plan if you want one, and I help you with the next steps. No accounts, no long forms."},
+      {q:"Who will answer my message?",a:"I answer quote requests myself. You talk to me, not a call center."},
+      {q:"What does travel insurance cover?",a:"Depending on the plan, coverage can include emergency medical care, trip cancellation and interruption, delays, and lost or delayed baggage. Each plan has its own benefits, limits, and exclusions, and I help you compare them for your trip."},
+      {q:"Who is eligible?",a:"Eligibility depends on the plan and on your country of residence, destination, ages, and trip dates. The quote form asks for those so I can check your options."},
       {q:"Do you help in Spanish?",a:"Yes. I support you fully in English and Español, before, during, and after your trip."},
       {q:"Is there any cost to get a quote?",a:"No. Quotes and guidance are free with no obligation. You only pay if you choose a policy that fits you."},
-      {q:"Who underwrites the policies?",a:"Policies are issued and supported through Best Travel Assistance. You get my personal service with an established travel assistance company behind your coverage."}
+      {q:"Which company provides the plan?",a:"I work with Best Travel Assistance. Before you buy, I share the plan documents, which name the company that provides your coverage and pays claims."}
     ]
   },
   es:{
@@ -943,42 +946,40 @@ const I18N = {
     hero_role:"Bróker autorizada, Best Travel Assistance",
     broker_t:"Bróker autorizada",
     broker_p:"Pólizas emitidas a través de Best Travel Assistance",
-    fact_1:"Respuesta el mismo día, muchas veces en minutos",
+    fact_1:"Hablas conmigo, no con un call center",
     fact_2:"Cotización gratis y sin compromiso",
     fact_3:"Atención en español e inglés",
     cov_h2:"Lo que puede cubrir tu plan",
     cov_sub:"Ajusto cada plan a tu destino, tus fechas y a quienes viajan contigo.",
-    cov_1_t:"Atención médica de emergencia", cov_1_d:"Consultas, hospitalización y evacuación médica si te enfermas o te lesionas en el exterior.",
-    cov_2_t:"Cancelación de viaje", cov_2_d:"Recupera gastos prepagados si una causa cubierta te impide viajar.",
-    cov_3_t:"Demoras y conexiones perdidas", cov_3_d:"Comidas y hotel cuando tu vuelo sale con horas de retraso.",
-    cov_4_t:"Equipaje perdido o demorado", cov_4_d:"Lo básico para seguir mientras la aerolínea encuentra tu maleta.",
-    cov_5_t:"Conmigo de principio a fin", cov_5_d:"Una duda antes de comprar o un reclamo en pleno viaje: escríbeme y te guío.",
-    cov_fine:"Los beneficios y límites dependen del plan que elijas.",
+    cov_1_t:"Atención médica de emergencia", cov_1_d:"Ayuda con gastos médicos si te enfermas o te lesionas durante tu viaje.",
+    cov_2_t:"Cancelación de viaje", cov_2_d:"Reembolso de gastos prepagados si una causa cubierta te impide viajar.",
+    cov_3_t:"Demoras y conexiones perdidas", cov_3_d:"Ayuda con gastos extra cuando una demora cubierta afecta tu viaje.",
+    cov_4_t:"Equipaje perdido o demorado", cov_4_d:"Ayuda con artículos básicos y pertenencias perdidas, hasta los límites de tu plan.",
+    cov_5_t:"Conmigo de principio a fin", cov_5_d:"Una duda antes de comprar o un reclamo durante tu viaje: escríbeme y te ayudo con los siguientes pasos.",
+    cov_fine:"No todos los planes incluyen todos los beneficios. Los beneficios, límites y exclusiones dependen del plan que elijas y están en sus documentos.",
     how_h2:"Cubierto en tres pasos",
     how_1_t:"Envía tu viaje", how_1_d:"Completa el formulario de abajo. Toma un minuto.",
-    how_2_t:"Compara opciones", how_2_d:"Te respondo por WhatsApp con planes y precios para tu viaje.",
-    how_3_t:"Quédate cubierto", how_3_d:"Eliges un plan y te ayudo a completar la compra antes de volar.",
+    how_2_t:"Compara opciones", how_2_d:"Te respondo por WhatsApp con opciones de planes y precios para tu viaje.",
+    how_3_t:"Quédate cubierto", how_3_d:"Si eliges un plan, te ayudo a completar la compra antes de viajar.",
     quote_eyebrow:"Cotización gratis",
     quote_h2:"Cuéntame de tu viaje",
     quote_sub:"Completa esto y WhatsApp se abre con tus datos listos para enviar. Sin costo ni compromiso.",
-    assure_1:"Suelo responder en minutos durante el día.",
-    assure_2:"Tus datos llegan solo a mí.",
+    assure_1:"Leo y respondo tu solicitud personalmente.",
+    assure_2:"Solo lo que una cotización necesita. Sin nombres ni números de pasaporte.",
     assure_3:"Sin cuentas ni formularios largos.",
     g_travelers:"Quiénes viajan", g_trip:"Tu viaje", g_needs:"Lo que te importa", g_contact:"Cómo contactarte",
-    traveler:"Viajero", f_name:"Nombre completo", ph_name:"Como aparece en el pasaporte", f_dob:"Fecha de nacimiento",
-    add_traveler:"Agregar otro viajero", remove:"Quitar",
+    f_age:"Viajero {n}: edad",
+    add_traveler:"Agregar otro viajero", remove:"Quitar", remove_n:"Quitar viajero {n}",
     f_origin:"Sales desde", f_destination:"Vas a", ph_city:"Ciudad o país",
     f_residence:"País donde vives", ph_country:"País",
     f_depart:"Salida", f_return:"Regreso", opt:"(opcional)",
     f_purpose:"Motivo del viaje", p_vacation:"Vacaciones", p_business:"Negocios", p_study:"Estudios", p_family:"Visitar familia",
     f_priorities:"Cobertura que te importa", c_medical:"Médica", c_cancel:"Cancelación", c_baggage:"Equipaje", c_delays:"Demoras",
-    f_wa:"Número de WhatsApp", f_email:"Correo",
-    consent:"Quiero ayuda personal para elegir mi seguro de viaje y acepto que me contacten por WhatsApp.",
+    f_email:"Correo, si lo prefieres", email_hint:"Respondo por WhatsApp. Agrega un correo solo si también quieres la cotización allí.",
+    consent:"Acepto enviar estos datos del viaje a Ana María Palacios por WhatsApp para que prepare mi cotización y me contacte sobre ella.", consent_link:"Lee la Política de privacidad",
     submit:"Enviar por WhatsApp",
-    form_note:"WhatsApp se abre con tu mensaje listo. Toca enviar y yo me encargo.",
-    err_name:"Escribe el nombre completo de este viajero.",
-    err_dob:"Escribe una fecha de nacimiento.",
-    err_dob_future:"La fecha de nacimiento no puede ser futura.",
+    form_note:"WhatsApp se abre con tu mensaje listo para revisar. No se envía nada hasta que toques enviar. Por favor no incluyas datos de salud ni números de pasaporte.",
+    err_age:"Escribe una edad de 0 a 120.",
     err_residence:"Escribe tu país de residencia.",
     err_origin:"Escribe dónde empieza tu viaje.",
     err_destination:"Escribe tu destino.",
@@ -990,27 +991,28 @@ const I18N = {
     s_open:"Abrir WhatsApp", s_copy:"Copiar datos", s_copied:"Copiado", s_edit:"Editar",
     about_h2:"Hola, soy Ana María",
     about_p1:"Ayudo a los viajeros a proteger los viajes que les importan. Conozco las preguntas que la gente olvida hacer y los detalles del plan que cuentan cuando algo sale mal.",
-    about_p2:"Cuando me escribes, hablas conmigo. Te explico tus opciones en palabras claras y te acompaño desde la primera cotización hasta que vuelves a casa.",
+    about_p2:"Cuando me escribes, hablas conmigo. Te explico tus opciones en palabras claras y te ayudo antes, durante y después de tu viaje.",
     faq_h2:"Preguntas antes de viajar",
     faq_more:"¿Te queda alguna duda?",
     foot_tag:"Ayuda con seguros de viaje en español e inglés. Envía los datos de tu viaje y recibe opciones por WhatsApp.",
-    foot_contact:"Contacto", foot_explore:"Explora", foot_email:"Correo",
+    foot_contact:"Contacto", foot_explore:"Explora", foot_legal_h:"Legal", skip:"Saltar al contenido",
+    l_privacy:"Política de privacidad", l_terms:"Términos y condiciones", l_cookies:"Política de cookies", l_refund:"Política de reembolsos",
     l_cov:"Cobertura", l_how:"Cómo funciona", l_faq:"Preguntas",
-    foot_legal:"Las pólizas de seguro de viaje se emiten y suscriben a través de Best Travel Assistance. Este sitio es solo informativo y no constituye un contrato de seguro. La cobertura está sujeta a los términos de la póliza y a los requisitos de elegibilidad.",
+    foot_legal:"Los planes se ofrecen a través de Best Travel Assistance. Los documentos de tu plan definen tu cobertura, beneficios, exclusiones, precio y la compañía responsable de pagar los reclamos, y prevalecen sobre cualquier contenido de este sitio. Este sitio es solo informativo. No es un contrato de seguro, y una cotización no garantiza elegibilidad ni cobertura.",
     wa_greeting:"¡Hola Ana! Me gustaría una cotización de seguro de viaje.",
     wa_title:"Nueva solicitud de cotización de seguro de viaje",
-    wa_travelers:"Viajeros", wa_dob:"Nacimiento",
+    wa_travelers:"Viajeros", wa_age:"Edad",
     wa_residence:"País de residencia", wa_origin:"Sale desde", wa_destination:"Va a",
     wa_dates:"Fechas de viaje", wa_to:"a", wa_purpose:"Motivo del viaje", wa_priorities:"Cobertura prioritaria",
-    wa_contact_wa:"WhatsApp", wa_contact_email:"Correo",
+    wa_contact_email:"Correo",
     faq:[
-      {q:"¿Cómo funciona cotizar por WhatsApp?",a:"Completa el formulario corto o escríbeme directo. Reviso tu viaje y te envío opciones de cobertura en el chat. Preguntas lo que necesites, eliges un plan y te ayudo a quedar cubierto. Sin cuentas ni formularios largos."},
-      {q:"¿Qué tan rápido respondes?",a:"Normalmente en pocos minutos durante el día, y siempre el mismo día. Hablas conmigo, no con un call center."},
-      {q:"¿Qué cubre el seguro de viaje?",a:"Los planes pueden incluir atención médica de emergencia, cancelación e interrupción del viaje, demoras, equipaje perdido o demorado y más. Te ayudo a ajustar la cobertura a tu viaje y a quienes viajan."},
-      {q:"¿Quién puede contratarlo?",a:"La mayoría de los viajeros califican. La elegibilidad depende de tu país de residencia, destino, edades y fechas del viaje. El formulario pide esos datos para confirmar tus opciones."},
+      {q:"¿Cómo funciona cotizar por WhatsApp?",a:"Completa el formulario corto o escríbeme directo. Reviso tu viaje y te envío opciones de cobertura en el chat. Preguntas lo que necesites, eliges un plan si quieres y te ayudo con los siguientes pasos. Sin cuentas ni formularios largos."},
+      {q:"¿Quién responde mi mensaje?",a:"Respondo las solicitudes de cotización personalmente. Hablas conmigo, no con un call center."},
+      {q:"¿Qué cubre el seguro de viaje?",a:"Según el plan, la cobertura puede incluir atención médica de emergencia, cancelación e interrupción del viaje, demoras y equipaje perdido o demorado. Cada plan tiene sus propios beneficios, límites y exclusiones, y te ayudo a compararlos para tu viaje."},
+      {q:"¿Quién puede contratarlo?",a:"La elegibilidad depende del plan y de tu país de residencia, destino, edades y fechas del viaje. El formulario pide esos datos para revisar tus opciones."},
       {q:"¿Me ayudas en español?",a:"Sí. Te atiendo por completo en español e inglés, antes, durante y después de tu viaje."},
       {q:"¿Cotizar tiene algún costo?",a:"No. Las cotizaciones y la orientación son gratis y sin compromiso. Solo pagas si eliges una póliza que se ajuste a ti."},
-      {q:"¿Quién suscribe las pólizas?",a:"Las pólizas se emiten y respaldan a través de Best Travel Assistance. Recibes mi atención personal con una compañía de asistencia al viajero establecida detrás de tu cobertura."}
+      {q:"¿Qué compañía provee el plan?",a:"Trabajo con Best Travel Assistance. Antes de comprar, te comparto los documentos del plan, que indican la compañía que provee tu cobertura y paga los reclamos."}
     ]
   }
 };
@@ -1031,12 +1033,14 @@ const I18N = {
   function applyConfig(){
     $$(".js-name").forEach(el=> el.textContent = CONFIG.clientName);
     $$(".js-phone").forEach(el=> el.textContent = CONFIG.phoneDisplay);
+    $$(".js-email").forEach(el=> el.textContent = CONFIG.email);
     if(CONFIG.portraitUrl) $("#heroPortrait").src = CONFIG.portraitUrl;
     if(CONFIG.phoneDisplay){ $("#footPhone").href = "tel:"+CONFIG.phoneDisplay.replace(/[^\d+]/g,""); } else { $("#footPhoneLi").hidden = true; }
     if(CONFIG.email){ $("#footEmail").href = "mailto:"+CONFIG.email; } else { $("#footEmailLi").hidden = true; }
     if(CONFIG.instagram){
       const h = CONFIG.instagram.replace(/^@/,""), u = "https://instagram.com/"+h;
       $("#footIg").href = u; $("#aboutIg").href = u; $("#aboutIgTxt").textContent = "@"+h;
+      $("#footIg").lastChild.nodeValue = "@"+h;
     } else { $("#footIgLi").hidden = true; $("#aboutIg").hidden = true; }
     $("#footYear").textContent = "© " + new Date().getFullYear();
   }
@@ -1073,29 +1077,29 @@ const I18N = {
     const id = ++uid;
     const w = document.createElement("div"); w.className = "traveler";
     w.innerHTML =
-      '<div class="tv-head"><b class="tv-title"></b><button type="button" class="rm-traveler"><i class="ph ph-x" aria-hidden="true"></i><span></span></button></div>'+
-      '<div class="grid-2">'+
-        '<div class="field"><label for="tvn'+id+'" class="lbl-name"></label><input id="tvn'+id+'" type="text" class="tv-name" autocomplete="'+(id===1?"name":"off")+'" required /><div class="err err-name"></div></div>'+
-        '<div class="field"><label for="tvd'+id+'" class="lbl-dob"></label><input id="tvd'+id+'" type="date" class="tv-dob" max="'+todayISO+'" min="1900-01-01" required /><div class="err err-dob"></div></div>'+
+      '<div class="tv-row">'+
+        '<div class="field"><label for="tva'+id+'" class="lbl-age"></label><input id="tva'+id+'" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3" class="tv-age" autocomplete="off" required /><div class="err err-age"></div></div>'+
+        '<button type="button" class="rm-traveler"><i class="ph ph-x" aria-hidden="true"></i><span></span></button>'+
       '</div>';
     $("#travelers").appendChild(w);
-    w.querySelector(".rm-traveler").addEventListener("click", ()=>{ w.remove(); relabelTravelers(); });
+    w.querySelector(".rm-traveler").addEventListener("click", ()=>{
+      const next = w.nextElementSibling || w.previousElementSibling;
+      w.remove(); relabelTravelers();
+      if(next) next.querySelector(".tv-age").focus();
+    });
     relabelTravelers();
-    if(focus) w.querySelector(".tv-name").focus();
+    if(focus) w.querySelector(".tv-age").focus();
   }
   function relabelTravelers(){
     const rows = $$("#travelers .traveler");
     rows.forEach((tv,i)=>{
-      tv.querySelector(".tv-title").textContent = t("traveler")+" "+(i+1);
-      tv.querySelector(".lbl-name").textContent = t("f_name");
-      tv.querySelector(".lbl-dob").textContent = t("f_dob");
+      const n = i+1;
+      tv.querySelector(".lbl-age").textContent = t("f_age").replace("{n}", n);
       const rm = tv.querySelector(".rm-traveler");
       rm.querySelector("span").textContent = t("remove");
+      rm.setAttribute("aria-label", t("remove_n").replace("{n}", n));
       rm.hidden = rows.length === 1;
-      tv.querySelector(".tv-name").placeholder = t("ph_name");
-      tv.querySelector(".err-name").textContent = t("err_name");
-      const de = tv.querySelector(".err-dob");
-      de.textContent = t(de.dataset.k || "err_dob");
+      tv.querySelector(".err-age").textContent = t("err_age");
     });
     $("#addTraveler").hidden = rows.length >= MAX;
   }
@@ -1116,10 +1120,8 @@ const I18N = {
     let first = null;
     const flag = (el,bad,key)=>{ showErr(el,bad,key); if(bad && !first) first = el; };
     $$("#travelers .traveler").forEach(tv=>{
-      const n = tv.querySelector(".tv-name"), d = tv.querySelector(".tv-dob");
-      flag(n, !n.value.trim());
-      if(!d.value) flag(d, true, "err_dob");
-      else flag(d, d.value > todayISO, d.value > todayISO ? "err_dob_future" : "err_dob");
+      const a = tv.querySelector(".tv-age"), v = a.value.trim();
+      flag(a, !/^\d{1,3}$/.test(v) || +v > 120);
     });
     ["origin","destination","residence"].forEach(id=>{ const el=$("#"+id); flag(el, !el.value.trim()); });
     const dep = $("#depart").value, ret = $("#ret");
@@ -1134,6 +1136,7 @@ const I18N = {
   // clear an error as soon as the user fixes the field
   $("#quoteForm").addEventListener("input", e=>{
     const el = e.target;
+    if(el.classList && el.classList.contains("tv-age")) el.value = el.value.replace(/\D/g,"").slice(0,3);
     if(el.getAttribute && el.getAttribute("aria-invalid")==="true" && el.value) showErr(el,false);
     if(el.id==="consent" && el.checked) $("#consentErr").classList.remove("show");
   });
@@ -1150,7 +1153,7 @@ const I18N = {
     const L = I18N[lang], fd = lang==="es" ? fmtDateES : fmtDate;
     let m = "*"+L.wa_title+"*\n\n*"+L.wa_travelers+":*\n";
     $$("#travelers .traveler").forEach((tv,i)=>{
-      m += (i+1)+". "+tv.querySelector(".tv-name").value.trim()+" ("+L.wa_dob+": "+fd(tv.querySelector(".tv-dob").value)+")\n";
+      m += (i+1)+". "+L.wa_age+" "+tv.querySelector(".tv-age").value.trim()+"\n";
     });
     m += "\n*"+L.wa_origin+":* "+$("#origin").value.trim()+"\n";
     m += "*"+L.wa_destination+":* "+$("#destination").value.trim()+"\n";
@@ -1161,10 +1164,8 @@ const I18N = {
     if(purpose) m += "*"+L.wa_purpose+":* "+t("p_"+purpose.value)+"\n";
     const prios = $$('input[name="priority"]:checked').map(c=> t("c_"+c.value));
     if(prios.length) m += "*"+L.wa_priorities+":* "+prios.join(", ")+"\n";
-    const wa=$("#waNumber").value.trim(), em=$("#email").value.trim();
-    if(wa||em) m += "\n";
-    if(wa) m += "*"+L.wa_contact_wa+":* "+wa+"\n";
-    if(em) m += "*"+L.wa_contact_email+":* "+em+"\n";
+    const em=$("#email").value.trim();
+    if(em) m += "\n*"+L.wa_contact_email+":* "+em+"\n";
     return m.trim();
   }
   const waUrl = txt => "https://wa.me/"+String(CONFIG.whatsapp).replace(/\D/g,"")+"?text="+encodeURIComponent(txt);
@@ -1185,8 +1186,6 @@ const I18N = {
     form.hidden = true; successEl.classList.add("show");
     successEl.scrollIntoView({behavior:"smooth",block:"start"});
     successEl.focus({preventScroll:true});
-    if(window.plausible) window.plausible("QuoteSubmit");
-    if(window.gtag) window.gtag("event","generate_lead",{method:"whatsapp_form"});
     window.open(waUrl(msg), "_blank", "noopener");
   });
   $("#editBtn").addEventListener("click", ()=>{
@@ -1199,12 +1198,6 @@ const I18N = {
     if(navigator.clipboard && window.isSecureContext){ navigator.clipboard.writeText(txt).then(done).catch(()=>{}); }
     else { const r=document.createRange(); r.selectNodeContents($("#copyBox")); const s=getSelection(); s.removeAllRanges(); s.addRange(r); try{ document.execCommand("copy"); done(); }catch(err){} }
   });
-
-  $$("[data-analytics]").forEach(el=> el.addEventListener("click", ()=>{
-    const ev = el.getAttribute("data-analytics");
-    if(window.plausible) window.plausible(ev);
-    if(window.gtag) window.gtag("event","cta_click",{cta:ev});
-  }));
 
   /* ---- Observers (no scroll listeners) ---- */
   const nav = $("#nav"), mbar = $("#mbar");

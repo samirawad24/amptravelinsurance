@@ -1,20 +1,19 @@
 # Ana María Palacios | Travel Insurance
 
-> Ana María Palacios is a bilingual (English and Spanish) travel insurance agent and an authorized broker for Best Travel Assistance. She helps travelers get personalized travel insurance quotes fast, with one-on-one support by WhatsApp before, during, and after their trip.
+> Ana María Palacios is a bilingual (English and Spanish) travel insurance agent who works with Best Travel Assistance. She prepares personalized travel insurance quotes and supports clients one on one by WhatsApp before, during, and after their trip.
 
 ## About
 - Name: Ana María Palacios
-- Role: Travel insurance agent and authorized broker for Best Travel Assistance
-- Languages: English and Español (fully bilingual)
-- Serves: travelers in the United States and Latin America (Colombia, Venezuela, Mexico, Ecuador, Peru, and more), for trips worldwide
-- Coverage types: travel medical insurance, trip cancellation and interruption, travel delays, lost or delayed baggage, and more
-- Cost: quotes and guidance are free with no obligation; you only pay if you choose a policy that fits you
-- Response time: usually within minutes during the day, always the same day; you talk to Ana directly, not a call center
+- Role: Travel insurance agent working with Best Travel Assistance
+- Languages: English and Español
+- Coverage types (depending on the plan): emergency medical care, trip cancellation and interruption, travel delays, lost or delayed baggage. Each plan has its own benefits, limits, and exclusions.
+- Cost: quotes and guidance are free with no obligation
+- Contact: you talk to Ana directly, not a call center
 
 ## How to get a quote
-1. Send your trip details (travelers, dates, and where you are going) using the quote form or WhatsApp.
-2. Ana reviews your trip and sends clear coverage options that fit your plans and budget.
-3. You confirm your plan on WhatsApp and get covered before you go.
+1. Send your trip details (number of travelers and their ages, where you are going, and your country of residence) using the quote form or WhatsApp.
+2. Ana reviews your trip and sends plan options and prices.
+3. If you choose a plan, Ana helps you complete the purchase before you travel.
 
 ## Contact
 - WhatsApp: https://wa.me/19545341345 (+1 954-534-1345)
@@ -22,7 +21,12 @@
 - Email: anamariapalacios1608@gmail.com
 - Website: https://samirawad24.github.io/amptravelinsurance/
 
-## Underwriting partner
-Policies are issued and supported through Best Travel Assistance, a specialist travel assistance provider. Ana María Palacios is an authorized broker for Best Travel Assistance.
+## Policies
+- Privacy Policy: https://samirawad24.github.io/amptravelinsurance/privacy.html
+- Terms and Conditions: https://samirawad24.github.io/amptravelinsurance/terms.html
+- Cookie Policy: https://samirawad24.github.io/amptravelinsurance/cookies.html
+- Refund Policy: https://samirawad24.github.io/amptravelinsurance/refund.html
 
-Last updated: 2026-07-23
+Plan documents set out the coverage and name the company that provides it and pays claims.
+
+Last updated: 2026-10-02
